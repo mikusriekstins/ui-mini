@@ -1,0 +1,19 @@
+@import '../styles/variables.css';
+
+.icon {
+  inline-size: var(--icon-size-medium);
+  block-size: var(--icon-size-medium);
+  stroke-width: var(--icon-stroke-width);
+  color: var(--icon-color);
+  flex-shrink: 0;
+}
+
+.icon--small {
+  inline-size: var(--icon-size-small);
+  block-size: var(--icon-size-small);
+}
+
+.icon--medium {
+  inline-size: var(--icon-size-medium);
+  block-size: var(--icon-size-medium);
+}

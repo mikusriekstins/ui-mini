@@ -1,0 +1,254 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { useState } from 'react';
+import { Button } from '../components/Button';
+import { Toggle } from '../components/Toggle';
+import { Icon } from '../components/Icon';
+import { Checkbox } from '../components/Checkbox';
+import { RadioGroup, Radio } from '../components/Radio';
+import { DropdownMenu, DropdownMenuItem } from '../components/DropdownMenu';
+import { Popover } from '../components/Popover';
+import { Dialog } from '../components/Dialog';
+import { Select } from '../components/Select';
+import { Label } from '../components/Label';
+import { TextInput } from '../components/TextInput';
+
+<Meta title="Introduction" />
+
+# UI Component Library
+
+A collection of React components built with Radix UI primitives and TypeScript.
+
+## Components
+
+<div className="component-grid">
+  <div className="component-item">
+    <h3>Button</h3>
+    <div className="component-examples">
+      <Button>Primary Button</Button>
+      <Button variant="secondary">Secondary Button</Button>
+      <Button icon="arrow-right">With Icon</Button>
+      <Button icon="arrow-up" />
+    </div>
+    <p>A flexible button component with primary/secondary variants and icon support.</p>
+  </div>
+
+<div className="component-item">
+  <h3>Toggle</h3>
+  <div className="component-examples">
+    <Toggle>Default Toggle</Toggle>
+    <Toggle variant="secondary">Secondary Toggle</Toggle>
+    <Toggle pressed>Pressed State</Toggle>
+  </div>
+  <p>
+    A toggle component built on Radix UI with consistent styling and variants.
+  </p>
+</div>
+
+<div className="component-item">
+  <h3>Icon</h3>
+  <div className="component-examples">
+    <Icon name="arrow-right" size="small" />
+    <Icon name="arrow-up" size="small" />
+    <Icon name="arrow-left" size="medium" />
+    <Icon name="arrow-down" size="medium" />
+  </div>
+  <p>
+    SVG icon component with predefined sizes (small: 1rem, medium: 1.5rem) and
+    consistent stroke weight.
+  </p>
+</div>
+
+<div className="component-item">
+  <h3>Checkbox</h3>
+  <div className="component-examples">
+    <Checkbox />
+    <Checkbox label="With Label" />
+    <Checkbox label="Checked" defaultChecked />
+    <Checkbox label="Disabled" disabled />
+  </div>
+  <p>
+    A checkbox component with optional labels, built on Radix UI with consistent
+    styling.
+  </p>
+</div>
+
+<div className="component-item">
+  <h3>Radio</h3>
+  <div className="component-examples">
+    <RadioGroup defaultValue="option2">
+      <Radio value="option1" label="Option 1" />
+      <Radio value="option2" label="Option 2" />
+      <Radio value="option3" label="Option 3" />
+    </RadioGroup>
+  </div>
+  <p>
+    A radio button component for mutually exclusive selections, built on Radix
+    UI with consistent styling.
+  </p>
+</div>
+
+<div className="component-item">
+  <h3>DropdownMenu</h3>
+  <div className="component-examples">
+    <DropdownMenu trigger={<Button>Open Menu</Button>} label="Menu Options">
+      <DropdownMenuItem>Option 1</DropdownMenuItem>
+      <DropdownMenuItem>Option 2</DropdownMenuItem>
+      <DropdownMenuItem disabled>Disabled Option</DropdownMenuItem>
+    </DropdownMenu>
+  </div>
+  <p>
+    A dropdown menu component with trigger button and menu items, built on Radix
+    UI.
+  </p>
+</div>
+
+<div className="component-item">
+  <h3>Popover</h3>
+  <div className="component-examples">
+    <PopoverExample />
+  </div>
+  <p>
+    A popover component for displaying content in a floating panel, with
+    customizable positioning.
+  </p>
+</div>
+
+  <div className="component-item">
+    <h3>Dialog</h3>
+    <div className="component-examples">
+      <DialogExample />
+    </div>
+    <p>A modal dialog component with overlay, built on Radix UI for accessible interactions.</p>
+  </div>
+
+  <div className="component-item">
+    <h3>Select</h3>
+    <div className="component-examples">
+      <SelectExample />
+    </div>
+    <p>A dropdown select component with searchable options, built on Radix UI with consistent styling.</p>
+  </div>
+
+  <div className="component-item">
+    <h3>Label</h3>
+    <div className="component-examples">
+      <Label text="Basic Label" />
+      <Label text="Required Field" isRequired />
+      <Label text="Form Label" htmlFor="example-input" />
+    </div>
+    <p>A semantic label component with required field indicators, built on Radix UI for form accessibility.</p>
+  </div>
+
+  <div className="component-item">
+    <h3>TextInput</h3>
+    <div className="component-examples">
+      <TextInput label="Email" placeholder="Enter your email..." />
+    </div>
+    <p>A text input component with labels, validation states, and helper text for comprehensive form handling.</p>
+  </div>
+</div>
+
+export const PopoverExample = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <Popover
+      isOpen={isOpen}
+      onOpenChange={setIsOpen}
+      popoverTrigger={<Button>Open Popover</Button>}
+      closeButtonText="Close"
+    >
+      <div>
+        <h4 style={{ margin: '0 0 0.5rem 0' }}>Popover Content</h4>
+        <p style={{ margin: 0 }}>This is content inside the popover.</p>
+      </div>
+    </Popover>
+  );
+};
+
+export const DialogExample = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <Dialog
+      open={isOpen}
+      onOpenChange={setIsOpen}
+      trigger={<Button>Open Dialog</Button>}
+      title="Dialog Title"
+      description="This is a modal dialog with overlay background."
+      closeButtonText="Close"
+    >
+      <div>
+        <Button onClick={() => setIsOpen(false)}>Close Dialog</Button>
+      </div>
+    </Dialog>
+  );
+};
+
+export const SelectExample = () => {
+  const [selectedValue, setSelectedValue] = useState('');
+  const options = [
+    { value: 'option1', label: 'Option 1' },
+    { value: 'option2', label: 'Option 2' },
+    { value: 'option3', label: 'Option 3' }
+  ];
+  
+  return (
+    <Select
+      options={options}
+      value={selectedValue}
+      onChange={setSelectedValue}
+      placeholder="Select an option..."
+    />
+  );
+};
+
+
+<style>
+  {`
+  .component-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .component-item {
+    padding: 1.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-muted);
+  }
+
+  .component-item h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--color-foreground);
+  }
+
+  .component-examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    align-items: center;
+  }
+
+  .component-item p {
+    margin: 0;
+    color: var(--color-muted-foreground);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  @media screen and (max-width: 768px) {
+    .component-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .component-examples {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  `}
+</style>

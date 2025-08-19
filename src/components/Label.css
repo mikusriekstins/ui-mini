@@ -1,0 +1,19 @@
+@import '../styles/variables.css';
+
+.label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  color: var(--color-foreground);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  cursor: pointer;
+  user-select: none;
+}
+
+.label__required {
+  color: var(--color-primary-600);
+  font-weight: var(--font-weight-bold);
+  margin-inline-end: var(--spacing-1);
+}

@@ -1,0 +1,87 @@
+@import '../styles/variables.css';
+
+.toggle {
+  padding-block: var(--component-padding-block-base);
+  padding-inline: var(--component-padding-inline-base);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-tight);
+  border: 1px solid var(--color-gray-300);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  outline: none;
+  background-color: transparent;
+  color: var(--color-gray-700);
+  box-sizing: border-box;
+  block-size: var(--component-block-size-base);
+}
+
+.toggle:hover:not([data-disabled]):not([data-state='on']) {
+  background-color: var(--color-muted);
+  border-color: var(--color-gray-400);
+}
+
+.toggle:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.toggle[data-disabled] {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.toggle[data-state='on'][data-disabled] {
+  background-color: var(--color-gray-300);
+  color: var(--color-gray-600);
+  border-color: var(--color-gray-300);
+}
+
+/* Toggle pressed/active state */
+.toggle[data-state='on'] {
+  background-color: var(--color-primary-600);
+  color: var(--color-white);
+  border-color: var(--color-primary-600);
+}
+
+.toggle[data-state='on']:hover:not([data-disabled]) {
+  background-color: var(--color-primary-700);
+  border-color: var(--color-primary-700);
+}
+
+.toggle[data-state='on']:active:not([data-disabled]) {
+  background-color: var(--color-primary-800);
+  border-color: var(--color-primary-800);
+}
+
+/* Toggle variants */
+.toggle--secondary {
+  background-color: transparent;
+  color: var(--color-gray-900);
+  border-color: var(--color-gray-300);
+}
+
+.toggle--secondary:hover:not([data-disabled]):not([data-state='on']) {
+  background-color: var(--color-muted);
+  border-color: var(--color-gray-400);
+}
+
+.toggle--secondary[data-state='on'] {
+  background-color: var(--color-gray-700);
+  color: var(--color-white);
+  border-color: var(--color-gray-700);
+}
+
+.toggle--secondary[data-state='on']:hover:not([data-disabled]) {
+  background-color: var(--color-gray-800);
+  border-color: var(--color-gray-800);
+}

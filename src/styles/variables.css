@@ -1,0 +1,177 @@
+/* Import Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+  /* Colors - Primary (shared across themes) */
+  --color-primary-50: #f3f0ff;
+  --color-primary-100: #e8dfff;
+  --color-primary-200: #d1bfff;
+  --color-primary-300: #ba9fff;
+  --color-primary-400: #a37fff;
+  --color-primary-500: #8c5fff;
+  --color-primary-600: #6105e0;
+  --color-primary-700: #5004b8;
+  --color-primary-800: #3f0390;
+  --color-primary-900: #2e0268;
+
+  /* Colors - Semantic (shared) */
+  --color-white: #ffffff;
+  --color-black: #000000;
+}
+
+/* Light theme colors (default) */
+:root,
+[data-theme='light'] {
+  /* Gray scale for light theme */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* Semantic colors for light theme */
+  --color-background: var(--color-white);
+  --color-foreground: var(--color-gray-900);
+  --color-muted: var(--color-gray-50);
+  --color-muted-foreground: var(--color-gray-500);
+  --color-border: var(--color-gray-200);
+  --color-input: var(--color-gray-200);
+}
+
+/* Dark theme colors */
+[data-theme='dark'] {
+  /* Gray scale for dark theme (inverted) */
+  --color-gray-50: #111827;
+  --color-gray-100: #1f2937;
+  --color-gray-200: #374151;
+  --color-gray-300: #4b5563;
+  --color-gray-400: #6b7280;
+  --color-gray-500: #9ca3af;
+  --color-gray-600: #d1d5db;
+  --color-gray-700: #e5e7eb;
+  --color-gray-800: #f3f4f6;
+  --color-gray-900: #f9fafb;
+
+  /* Semantic colors for dark theme */
+  --color-background: #0a0a0a;
+  --color-foreground: var(--color-gray-900);
+  --color-muted: #262626;
+  --color-muted-foreground: var(--color-gray-500);
+  --color-border: var(--color-gray-300);
+  --color-input: var(--color-gray-300);
+}
+
+:root {
+  /* Typography - Font Family */
+  --font-family-sans:
+    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  --font-family-mono:
+    'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New',
+    monospace;
+
+  /* Typography - Font Sizes (Modular Scale: 1.125 - Major Second) */
+  --font-size-2xs: 0.703rem; /* 11.25px */
+  --font-size-xs: 0.79rem; /* 12.64px */
+  --font-size-sm: 0.889rem; /* 14.22px */
+  --font-size-base: 1rem; /* 16px - Base */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.266rem; /* 20.25px */
+  --font-size-2xl: 1.424rem; /* 22.78px */
+  --font-size-3xl: 1.602rem; /* 25.63px */
+  --font-size-4xl: 1.802rem; /* 28.83px */
+  --font-size-5xl: 2.027rem; /* 32.43px */
+  --font-size-6xl: 2.281rem; /* 36.48px */
+
+  /* Typography - Line Heights */
+  --line-height-none: 1;
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+
+  /* Typography - Font Weights (Limited to 400 and 700 for performance) */
+  --font-weight-light: 400; /* Maps to normal for performance */
+  --font-weight-normal: 400;
+  --font-weight-medium: 400; /* Maps to normal for performance */
+  --font-weight-semibold: 700; /* Maps to bold for performance */
+  --font-weight-bold: 700;
+
+  /* Typography - Letter Spacing */
+  --letter-spacing-tighter: -0.05em;
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0em;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
+
+  /* Icons */
+  --icon-size-small: 1rem;
+  --icon-size-medium: 1.5rem;
+  --icon-stroke-width: 2;
+  --icon-color: currentColor;
+
+  /* Spacing */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+
+  /* Component dimensions */
+  --component-padding-block-base: 0.5rem; /* --spacing-2 */
+  --component-padding-inline-base: 1rem; /* --spacing-4 */
+  --component-block-size-base: 2.25rem; /* 36px - standard component height */
+
+  /* Border Radius */
+  --radius-none: 0;
+  --radius-sm: 0.125rem;
+  --radius-base: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-base: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg:
+    0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  /* Focus */
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+  --focus-ring-color: var(--color-primary-500);
+
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 200ms ease-in-out;
+  --transition-slow: 300ms ease-in-out;
+}
+
+/* Base Typography */
+* {
+  font-family: var(--font-family-sans);
+}
+
+body {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-normal);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-foreground);
+  background-color: var(--color-background);
+}
