@@ -5,7 +5,7 @@ import {
   ThemeContextValue,
 } from '../context/ThemeContext';
 
-const STORAGE_KEY = 'ui-lib-theme';
+const STORAGE_KEY = 'ui-mini-theme';
 
 export interface ThemeProviderProps {
   children: React.ReactNode;

@@ -7,6 +7,14 @@ A React UI component library built with TypeScript, Radix UI primitives, and mod
 - **Button** - Flexible button component with variants and icon support
 - **Toggle** - Accessible toggle component built on Radix UI
 - **Icon** - Icon component using Lucide React icons
+- **Checkbox** - Simple checkbox with Icon for checkmark
+- **Radio** - Radio group and items as children for single option selection 
+- **DropdownMenu** - A dropdown menu with items and trigger
+- **Popover** - Popover window with a trigger
+- **Dialog** - Dialog window with a trigger
+- **Select** - Selection input field
+- **Label** - Separate label component for form fields
+- **TextInput** - Text input with label and help text
 
 ## Installation
 
@@ -22,7 +30,7 @@ npm link
 In your React project:
 
 ```bash
-npm link ui-lib
+npm link ui-mini
 ```
 
 ### Option 2: npm pack (for testing)
@@ -37,14 +45,14 @@ npm pack
 In your React project:
 
 ```bash
-npm install /path/to/ui-lib-1.0.0.tgz
+npm install /path/to/ui-mini-1.0.0.tgz
 ```
 
 ### Option 3: Publish to npm (for production)
 
 ```bash
 npm publish  # This will automatically run build via prepublishOnly
-npm install ui-lib
+npm install ui-mini
 ```
 
 ## Setup in Your React Project
@@ -54,7 +62,7 @@ npm install ui-lib
 The library bundles all its dependencies except React:
 
 ```bash
-npm install ui-lib
+npm install ui-mini
 ```
 
 **Note**: You only need React 18+ in your project. All other dependencies (Radix UI, Lucide icons) are bundled with the library.
@@ -62,8 +70,8 @@ npm install ui-lib
 ### 2. Import Components and Styles
 
 ```tsx
-import { Button, Toggle, Icon } from 'ui-lib';
-import 'ui-lib/styles'; // Import the bundled CSS
+import { Button, Toggle, Icon } from 'ui-mini';
+import 'ui-mini/styles'; // Import the bundled CSS
 ```
 
 ## Usage Examples
@@ -71,7 +79,7 @@ import 'ui-lib/styles'; // Import the bundled CSS
 ### Button Component
 
 ```tsx
-import { Button } from 'ui-lib';
+import { Button } from 'ui-mini';
 
 function App() {
   return (
@@ -101,7 +109,7 @@ function App() {
 ### Toggle Component
 
 ```tsx
-import { Toggle } from 'ui-lib';
+import { Toggle } from 'ui-mini';
 import { useState } from 'react';
 
 function App() {
@@ -130,7 +138,7 @@ function App() {
 ### Icon Component
 
 ```tsx
-import { Icon } from 'ui-lib';
+import { Icon } from 'ui-mini';
 
 function App() {
   return (
@@ -197,7 +205,7 @@ import {
   Icon,
   IconProps,
   IconName,
-} from 'ui-lib';
+} from 'ui-mini';
 
 // Use the prop interfaces for your own components
 interface MyComponentProps {
@@ -210,8 +218,8 @@ interface MyComponentProps {
 
 ```tsx
 import React, { useState } from 'react';
-import { Button, Toggle, Icon } from 'ui-lib';
-import 'ui-lib/styles';
+import { Button, Toggle, Icon } from 'ui-mini';
+import 'ui-mini/styles';
 
 function App() {
   const [isToggled, setIsToggled] = useState(false);

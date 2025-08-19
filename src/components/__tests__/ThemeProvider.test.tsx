@@ -158,7 +158,7 @@ describe('ThemeProvider', () => {
     const darkButton = screen.getByRole('button', { name: /set dark/i });
     await user.click(darkButton);
 
-    expect(localStorageMock.getItem('ui-lib-theme')).toBe('dark');
+    expect(localStorageMock.getItem('ui-mini-theme')).toBe('dark');
   });
 
   it('uses custom storage key', async () => {
@@ -177,7 +177,7 @@ describe('ThemeProvider', () => {
   });
 
   it('loads theme from localStorage on mount', () => {
-    localStorageMock.setItem('ui-lib-theme', 'dark');
+    localStorageMock.setItem('ui-mini-theme', 'dark');
 
     render(
       <ThemeProvider>
