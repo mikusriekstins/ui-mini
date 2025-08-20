@@ -11,7 +11,26 @@ const meta: Meta<typeof Icon> = {
   argTypes: {
     name: {
       control: { type: 'select' },
-      options: ['arrow-left', 'arrow-up', 'arrow-right', 'arrow-down'],
+      options: [
+        'arrow-left',
+        'arrow-up',
+        'arrow-right',
+        'arrow-down',
+        'chevron-down',
+        'x',
+        'check',
+        'shopping-basket',
+        'mail',
+        'download',
+        'image',
+        'headphones',
+        'music',
+        'play',
+        'star',
+        'triangle-alert',
+        'lock',
+        'percent',
+      ],
     },
     size: {
       control: { type: 'select' },
@@ -35,29 +54,49 @@ export const AllIcons: Story = {
     <div
       style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(4, 1fr)',
+        gridTemplateColumns: 'repeat(6, 1fr)',
         gap: '24px',
         padding: '16px',
+        maxWidth: '800px',
       }}
     >
-      {(['arrow-left', 'arrow-up', 'arrow-right', 'arrow-down'] as const).map(
-        (iconName) => (
-          <div
-            key={iconName}
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              gap: '8px',
-            }}
-          >
-            <Icon name={iconName} size="medium" />
-            <span style={{ fontSize: 'var(--font-size-2xs)', color: '#666' }}>
-              {iconName}
-            </span>
-          </div>
-        )
-      )}
+      {(
+        [
+          'arrow-left',
+          'arrow-up',
+          'arrow-right',
+          'arrow-down',
+          'chevron-down',
+          'x',
+          'check',
+          'shopping-basket',
+          'mail',
+          'download',
+          'image',
+          'headphones',
+          'music',
+          'play',
+          'star',
+          'triangle-alert',
+          'lock',
+          'percent',
+        ] as const
+      ).map((iconName) => (
+        <div
+          key={iconName}
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '8px',
+          }}
+        >
+          <Icon name={iconName} size="medium" />
+          <span style={{ fontSize: 'var(--font-size-2xs)', color: '#666' }}>
+            {iconName}
+          </span>
+        </div>
+      ))}
     </div>
   ),
 };

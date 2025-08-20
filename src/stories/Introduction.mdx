@@ -48,13 +48,15 @@ A collection of React components built with Radix UI primitives and TypeScript.
   <h3>Icon</h3>
   <div className="component-examples">
     <Icon name="arrow-right" size="small" />
-    <Icon name="arrow-up" size="small" />
-    <Icon name="arrow-left" size="medium" />
-    <Icon name="arrow-down" size="medium" />
+    <Icon name="star" size="small" />
+    <Icon name="mail" size="small" />
+    <Icon name="shopping-basket" size="medium" />
+    <Icon name="music" size="medium" />
+    <Icon name="lock" size="medium" />
   </div>
   <p>
-    SVG icon component with predefined sizes (small: 1rem, medium: 1.5rem) and
-    consistent stroke weight.
+    SVG icon component with 18 available icons, predefined sizes (small: 1rem, medium: 1.5rem) and
+    consistent stroke weight. Includes arrows, UI controls, and common interface icons.
   </p>
 </div>
 
@@ -109,7 +111,7 @@ A collection of React components built with Radix UI primitives and TypeScript.
   </div>
   <p>
     A popover component for displaying content in a floating panel, with
-    customizable positioning.
+    customizable positioning. Supports both controlled and uncontrolled modes.
   </p>
 </div>
 
@@ -149,11 +151,8 @@ A collection of React components built with Radix UI primitives and TypeScript.
 </div>
 
 export const PopoverExample = () => {
-  const [isOpen, setIsOpen] = useState(false);
   return (
     <Popover
-      isOpen={isOpen}
-      onOpenChange={setIsOpen}
       popoverTrigger={<Button>Open Popover</Button>}
       closeButtonText="Close"
     >

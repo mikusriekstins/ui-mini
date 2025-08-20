@@ -7,6 +7,17 @@ import {
   ChevronDown,
   X,
   Check,
+  ShoppingBasket,
+  Mail,
+  Download,
+  Image,
+  Headphones,
+  Music,
+  Play,
+  Star,
+  TriangleAlert,
+  Lock,
+  Percent,
   LucideProps,
 } from 'lucide-react';
 import './Icon.css';
@@ -19,6 +30,17 @@ const iconMap = {
   'chevron-down': ChevronDown,
   x: X,
   check: Check,
+  'shopping-basket': ShoppingBasket,
+  mail: Mail,
+  download: Download,
+  image: Image,
+  headphones: Headphones,
+  music: Music,
+  play: Play,
+  star: Star,
+  'triangle-alert': TriangleAlert,
+  lock: Lock,
+  percent: Percent,
 } as const;
 
 export type IconName = keyof typeof iconMap;
