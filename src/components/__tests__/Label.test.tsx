@@ -1,5 +1,6 @@
 import { expect, describe, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
+import { createRef } from 'react';
 import { Label } from '../Label';
 
 describe('Label', () => {
@@ -51,9 +52,10 @@ describe('Label', () => {
   });
 
   it('forwards ref correctly', () => {
-    const ref = { current: null };
+    const ref = createRef<HTMLElement>();
     render(<Label ref={ref} text="Label with ref" />);
 
+    expect(ref.current).toBeInstanceOf(HTMLElement);
     expect(ref.current?.tagName).toBe('LABEL');
   });
 
