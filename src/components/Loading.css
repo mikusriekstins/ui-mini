@@ -24,7 +24,7 @@
   width: inherit;
   height: inherit;
   border-radius: var(--radius-md);
-  background-color: var(--color-black);
+  background-color: var(--color-primary-600);
   animation: var(--loading-duration) ease-out infinite loading-spin;
   will-change: transform;
 }
@@ -190,7 +190,7 @@
 
 /* Dark theme adjustments */
 [data-theme='dark'] .loading::before {
-  background-color: var(--color-white);
+  background-color: var(--color-primary-500);
 }
 
 [data-theme='dark'] .loading::after {

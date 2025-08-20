@@ -3,16 +3,16 @@
 
 :root {
   /* Colors - Primary (shared across themes) */
-  --color-primary-50: #f3f0ff;
-  --color-primary-100: #e8dfff;
-  --color-primary-200: #d1bfff;
-  --color-primary-300: #ba9fff;
-  --color-primary-400: #a37fff;
-  --color-primary-500: #8c5fff;
-  --color-primary-600: #6105e0;
-  --color-primary-700: #5004b8;
-  --color-primary-800: #3f0390;
-  --color-primary-900: #2e0268;
+  --color-primary-50: #fef2f0;
+  --color-primary-100: #fde4e0;
+  --color-primary-200: #fbcdc6;
+  --color-primary-300: #f8a89c;
+  --color-primary-400: #f4785f;
+  --color-primary-500: #f95738;
+  --color-primary-600: #e73e1f;
+  --color-primary-700: #c2321a;
+  --color-primary-800: #a02b1a;
+  --color-primary-900: #84281c;
 
   /* Colors - Semantic (shared) */
   --color-white: #ffffff;
