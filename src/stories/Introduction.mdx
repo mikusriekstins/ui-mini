@@ -11,6 +11,7 @@ import { Dialog } from '../components/Dialog';
 import { Select } from '../components/Select';
 import { Label } from '../components/Label';
 import { TextInput } from '../components/TextInput';
+import { Loading } from '../components/Loading';
 
 <Meta title="Introduction" />
 
@@ -147,6 +148,16 @@ A collection of React components built with Radix UI primitives and TypeScript.
       <TextInput label="Email" placeholder="Enter your email..." />
     </div>
     <p>A text input component with labels, validation states, and helper text for comprehensive form handling.</p>
+  </div>
+
+  <div className="component-item">
+    <h3>Loading</h3>
+    <div className="component-examples" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)', padding: '24px', borderRadius: '8px', gap: '24px', alignItems: 'flex-end' }}>
+      <Loading size="small" />
+      <Loading size="medium" />
+      <Loading size="large" />
+    </div>
+    <p>A bouncing and spinning box loader with animated shadow. Perfect for overlays and loading states with three size variants.</p>
   </div>
 </div>
 
