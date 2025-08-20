@@ -1,5 +1,5 @@
 {
-  "name": "ui-mini",
+  "name": "@mikusriekstins/ui-mini",
   "version": "0.6.0",
   "type": "module",
   "main": "dist/index.cjs.js",

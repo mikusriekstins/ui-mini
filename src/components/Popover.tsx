@@ -11,8 +11,8 @@ export interface PopoverProps
   children: React.ReactNode;
   closeButtonText: string;
   popoverTrigger: React.ReactNode;
-  isOpen: boolean;
-  onOpenChange: (open: boolean) => void;
+  isOpen?: boolean;
+  onOpenChange?: (open: boolean) => void;
   align?: 'center' | 'start' | 'end';
   side?: 'top' | 'right' | 'bottom' | 'left';
   sideOffset?: number;
@@ -38,8 +38,13 @@ const Popover = React.forwardRef<
     },
     ref
   ) => {
+    const rootProps = {
+      ...(isOpen !== undefined && { open: isOpen }),
+      ...(onOpenChange !== undefined && { onOpenChange }),
+    };
+
     return (
-      <PopoverPrimitive.Root open={isOpen} onOpenChange={onOpenChange}>
+      <PopoverPrimitive.Root {...rootProps}>
         <PopoverPrimitive.Trigger asChild className="popover__trigger">
           {popoverTrigger}
         </PopoverPrimitive.Trigger>

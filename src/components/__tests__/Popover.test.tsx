@@ -162,4 +162,48 @@ describe('Popover', () => {
       .closest('[id="custom-popover"]');
     expect(content).toBeInTheDocument();
   });
+
+  describe('uncontrolled mode', () => {
+    const uncontrolledProps = {
+      closeButtonText: 'Close popover',
+      popoverTrigger: <button>Open Popover</button>,
+      children: <div>Popover content</div>,
+    };
+
+    it('works without isOpen and onOpenChange props', () => {
+      render(<Popover {...uncontrolledProps} />);
+
+      const trigger = screen.getByRole('button', { name: /open popover/i });
+      expect(trigger).toBeInTheDocument();
+      expect(screen.queryByText('Popover content')).not.toBeInTheDocument();
+    });
+
+    it('can be opened and closed in uncontrolled mode', async () => {
+      const user = userEvent.setup();
+      render(<Popover {...uncontrolledProps} />);
+
+      const trigger = screen.getByRole('button', { name: /open popover/i });
+
+      await user.click(trigger);
+      expect(screen.getByText('Popover content')).toBeInTheDocument();
+
+      const closeButton = screen.getByRole('button', {
+        name: /close popover/i,
+      });
+      await user.click(closeButton);
+      expect(screen.queryByText('Popover content')).not.toBeInTheDocument();
+    });
+
+    it('can be closed with escape key in uncontrolled mode', async () => {
+      const user = userEvent.setup();
+      render(<Popover {...uncontrolledProps} />);
+
+      const trigger = screen.getByRole('button', { name: /open popover/i });
+      await user.click(trigger);
+      expect(screen.getByText('Popover content')).toBeInTheDocument();
+
+      await user.keyboard('{Escape}');
+      expect(screen.queryByText('Popover content')).not.toBeInTheDocument();
+    });
+  });
 });
