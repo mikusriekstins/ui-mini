@@ -82,7 +82,7 @@
 
 /* Label styling */
 .checkbox__label {
-  font-size: var(--font-size-sm);
+  font-size: var(--ui-font-size);
   line-height: var(--line-height-normal);
   color: var(--color-foreground);
   cursor: pointer;

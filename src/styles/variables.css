@@ -150,6 +150,11 @@
   --shadow-lg:
     0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 
+  /* UI Components */
+  --ui-font-size: var(
+    --font-size-base
+  ); /* Primary font size for UI components */
+
   /* Focus */
   --focus-ring-width: 2px;
   --focus-ring-offset: 2px;
