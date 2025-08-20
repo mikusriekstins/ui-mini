@@ -16,6 +16,7 @@ export interface SelectProps {
   onChange?: (value: string) => void;
   disabled?: boolean;
   className?: string;
+  id?: string;
 }
 
 const Select = React.forwardRef<
@@ -31,6 +32,7 @@ const Select = React.forwardRef<
       onChange,
       disabled,
       className = '',
+      id,
       ...props
     },
     ref
@@ -48,6 +50,7 @@ const Select = React.forwardRef<
         <SelectPrimitive.Trigger
           ref={ref}
           className={`select__trigger ${selectClasses}`}
+          id={id}
         >
           <SelectPrimitive.Value placeholder={placeholder} />
           <SelectPrimitive.Icon className="select__icon">
