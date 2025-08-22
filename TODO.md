@@ -1,11 +1,13 @@
 # TODO: Implement Alert Component
 
 ## Overview
+
 This document outlines the tasks required to implement a new `Alert` component in the React UI library, following the architecture and conventions defined in `CLAUDE.md`.
 
 ---
 
 ## 1. Component Structure Setup
+
 - Create a new folder: `src/components/Alert`
 - Inside the folder, create the following files:
   - `Alert.tsx` - Main component implementation
@@ -16,7 +18,9 @@ This document outlines the tasks required to implement a new `Alert` component i
 ---
 
 ## 2. TypeScript Props Interface
+
 Define a `AlertProps` interface in `Alert.tsx`:
+
 - Extend `React.ComponentPropsWithoutRef<'div'>`
 - Include the following props:
   - `variant` (success/error/warning/info)
@@ -26,6 +30,7 @@ Define a `AlertProps` interface in `Alert.tsx`:
   - `onClose` (optional callback for dismissible alerts)
 
 Example:
+
 ```tsx
 interface AlertProps extends React.ComponentPropsWithoutRef<'div'> {
   variant?: 'success' | 'error' | 'warning' | 'info';
@@ -39,19 +44,25 @@ interface AlertProps extends React.ComponentPropsWithoutRef<'div'> {
 ---
 
 ## 3. Component Implementation
+
 Implement `Alert.tsx`:
+
 - Use `React.forwardRef` if necessary
 - Apply BEM-style class names (e.g., `alert`, `alert--success`)
 - Use CSS variables from `src/styles/variables.css`
 - Add accessibility attributes (e.g., `role="alert"`)
 
 Example:
+
 ```tsx
 import * as React from 'react';
 import './Alert.css';
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
-  ({ variant = 'info', title, description, action, onClose, ...props }, ref) => {
+  (
+    { variant = 'info', title, description, action, onClose, ...props },
+    ref
+  ) => {
     const handleClose = () => {
       if (onClose) onClose();
     };
@@ -79,12 +90,15 @@ export { Alert };
 ---
 
 ## 4. Styling with BEM and CSS Variables
+
 Create `Alert.css` with styles:
+
 - Base styles for `.alert`
 - Variant-specific styles (e.g., `.alert--success`)
 - Modifier classes for title, description, action, and close button
 
 Example:
+
 ```css
 .alert {
   padding: 1rem;
@@ -114,12 +128,15 @@ Example:
 ---
 
 ## 5. Unit Testing with Vitest
+
 Implement `__tests__/Alert.test.tsx`:
+
 - Test rendering with default and variant props
 - Test `onClose` callback behavior
 - Test accessibility attributes
 
 Example:
+
 ```tsx
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -141,11 +158,14 @@ test('calls onClose when close button is clicked', () => {
 ---
 
 ## 6. Storybook Documentation
+
 Create `stories/Alert.stories.tsx`:
+
 - Define stories for each variant
 - Include examples with title, description, and action
 
 Example:
+
 ```tsx
 import { Meta, StoryObj } from '@storybook/react';
 import Alert from './Alert';
@@ -169,7 +189,9 @@ export const Default: Story = {
 ---
 
 ## 7. Export and Integration
+
 Update `src/components/index.ts` to export the new component:
+
 ```ts
 export * from './Alert/Alert';
 ```
@@ -177,7 +199,9 @@ export * from './Alert/Alert';
 ---
 
 ## 8. Build and Test
+
 Run the following commands to test and build the component:
+
 ```bash
 npm run test
 npm run build

@@ -8,7 +8,7 @@ A React UI component library built with TypeScript, Radix UI primitives, and mod
 - **Toggle** - Accessible toggle component built on Radix UI
 - **Icon** - Icon component using Lucide React icons
 - **Checkbox** - Simple checkbox with Icon for checkmark
-- **Radio** - Radio group and items as children for single option selection 
+- **Radio** - Radio group and items as children for single option selection
 - **DropdownMenu** - A dropdown menu with items and trigger
 - **Popover** - Popover window with a trigger
 - **Dialog** - Dialog window with a trigger

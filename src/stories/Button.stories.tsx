@@ -23,6 +23,11 @@ const meta: Meta<typeof Button> = {
         'arrow-down',
       ],
     },
+    href: {
+      control: { type: 'text' },
+      description:
+        'When provided, renders as an anchor tag instead of a button. Supports all standard anchor attributes like target, rel, etc.',
+    },
   },
 };
 
@@ -85,5 +90,15 @@ export const SecondaryWithIcon: Story = {
     children: 'Cancel',
     variant: 'secondary',
     icon: 'arrow-left',
+  },
+};
+
+export const AsLink: Story = {
+  args: {
+    children: 'Visit Documentation',
+    variant: 'primary',
+    href: 'https://example.com',
+    target: '_blank',
+    rel: 'noopener noreferrer',
   },
 };

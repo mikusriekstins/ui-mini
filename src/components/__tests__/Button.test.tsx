@@ -90,4 +90,56 @@ describe('Button', () => {
     expect(button).toHaveAttribute('type', 'submit');
     expect(button).toHaveAttribute('id', 'submit-btn');
   });
+
+  it('renders as link when href is provided', () => {
+    render(<Button href="/example">Link Button</Button>);
+
+    const link = screen.getByRole('link', { name: /link button/i });
+    expect(link).toBeInTheDocument();
+    expect(link.tagName).toBe('A');
+    expect(link).toHaveAttribute('href', '/example');
+    expect(link).toHaveClass('button', 'button--primary');
+  });
+
+  it('renders link with icon', () => {
+    render(
+      <Button href="/example" icon="x">
+        Link with Icon
+      </Button>
+    );
+
+    const link = screen.getByRole('link', { name: /link with icon/i });
+    expect(link).toBeInTheDocument();
+
+    const iconElement = link.querySelector('.button__icon');
+    expect(iconElement).toBeInTheDocument();
+
+    const textElement = link.querySelector('.button__text');
+    expect(textElement).toBeInTheDocument();
+    expect(textElement).toHaveTextContent('Link with Icon');
+  });
+
+  it('passes through anchor attributes when href is provided', () => {
+    render(
+      <Button href="/example" target="_blank" rel="noopener">
+        External Link
+      </Button>
+    );
+
+    const link = screen.getByRole('link', { name: /external link/i });
+    expect(link).toHaveAttribute('href', '/example');
+    expect(link).toHaveAttribute('target', '_blank');
+    expect(link).toHaveAttribute('rel', 'noopener');
+  });
+
+  it('forwards ref correctly for link', () => {
+    const ref = { current: null };
+    render(
+      <Button ref={ref} href="/example">
+        Link with ref
+      </Button>
+    );
+
+    expect(ref.current).toBeInstanceOf(HTMLAnchorElement);
+  });
 });

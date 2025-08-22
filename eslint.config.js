@@ -21,6 +21,7 @@ export default [
       globals: {
         HTMLElement: 'readonly',
         HTMLButtonElement: 'readonly',
+        HTMLAnchorElement: 'readonly',
         HTMLDivElement: 'readonly',
         HTMLSpanElement: 'readonly',
         SVGSVGElement: 'readonly',

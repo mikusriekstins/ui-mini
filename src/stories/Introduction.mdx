@@ -56,8 +56,9 @@ A collection of React components built with Radix UI primitives and TypeScript.
     <Icon name="lock" size="medium" />
   </div>
   <p>
-    SVG icon component with 18 available icons, predefined sizes (small: 1rem, medium: 1.5rem) and
-    consistent stroke weight. Includes arrows, UI controls, and common interface icons.
+    SVG icon component with 18 available icons, predefined sizes (small: 1rem,
+    medium: 1.5rem) and consistent stroke weight. Includes arrows, UI controls,
+    and common interface icons.
   </p>
 </div>
 
@@ -116,39 +117,51 @@ A collection of React components built with Radix UI primitives and TypeScript.
   </p>
 </div>
 
-  <div className="component-item">
-    <h3>Dialog</h3>
-    <div className="component-examples">
-      <DialogExample />
-    </div>
-    <p>A modal dialog component with overlay, built on Radix UI for accessible interactions.</p>
+<div className="component-item">
+  <h3>Dialog</h3>
+  <div className="component-examples">
+    <DialogExample />
   </div>
+  <p>
+    A modal dialog component with overlay, built on Radix UI for accessible
+    interactions.
+  </p>
+</div>
 
-  <div className="component-item">
-    <h3>Select</h3>
-    <div className="component-examples">
-      <SelectExample />
-    </div>
-    <p>A dropdown select component with searchable options, built on Radix UI with consistent styling.</p>
+<div className="component-item">
+  <h3>Select</h3>
+  <div className="component-examples">
+    <SelectExample />
   </div>
+  <p>
+    A dropdown select component with searchable options, built on Radix UI with
+    consistent styling.
+  </p>
+</div>
 
-  <div className="component-item">
-    <h3>Label</h3>
-    <div className="component-examples">
-      <Label text="Basic Label" />
-      <Label text="Required Field" isRequired />
-      <Label text="Form Label" htmlFor="example-input" />
-    </div>
-    <p>A semantic label component with required field indicators, built on Radix UI for form accessibility.</p>
+<div className="component-item">
+  <h3>Label</h3>
+  <div className="component-examples">
+    <Label text="Basic Label" />
+    <Label text="Required Field" isRequired />
+    <Label text="Form Label" htmlFor="example-input" />
   </div>
+  <p>
+    A semantic label component with required field indicators, built on Radix UI
+    for form accessibility.
+  </p>
+</div>
 
-  <div className="component-item">
-    <h3>TextInput</h3>
-    <div className="component-examples">
-      <TextInput label="Email" placeholder="Enter your email..." />
-    </div>
-    <p>A text input component with labels, validation states, and helper text for comprehensive form handling.</p>
+<div className="component-item">
+  <h3>TextInput</h3>
+  <div className="component-examples">
+    <TextInput label="Email" placeholder="Enter your email..." />
   </div>
+  <p>
+    A text input component with labels, validation states, and helper text for
+    comprehensive form handling.
+  </p>
+</div>
 
   <div className="component-item">
     <h3>Loading</h3>
@@ -198,9 +211,9 @@ export const SelectExample = () => {
   const options = [
     { value: 'option1', label: 'Option 1' },
     { value: 'option2', label: 'Option 2' },
-    { value: 'option3', label: 'Option 3' }
+    { value: 'option3', label: 'Option 3' },
   ];
-  
+
   return (
     <Select
       options={options}
@@ -210,7 +223,6 @@ export const SelectExample = () => {
     />
   );
 };
-
 
 <style>
   {`
