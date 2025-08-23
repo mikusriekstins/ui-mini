@@ -12,15 +12,14 @@
 
 .text-input__input {
   inline-size: 100%;
-  block-size: var(--component-block-size-base);
-  padding-block: var(--component-padding-block-base);
+  padding-block: calc(var(--component-padding-block-base) - 1px);
   padding-inline: var(--component-padding-inline-base);
   border: 1px solid var(--color-input);
   border-radius: var(--border-radius-sm);
   background-color: var(--color-background);
   color: var(--color-foreground);
   font-size: var(--font-size-md);
-  line-height: var(--line-height-md);
+  line-height: var(--line-height-sm);
   transition:
     border-color var(--transition-base),
     box-shadow var(--transition-base),

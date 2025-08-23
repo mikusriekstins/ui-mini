@@ -101,8 +101,8 @@
   --letter-spacing-lg: 0.025em;
 
   /* Icons */
-  --icon-size-sm: 1rem;
-  --icon-size-md: 1.5rem;
+  --icon-size-small: 1rem;
+  --icon-size-medium: 1.5rem;
   --icon-size-lg: 2rem;
   --icon-stroke-width: 2;
   --icon-color: currentColor;

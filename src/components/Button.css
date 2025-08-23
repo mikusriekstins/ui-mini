@@ -19,7 +19,6 @@
   text-decoration: none;
   outline: none;
   box-sizing: border-box;
-  block-size: var(--component-block-size-base);
 }
 
 .button:focus-visible {
@@ -73,9 +72,8 @@
   margin-inline-start: var(--xs);
 }
 
-/* Icon-only button - square shape */
+/* Icon-only button - square padding */
 .button:has(.button__icon):not(:has(.button__text)) {
   padding-block: var(--component-padding-block-base);
   padding-inline: var(--component-padding-block-base);
-  inline-size: var(--component-block-size-base);
 }

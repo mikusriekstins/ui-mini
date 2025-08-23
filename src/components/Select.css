@@ -19,7 +19,6 @@
   text-decoration: none;
   outline: none;
   box-sizing: border-box;
-  block-size: var(--component-block-size-base);
   min-inline-size: 160px;
   background-color: var(--color-gray-200);
   color: var(--color-gray-900);
