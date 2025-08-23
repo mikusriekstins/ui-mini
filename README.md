@@ -1,297 +1,288 @@
-# UI Component Library
+# UI Mini
 
-A React UI component library built with TypeScript, Radix UI primitives, and modern CSS. This library provides accessible, customizable components for building user interfaces.
-
-## Components
-
-- **Button** - Flexible button component with variants and icon support
-- **Toggle** - Accessible toggle component built on Radix UI
-- **Icon** - Icon component using Lucide React icons
-- **Checkbox** - Simple checkbox with Icon for checkmark
-- **Radio** - Radio group and items as children for single option selection
-- **DropdownMenu** - A dropdown menu with items and trigger
-- **Popover** - Popover window with a trigger
-- **Dialog** - Dialog window with a trigger
-- **Select** - Selection input field
-- **Label** - Separate label component for form fields
-- **TextInput** - Text input with label and help text
+A modern React component library built with Radix UI primitives, TypeScript, and CSS variables. Provides accessible, customizable components with consistent theming and excellent developer experience.
 
 ## Installation
 
-### Option 1: npm link (for local development)
-
-In this library directory:
-
 ```bash
-npm run build  # Build the library first
-npm link
+npm install @mikusriekstins/ui-mini
 ```
 
-In your React project:
-
-```bash
-npm link ui-mini
-```
-
-### Option 2: npm pack (for testing)
-
-In this library directory:
-
-```bash
-npm run build  # Build the library first
-npm pack
-```
-
-In your React project:
-
-```bash
-npm install /path/to/ui-mini-1.0.0.tgz
-```
-
-### Option 3: Publish to npm (for production)
-
-```bash
-npm publish  # This will automatically run build via prepublishOnly
-npm install ui-mini
-```
-
-## Setup in Your React Project
-
-### 1. Install the Library
-
-The library bundles all its dependencies except React:
-
-```bash
-npm install ui-mini
-```
-
-**Note**: You only need React 18+ in your project. All other dependencies (Radix UI, Lucide icons) are bundled with the library.
-
-### 2. Import Components and Styles
+## Quick Start
 
 ```tsx
-import { Button, Toggle, Icon } from 'ui-mini';
-import 'ui-mini/styles'; // Import the bundled CSS
-```
-
-## Usage Examples
-
-### Button Component
-
-```tsx
-import { Button } from 'ui-mini';
+import { Button, TextInput, Icon } from '@mikusriekstins/ui-mini';
+import '@mikusriekstins/ui-mini/styles';
 
 function App() {
   return (
     <div>
-      {/* Basic button */}
-      <Button>Click me</Button>
-
-      {/* Secondary variant */}
-      <Button variant="secondary">Secondary</Button>
-
-      {/* With icon */}
-      <Button icon="arrow-right">Save</Button>
-
-      {/* Icon only */}
-      <Button icon="arrow-up" />
-
-      {/* With click handler */}
-      <Button onClick={() => alert('Clicked!')}>Alert Button</Button>
-
-      {/* Disabled */}
-      <Button disabled>Disabled</Button>
+      <TextInput label="Email" placeholder="Enter your email..." />
+      <Button icon="arrow-right">Submit</Button>
     </div>
   );
 }
 ```
 
-### Toggle Component
+## Components
+
+### Button
+
+Interactive button with variants and icon support.
 
 ```tsx
-import { Toggle } from 'ui-mini';
-import { useState } from 'react';
-
-function App() {
-  const [pressed, setPressed] = useState(false);
-
-  return (
-    <div>
-      {/* Basic toggle */}
-      <Toggle pressed={pressed} onPressedChange={setPressed}>
-        Toggle me
-      </Toggle>
-
-      {/* Secondary variant */}
-      <Toggle
-        variant="secondary"
-        pressed={pressed}
-        onPressedChange={setPressed}
-      >
-        Secondary Toggle
-      </Toggle>
-    </div>
-  );
-}
+<Button variant="primary" icon="arrow-right">Save</Button>
+<Button variant="secondary" disabled>Cancel</Button>
+<Button href="/profile">Link Button</Button>
 ```
 
-### Icon Component
+### TextInput
+
+Form input with label, validation, and helper text.
 
 ```tsx
-import { Icon } from 'ui-mini';
-
-function App() {
-  return (
-    <div>
-      {/* Basic icon */}
-      <Icon name="arrow-right" />
-
-      {/* Custom size */}
-      <Icon name="arrow-up" size={32} />
-
-      {/* With custom className */}
-      <Icon name="arrow-left" className="my-custom-class" />
-
-      {/* All available icons */}
-      <Icon name="arrow-left" />
-      <Icon name="arrow-up" />
-      <Icon name="arrow-right" />
-      <Icon name="arrow-down" />
-    </div>
-  );
-}
+<TextInput
+  label="Email"
+  placeholder="Enter email..."
+  error="Invalid email format"
+  isRequired
+/>
 ```
 
-## API Reference
+### Select
 
-### Button Props
+Dropdown select with searchable options.
 
 ```tsx
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary';
-  icon?: 'arrow-left' | 'arrow-up' | 'arrow-right' | 'arrow-down';
-  children?: React.ReactNode;
-}
+<Select
+  options={[
+    { value: 'us', label: 'United States' },
+    { value: 'ca', label: 'Canada' },
+  ]}
+  placeholder="Select country..."
+  value={country}
+  onChange={setCountry}
+/>
 ```
 
-### Toggle Props
+### Checkbox
+
+Checkbox input with optional labels.
 
 ```tsx
-interface ToggleProps
-  extends React.ComponentPropsWithoutRef<typeof TogglePrimitive.Root> {
-  variant?: 'primary' | 'secondary';
-}
+<Checkbox label="Accept terms" defaultChecked />
+<Checkbox label="Subscribe to newsletter" disabled />
 ```
 
-### Icon Props
+### Radio
+
+Radio button group for exclusive selections.
 
 ```tsx
-interface IconProps extends Omit<LucideProps, 'size'> {
-  name: 'arrow-left' | 'arrow-up' | 'arrow-right' | 'arrow-down';
-  size?: number | string;
-}
+<RadioGroup value={size} onValueChange={setSize}>
+  <Radio value="sm" label="Small" />
+  <Radio value="md" label="Medium" />
+  <Radio value="lg" label="Large" />
+</RadioGroup>
+```
+
+### Toggle
+
+Toggle button with pressed state management.
+
+```tsx
+<Toggle variant="primary" pressed={enabled} onPressedChange={setEnabled}>
+  Enable notifications
+</Toggle>
+```
+
+### Dialog
+
+Modal dialog with overlay and focus management.
+
+```tsx
+<Dialog
+  trigger={<Button>Open Dialog</Button>}
+  title="Confirm Action"
+  description="Are you sure you want to continue?"
+>
+  <Button onClick={handleConfirm}>Confirm</Button>
+</Dialog>
+```
+
+### Popover
+
+Floating content panel with customizable positioning.
+
+```tsx
+<Popover popoverTrigger={<Button>Show Info</Button>} closeButtonText="Close">
+  <div>Popover content here</div>
+</Popover>
+```
+
+### DropdownMenu
+
+Dropdown menu with keyboard navigation.
+
+```tsx
+<DropdownMenu trigger={<Button>Menu</Button>} label="Actions">
+  <DropdownMenuItem>Edit</DropdownMenuItem>
+  <DropdownMenuItem>Delete</DropdownMenuItem>
+</DropdownMenu>
+```
+
+### Tabs
+
+Tabbed interface with content panels.
+
+```tsx
+<Tabs value={activeTab} onValueChange={setActiveTab}>
+  <TabsList>
+    <TabsTrigger value="tab1">Overview</TabsTrigger>
+    <TabsTrigger value="tab2">Details</TabsTrigger>
+  </TabsList>
+  <TabsContent value="tab1">Overview content</TabsContent>
+  <TabsContent value="tab2">Details content</TabsContent>
+</Tabs>
+```
+
+### Label
+
+Semantic form labels with required indicators.
+
+```tsx
+<Label text="Full Name" isRequired />
+<Label text="Company" htmlFor="company-input" />
+```
+
+### Loading
+
+Animated loading indicator with size variants.
+
+```tsx
+<Loading size="small" />
+<Loading size="medium" />
+<Loading size="large" />
+```
+
+### Icon
+
+SVG icon component with consistent sizing.
+
+```tsx
+<Icon name="star" size="small" />
+<Icon name="mail" size="medium" />
+```
+
+### ThemeProvider
+
+Context provider for light/dark theme management.
+
+```tsx
+<ThemeProvider theme="dark">
+  <App />
+</ThemeProvider>
+```
+
+### VisuallyHidden
+
+Accessible content hidden from visual display.
+
+```tsx
+<VisuallyHidden>Screen reader only text</VisuallyHidden>
+```
+
+## Icons
+
+18 built-in icons available:
+
+**Navigation**: `arrow-left`, `arrow-up`, `arrow-right`, `arrow-down`, `chevron-down`
+
+**Actions**: `x`, `check`, `download`, `play`
+
+**UI Elements**: `shopping-basket`, `mail`, `image`, `headphones`, `music`, `star`, `triangle-alert`, `lock`, `percent`
+
+```tsx
+<Icon name="star" size="small" />
+<Icon name="mail" size="medium" />
+<Icon name="triangle-alert" size="medium" />
 ```
 
 ## TypeScript Support
 
-This library is built with TypeScript and exports all component prop interfaces:
+Full TypeScript support with exported interfaces:
 
 ```tsx
 import {
   Button,
   ButtonProps,
-  Toggle,
-  ToggleProps,
+  TextInput,
+  TextInputProps,
   Icon,
-  IconProps,
   IconName,
-} from 'ui-mini';
+  IconSize,
+} from '@mikusriekstins/ui-mini';
 
-// Use the prop interfaces for your own components
-interface MyComponentProps {
-  buttonProps: ButtonProps;
-  iconName: IconName;
+// Use interfaces in your components
+interface MyFormProps {
+  onSubmit: (data: FormData) => void;
+  submitIcon?: IconName;
 }
 ```
 
-## Complete Example
+## Theming
+
+Built-in light/dark mode support with CSS variables:
 
 ```tsx
-import React, { useState } from 'react';
-import { Button, Toggle, Icon } from 'ui-mini';
-import 'ui-mini/styles';
+// Automatic theme detection
+<ThemeProvider theme="system">
+  <App />
+</ThemeProvider>
 
-function App() {
-  const [isToggled, setIsToggled] = useState(false);
+// Force specific theme
+<ThemeProvider theme="dark">
+  <App />
+</ThemeProvider>
+```
 
-  return (
-    <div
-      style={{
-        padding: '20px',
-        display: 'flex',
-        gap: '16px',
-        flexDirection: 'column',
-      }}
-    >
-      <h1>UI Library Demo</h1>
+### CSS Variables
 
-      <section>
-        <h2>Buttons</h2>
-        <div style={{ display: 'flex', gap: '8px' }}>
-          <Button>Primary</Button>
-          <Button variant="secondary">Secondary</Button>
-          <Button icon="arrow-right">With Icon</Button>
-          <Button icon="arrow-up" />
-        </div>
-      </section>
+Key customizable variables:
 
-      <section>
-        <h2>Toggle</h2>
-        <Toggle pressed={isToggled} onPressedChange={setIsToggled}>
-          {isToggled ? 'On' : 'Off'}
-        </Toggle>
-      </section>
-
-      <section>
-        <h2>Icons</h2>
-        <div style={{ display: 'flex', gap: '8px' }}>
-          <Icon name="arrow-left" />
-          <Icon name="arrow-up" />
-          <Icon name="arrow-right" />
-          <Icon name="arrow-down" />
-        </div>
-      </section>
-    </div>
-  );
+```css
+:root {
+  --color-primary-600: #e73e1f;
+  --font-size-md: 1.125rem;
+  --border-radius-md: 0.375rem;
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 }
-
-export default App;
 ```
 
 ## Development
 
-To see the components in action and explore all available props:
+View components and documentation:
 
 ```bash
 npm run storybook
 ```
 
-This will start Storybook on `http://localhost:6006` where you can view all components and their documentation.
+Visit `http://localhost:6006` for interactive component playground.
 
 ## Architecture
 
-This library follows these principles:
-
-- **Accessibility First**: Built on Radix UI primitives for screen reader support
-- **TypeScript**: Full type safety with exported interfaces
-- **CSS Variables**: Customizable styling with CSS custom properties
-- **BEM Methodology**: Consistent CSS class naming
-- **React Best Practices**: Proper ref forwarding and display names
+- **Accessibility**: Built on Radix UI primitives
+- **TypeScript**: Full type safety and IntelliSense
+- **CSS Variables**: Consistent theming system
+- **Tree Shaking**: Import only what you need
+- **Modern Build**: ESM/CJS dual output
 
 ## Browser Support
 
-This library supports all modern browsers and requires:
-
 - React 18+
-- Modern ES2020+ JavaScript environment
+- Modern browsers (ES2020+)
 - CSS custom properties support
+
+## License
+
+MIT

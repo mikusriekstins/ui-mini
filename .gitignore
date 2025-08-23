@@ -13,6 +13,9 @@ build/
 # Storybook
 storybook-static/
 
+# Claude
+CLAUDE.md
+
 # Environment variables
 .env
 .env.local
