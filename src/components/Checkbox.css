@@ -4,7 +4,7 @@
 .checkbox {
   display: inline-flex;
   align-items: center;
-  gap: var(--spacing-2);
+  gap: var(--xs);
   cursor: pointer;
   vertical-align: top;
 }
@@ -83,7 +83,7 @@
 /* Label styling */
 .checkbox__label {
   font-size: var(--ui-font-size);
-  line-height: var(--line-height-normal);
+  line-height: var(--line-height-md);
   color: var(--color-foreground);
   cursor: pointer;
   user-select: none;

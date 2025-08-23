@@ -75,26 +75,20 @@
     'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New',
     monospace;
 
-  /* Typography - Font Sizes (Modular Scale: 1.125 - Major Second) */
-  --font-size-2xs: 0.703rem; /* 11.25px */
-  --font-size-xs: 0.79rem; /* 12.64px */
-  --font-size-sm: 0.889rem; /* 14.22px */
-  --font-size-base: 1rem; /* 16px - Base */
-  --font-size-lg: 1.125rem; /* 18px */
-  --font-size-xl: 1.266rem; /* 20.25px */
-  --font-size-2xl: 1.424rem; /* 22.78px */
-  --font-size-3xl: 1.602rem; /* 25.63px */
-  --font-size-4xl: 1.802rem; /* 28.83px */
-  --font-size-5xl: 2.027rem; /* 32.43px */
-  --font-size-6xl: 2.281rem; /* 36.48px */
+  /* Typography - Font Sizes (Modular Scale: 1.25 - Major Third) */
+  --font-size-xss: 0.576rem; /* 9.22px */
+  --font-size-xs: 0.72rem; /* 11.52px */
+  --font-size-sm: 0.9rem; /* 14.4px */
+  --font-size-md: 1.125rem; /* 18px - Base */
+  --font-size-lg: 1.406rem; /* 22.5px */
+  --font-size-xl: 1.758rem; /* 28.13px */
+  --font-size-xxl: 2.197rem; /* 35.16px */
+  --font-size-xxxl: 2.746rem; /* 43.94px */
 
   /* Typography - Line Heights */
-  --line-height-none: 1;
-  --line-height-tight: 1.25;
-  --line-height-snug: 1.375;
-  --line-height-normal: 1.5;
-  --line-height-relaxed: 1.625;
-  --line-height-loose: 2;
+  --line-height-sm: 1.25;
+  --line-height-md: 1.5;
+  --line-height-lg: 1.625;
 
   /* Typography - Font Weights (Limited to 400 and 700 for performance) */
   --font-weight-light: 400; /* Maps to normal for performance */
@@ -118,19 +112,18 @@
   --icon-color: currentColor;
 
   /* Spacing */
-  --spacing-1: 0.25rem;
-  --spacing-2: 0.5rem;
-  --spacing-3: 0.75rem;
-  --spacing-4: 1rem;
-  --spacing-5: 1.25rem;
-  --spacing-6: 1.5rem;
-  --spacing-8: 2rem;
-  --spacing-10: 2.5rem;
-  --spacing-12: 3rem;
+  --xss: 0.25rem;
+  --xs: 0.5rem;
+  --sm: 0.75rem;
+  --md: 1rem;
+  --lg: 1.25rem;
+  --xl: 1.5rem;
+  --xxl: 2rem;
+  --xxxl: 2.5rem;
 
   /* Component dimensions */
-  --component-padding-block-base: 0.5rem; /* --spacing-2 */
-  --component-padding-inline-base: 1rem; /* --spacing-4 */
+  --component-padding-block-base: 0.5rem; /* --xs */
+  --component-padding-inline-base: 1rem; /* --md */
   --component-block-size-base: 2.25rem; /* 36px - standard component height */
 
   /* Border Radius */
@@ -151,9 +144,7 @@
     0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 
   /* UI Components */
-  --ui-font-size: var(
-    --font-size-base
-  ); /* Primary font size for UI components */
+  --ui-font-size: var(--font-size-md); /* Primary font size for UI components */
 
   /* Focus */
   --focus-ring-width: 2px;
@@ -173,8 +164,8 @@
 
 body {
   font-family: var(--font-family-sans);
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-normal);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-md);
   letter-spacing: var(--letter-spacing-normal);
   font-weight: var(--font-weight-normal);
   color: var(--color-foreground);

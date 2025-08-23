@@ -4,7 +4,7 @@
 .radio-group {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-2);
+  gap: var(--xs);
 }
 
 .radio-group[data-orientation='horizontal'] {
@@ -15,7 +15,7 @@
 .radio {
   display: inline-flex;
   align-items: center;
-  gap: var(--spacing-2);
+  gap: var(--xs);
   cursor: pointer;
   vertical-align: top;
 }
@@ -99,7 +99,7 @@
 /* Label styling */
 .radio__label {
   font-size: var(--ui-font-size);
-  line-height: var(--line-height-normal);
+  line-height: var(--line-height-md);
   color: var(--color-foreground);
   cursor: pointer;
   user-select: none;

@@ -8,7 +8,7 @@ const meta: Meta = {
     docs: {
       description: {
         component:
-          'Typography system using Inter font with a modular scale based on Major Second (1.125).',
+          'Typography system using Inter font with a modular scale based on Major Third (1.25).',
       },
     },
   },
@@ -20,236 +20,108 @@ type Story = StoryObj<typeof meta>;
 
 export const FontSizes: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+    <div>
+      <h2>Font Size Scale</h2>
+      <p>
+        Modular scale based on Major Third (1.25) with 18px (1.125rem) as the
+        base size.
+      </p>
+
       <div>
-        <h2
-          style={{
-            marginBottom: '16px',
-            fontSize: 'var(--font-size-xl)',
-            fontWeight: 'var(--font-weight-semibold)',
-          }}
-        >
-          Font Size Scale
-        </h2>
-        <p
-          style={{
-            marginBottom: '24px',
-            color: 'var(--color-muted-foreground)',
-          }}
-        >
-          Modular scale based on Major Second (1.125) with 1rem as the base
-          size.
-        </p>
-      </div>
-
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px' }}>
+        <div>
           <span
             style={{
-              fontSize: 'var(--font-size-6xl)',
-              lineHeight: 'var(--line-height-tight)',
+              fontSize: 'var(--font-size-xxxl)',
+              lineHeight: 'var(--line-height-sm)',
             }}
           >
             The quick brown fox
           </span>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-            }}
-          >
-            --font-size-6xl (2.281rem / 36.48px)
-          </code>
+          <code>--font-size-xxxl (2.746rem / 43.94px)</code>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px' }}>
+        <div>
           <span
             style={{
-              fontSize: 'var(--font-size-5xl)',
-              lineHeight: 'var(--line-height-tight)',
+              fontSize: 'var(--font-size-xxl)',
+              lineHeight: 'var(--line-height-sm)',
             }}
           >
             The quick brown fox
           </span>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-            }}
-          >
-            --font-size-5xl (2.027rem / 32.43px)
-          </code>
+          <code>--font-size-xxl (2.197rem / 35.16px)</code>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px' }}>
-          <span
-            style={{
-              fontSize: 'var(--font-size-4xl)',
-              lineHeight: 'var(--line-height-tight)',
-            }}
-          >
-            The quick brown fox
-          </span>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-            }}
-          >
-            --font-size-4xl (1.802rem / 28.83px)
-          </code>
-        </div>
-
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px' }}>
-          <span
-            style={{
-              fontSize: 'var(--font-size-3xl)',
-              lineHeight: 'var(--line-height-tight)',
-            }}
-          >
-            The quick brown fox
-          </span>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-            }}
-          >
-            --font-size-3xl (1.602rem / 25.63px)
-          </code>
-        </div>
-
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px' }}>
-          <span
-            style={{
-              fontSize: 'var(--font-size-2xl)',
-              lineHeight: 'var(--line-height-tight)',
-            }}
-          >
-            The quick brown fox
-          </span>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-            }}
-          >
-            --font-size-2xl (1.424rem / 22.78px)
-          </code>
-        </div>
-
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px' }}>
+        <div>
           <span
             style={{
               fontSize: 'var(--font-size-xl)',
-              lineHeight: 'var(--line-height-snug)',
+              lineHeight: 'var(--line-height-sm)',
             }}
           >
             The quick brown fox
           </span>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-            }}
-          >
-            --font-size-xl (1.266rem / 20.25px)
-          </code>
+          <code>--font-size-xl (1.758rem / 28.13px)</code>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px' }}>
+        <div>
           <span
             style={{
               fontSize: 'var(--font-size-lg)',
-              lineHeight: 'var(--line-height-snug)',
+              lineHeight: 'var(--line-height-md)',
             }}
           >
             The quick brown fox
           </span>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-            }}
-          >
-            --font-size-lg (1.125rem / 18px)
-          </code>
+          <code>--font-size-lg (1.406rem / 22.5px)</code>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px' }}>
+        <div>
           <span
             style={{
-              fontSize: 'var(--font-size-base)',
-              lineHeight: 'var(--line-height-normal)',
+              fontSize: 'var(--font-size-md)',
+              lineHeight: 'var(--line-height-md)',
             }}
           >
             The quick brown fox
           </span>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-            }}
-          >
-            --font-size-base (1rem / 16px) - Base Size
-          </code>
+          <code>--font-size-md (1.125rem / 18px) - Base Size</code>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px' }}>
+        <div>
           <span
             style={{
               fontSize: 'var(--font-size-sm)',
-              lineHeight: 'var(--line-height-normal)',
+              lineHeight: 'var(--line-height-md)',
             }}
           >
             The quick brown fox
           </span>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-            }}
-          >
-            --font-size-sm (0.889rem / 14.22px)
-          </code>
+          <code>--font-size-sm (0.9rem / 14.4px)</code>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px' }}>
+        <div>
           <span
             style={{
               fontSize: 'var(--font-size-xs)',
-              lineHeight: 'var(--line-height-normal)',
+              lineHeight: 'var(--line-height-md)',
             }}
           >
             The quick brown fox
           </span>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-            }}
-          >
-            --font-size-xs (0.79rem / 12.64px)
-          </code>
+          <code>--font-size-xs (0.72rem / 11.52px)</code>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px' }}>
+        <div>
           <span
             style={{
-              fontSize: 'var(--font-size-2xs)',
-              lineHeight: 'var(--line-height-normal)',
+              fontSize: 'var(--font-size-xss)',
+              lineHeight: 'var(--line-height-md)',
             }}
           >
             The quick brown fox
           </span>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-            }}
-          >
-            --font-size-2xs (0.703rem / 11.25px)
-          </code>
+          <code>--font-size-xss (0.576rem / 9.22px)</code>
         </div>
       </div>
     </div>
@@ -258,30 +130,15 @@ export const FontSizes: Story = {
 
 export const FontWeights: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-      <div>
-        <h2
-          style={{
-            marginBottom: '16px',
-            fontSize: 'var(--font-size-xl)',
-            fontWeight: 'var(--font-weight-semibold)',
-          }}
-        >
-          Font Weights
-        </h2>
-        <p
-          style={{
-            marginBottom: '24px',
-            color: 'var(--color-muted-foreground)',
-          }}
-        >
-          Available font weights for the Inter font family. Only 400 and 700 are
-          loaded for performance.
-        </p>
-      </div>
+    <div>
+      <h2>Font Weights</h2>
+      <p>
+        Available font weights for the Inter font family. Only 400 and 700 are
+        loaded for performance.
+      </p>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px' }}>
+      <div>
+        <div>
           <span
             style={{
               fontSize: 'var(--font-size-lg)',
@@ -290,17 +147,10 @@ export const FontWeights: Story = {
           >
             The quick brown fox jumps over the lazy dog
           </span>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-            }}
-          >
-            --font-weight-light (400) - Maps to normal
-          </code>
+          <code>--font-weight-light (400) - Maps to normal</code>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px' }}>
+        <div>
           <span
             style={{
               fontSize: 'var(--font-size-lg)',
@@ -309,17 +159,10 @@ export const FontWeights: Story = {
           >
             The quick brown fox jumps over the lazy dog
           </span>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-            }}
-          >
-            --font-weight-normal (400)
-          </code>
+          <code>--font-weight-normal (400)</code>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px' }}>
+        <div>
           <span
             style={{
               fontSize: 'var(--font-size-lg)',
@@ -328,17 +171,10 @@ export const FontWeights: Story = {
           >
             The quick brown fox jumps over the lazy dog
           </span>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-            }}
-          >
-            --font-weight-medium (400) - Maps to normal
-          </code>
+          <code>--font-weight-medium (400) - Maps to normal</code>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px' }}>
+        <div>
           <span
             style={{
               fontSize: 'var(--font-size-lg)',
@@ -347,17 +183,10 @@ export const FontWeights: Story = {
           >
             The quick brown fox jumps over the lazy dog
           </span>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-            }}
-          >
-            --font-weight-semibold (700) - Maps to bold
-          </code>
+          <code>--font-weight-semibold (700) - Maps to bold</code>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px' }}>
+        <div>
           <span
             style={{
               fontSize: 'var(--font-size-lg)',
@@ -366,14 +195,7 @@ export const FontWeights: Story = {
           >
             The quick brown fox jumps over the lazy dog
           </span>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-            }}
-          >
-            --font-weight-bold (700)
-          </code>
+          <code>--font-weight-bold (700)</code>
         </div>
       </div>
     </div>
@@ -382,163 +204,50 @@ export const FontWeights: Story = {
 
 export const LineHeights: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+    <div>
+      <h2>Line Heights</h2>
+      <p>Simplified 3-size line height system for improved consistency.</p>
+
       <div>
-        <h2
-          style={{
-            marginBottom: '16px',
-            fontSize: 'var(--font-size-xl)',
-            fontWeight: 'var(--font-weight-semibold)',
-          }}
-        >
-          Line Heights
-        </h2>
-        <p
-          style={{
-            marginBottom: '24px',
-            color: 'var(--color-muted-foreground)',
-          }}
-        >
-          Available line height options for improved readability.
-        </p>
-      </div>
-
-      <div
-        style={{
-          display: 'grid',
-          gap: '24px',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-        }}
-      >
         <div>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-              marginBottom: '8px',
-              display: 'block',
-            }}
-          >
-            --line-height-none (1)
-          </code>
+          <code>--line-height-sm (1.25) - Tight</code>
           <p
             style={{
-              fontSize: 'var(--font-size-base)',
-              lineHeight: 'var(--line-height-none)',
+              fontSize: 'var(--font-size-md)',
+              lineHeight: 'var(--line-height-sm)',
             }}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Used for
+            buttons, tabs, and compact UI elements.
           </p>
         </div>
 
         <div>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-              marginBottom: '8px',
-              display: 'block',
-            }}
-          >
-            --line-height-tight (1.25)
-          </code>
+          <code>--line-height-md (1.5) - Default</code>
           <p
             style={{
-              fontSize: 'var(--font-size-base)',
-              lineHeight: 'var(--line-height-tight)',
+              fontSize: 'var(--font-size-md)',
+              lineHeight: 'var(--line-height-md)',
             }}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Used for
+            body text and most UI components.
           </p>
         </div>
 
         <div>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-              marginBottom: '8px',
-              display: 'block',
-            }}
-          >
-            --line-height-snug (1.375)
-          </code>
+          <code>--line-height-lg (1.625) - Relaxed</code>
           <p
             style={{
-              fontSize: 'var(--font-size-base)',
-              lineHeight: 'var(--line-height-snug)',
+              fontSize: 'var(--font-size-md)',
+              lineHeight: 'var(--line-height-lg)',
             }}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
-
-        <div>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-              marginBottom: '8px',
-              display: 'block',
-            }}
-          >
-            --line-height-normal (1.5) - Default
-          </code>
-          <p
-            style={{
-              fontSize: 'var(--font-size-base)',
-              lineHeight: 'var(--line-height-normal)',
-            }}
-          >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
-
-        <div>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-              marginBottom: '8px',
-              display: 'block',
-            }}
-          >
-            --line-height-relaxed (1.625)
-          </code>
-          <p
-            style={{
-              fontSize: 'var(--font-size-base)',
-              lineHeight: 'var(--line-height-relaxed)',
-            }}
-          >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
-
-        <div>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-              marginBottom: '8px',
-              display: 'block',
-            }}
-          >
-            --line-height-loose (2)
-          </code>
-          <p
-            style={{
-              fontSize: 'var(--font-size-base)',
-              lineHeight: 'var(--line-height-loose)',
-            }}
-          >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Used for
+            improved readability in longer text content.
           </p>
         </div>
       </div>
@@ -548,39 +257,13 @@ export const LineHeights: Story = {
 
 export const LetterSpacing: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-      <div>
-        <h2
-          style={{
-            marginBottom: '16px',
-            fontSize: 'var(--font-size-xl)',
-            fontWeight: 'var(--font-weight-semibold)',
-          }}
-        >
-          Letter Spacing
-        </h2>
-        <p
-          style={{
-            marginBottom: '24px',
-            color: 'var(--color-muted-foreground)',
-          }}
-        >
-          Letter spacing options for fine-tuning text appearance.
-        </p>
-      </div>
+    <div>
+      <h2>Letter Spacing</h2>
+      <p>Letter spacing options for fine-tuning text appearance.</p>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+      <div>
         <div>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-              marginBottom: '8px',
-              display: 'block',
-            }}
-          >
-            --letter-spacing-tighter (-0.05em)
-          </code>
+          <code>--letter-spacing-tighter (-0.05em)</code>
           <p
             style={{
               fontSize: 'var(--font-size-lg)',
@@ -592,16 +275,7 @@ export const LetterSpacing: Story = {
         </div>
 
         <div>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-              marginBottom: '8px',
-              display: 'block',
-            }}
-          >
-            --letter-spacing-tight (-0.025em)
-          </code>
+          <code>--letter-spacing-tight (-0.025em)</code>
           <p
             style={{
               fontSize: 'var(--font-size-lg)',
@@ -613,16 +287,7 @@ export const LetterSpacing: Story = {
         </div>
 
         <div>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-              marginBottom: '8px',
-              display: 'block',
-            }}
-          >
-            --letter-spacing-normal (0em) - Default
-          </code>
+          <code>--letter-spacing-normal (0em) - Default</code>
           <p
             style={{
               fontSize: 'var(--font-size-lg)',
@@ -634,16 +299,7 @@ export const LetterSpacing: Story = {
         </div>
 
         <div>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-              marginBottom: '8px',
-              display: 'block',
-            }}
-          >
-            --letter-spacing-wide (0.025em)
-          </code>
+          <code>--letter-spacing-wide (0.025em)</code>
           <p
             style={{
               fontSize: 'var(--font-size-lg)',
@@ -655,16 +311,7 @@ export const LetterSpacing: Story = {
         </div>
 
         <div>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-              marginBottom: '8px',
-              display: 'block',
-            }}
-          >
-            --letter-spacing-wider (0.05em)
-          </code>
+          <code>--letter-spacing-wider (0.05em)</code>
           <p
             style={{
               fontSize: 'var(--font-size-lg)',
@@ -676,16 +323,7 @@ export const LetterSpacing: Story = {
         </div>
 
         <div>
-          <code
-            style={{
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-              marginBottom: '8px',
-              display: 'block',
-            }}
-          >
-            --letter-spacing-widest (0.1em)
-          </code>
+          <code>--letter-spacing-widest (0.1em)</code>
           <p
             style={{
               fontSize: 'var(--font-size-lg)',

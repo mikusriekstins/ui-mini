@@ -34,10 +34,10 @@
   inline-size: 100%;
   max-inline-size: 32rem;
   max-block-size: 85vh;
-  gap: var(--spacing-4);
+  gap: var(--md);
   border: 1px solid var(--color-border);
   background-color: var(--color-background);
-  padding: var(--spacing-6);
+  padding: var(--xl);
   color: var(--color-foreground);
   box-shadow: var(--shadow-lg);
   border-radius: var(--radius-lg);
@@ -56,7 +56,7 @@
 .dialog__header {
   display: flex;
   flex-direction: column;
-  space-block: var(--spacing-2);
+  space-block: var(--xs);
   text-align: center;
 }
 
@@ -69,7 +69,7 @@
 .dialog__footer {
   display: flex;
   flex-direction: column-reverse;
-  gap: var(--spacing-2);
+  gap: var(--xs);
 }
 
 @media (min-width: 40rem) {
@@ -82,7 +82,7 @@
 .dialog__title {
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-semibold);
-  line-height: var(--line-height-tight);
+  line-height: var(--line-height-sm);
   letter-spacing: var(--letter-spacing-tight);
   margin-block-start: 0;
 }
@@ -98,7 +98,7 @@
   background-color: transparent;
   color: var(--color-muted-foreground);
   cursor: pointer;
-  padding: var(--spacing-1);
+  padding: var(--xss);
   outline: none;
   transition:
     color var(--transition-fast),
@@ -123,8 +123,8 @@
 
 .dialog__close--absolute {
   position: absolute;
-  inset-inline-end: var(--spacing-4);
-  inset-block-start: var(--spacing-4);
+  inset-inline-end: var(--md);
+  inset-block-start: var(--md);
   border-radius: var(--radius-sm);
   opacity: 0.7;
 }
@@ -134,8 +134,8 @@
 }
 
 .dialog__close-icon {
-  block-size: var(--spacing-4);
-  inline-size: var(--spacing-4);
+  block-size: var(--md);
+  inline-size: var(--md);
 }
 
 @keyframes dialog-overlay-show {

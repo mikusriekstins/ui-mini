@@ -15,8 +15,8 @@
   border-block-end: 1px solid var(--color-border);
   background-color: var(--color-muted);
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-  padding: var(--spacing-1);
-  gap: var(--spacing-1);
+  padding: var(--xss);
+  gap: var(--xss);
 }
 
 /* Tabs Trigger */
@@ -26,11 +26,11 @@
   justify-content: center;
   white-space: nowrap;
   border-radius: var(--radius-base);
-  padding-block: var(--spacing-2);
-  padding-inline: var(--spacing-3);
+  padding-block: var(--xs);
+  padding-inline: var(--sm);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-tight);
+  line-height: var(--line-height-sm);
   background-color: transparent;
   color: var(--color-muted-foreground);
   border: none;
@@ -64,7 +64,7 @@
 
 /* Tabs Content */
 .tabs__content {
-  padding: var(--spacing-4);
+  padding: var(--md);
   background-color: var(--color-background);
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
   border: 1px solid var(--color-border);
