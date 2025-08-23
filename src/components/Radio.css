@@ -51,8 +51,8 @@
 }
 
 .radio__item:focus-visible {
-  outline: var(--focus-ring-width) solid var(--focus-ring-color);
-  outline-offset: var(--focus-ring-offset);
+  outline: var(--focus-outline-width) solid var(--focus-outline-color);
+  outline-offset: var(--focus-outline-offset);
 }
 
 .radio__item[data-disabled] {
@@ -98,7 +98,7 @@
 
 /* Label styling */
 .radio__label {
-  font-size: var(--ui-font-size);
+  font-size: var(--font-size-md);
   line-height: var(--line-height-md);
   color: var(--color-foreground);
   cursor: pointer;

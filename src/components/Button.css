@@ -3,9 +3,9 @@
 .button {
   padding-block: var(--component-padding-block-base);
   padding-inline: var(--component-padding-inline-base);
-  border-radius: var(--radius-md);
-  font-weight: var(--font-weight-medium);
-  font-size: var(--ui-font-size);
+  border-radius: var(--border-radius-md);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-md);
   line-height: var(--line-height-sm);
   border: none;
   cursor: pointer;
@@ -23,8 +23,8 @@
 }
 
 .button:focus-visible {
-  outline: var(--focus-ring-width) solid var(--focus-ring-color);
-  outline-offset: var(--focus-ring-offset);
+  outline: var(--focus-outline-width) solid var(--focus-outline-color);
+  outline-offset: var(--focus-outline-offset);
 }
 
 .button:disabled {

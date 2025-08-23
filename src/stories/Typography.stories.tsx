@@ -259,15 +259,17 @@ export const LetterSpacing: Story = {
   render: () => (
     <div>
       <h2>Letter Spacing</h2>
-      <p>Letter spacing options for fine-tuning text appearance.</p>
+      <p>
+        Simplified letter spacing system with small, medium, and large options.
+      </p>
 
       <div>
         <div>
-          <code>--letter-spacing-tighter (-0.05em)</code>
+          <code>--letter-spacing-sm (-0.025em)</code>
           <p
             style={{
               fontSize: 'var(--font-size-lg)',
-              letterSpacing: 'var(--letter-spacing-tighter)',
+              letterSpacing: 'var(--letter-spacing-sm)',
             }}
           >
             The quick brown fox jumps over the lazy dog
@@ -275,11 +277,11 @@ export const LetterSpacing: Story = {
         </div>
 
         <div>
-          <code>--letter-spacing-tight (-0.025em)</code>
+          <code>--letter-spacing-md (0em) - Default</code>
           <p
             style={{
               fontSize: 'var(--font-size-lg)',
-              letterSpacing: 'var(--letter-spacing-tight)',
+              letterSpacing: 'var(--letter-spacing-md)',
             }}
           >
             The quick brown fox jumps over the lazy dog
@@ -287,47 +289,11 @@ export const LetterSpacing: Story = {
         </div>
 
         <div>
-          <code>--letter-spacing-normal (0em) - Default</code>
+          <code>--letter-spacing-lg (0.025em)</code>
           <p
             style={{
               fontSize: 'var(--font-size-lg)',
-              letterSpacing: 'var(--letter-spacing-normal)',
-            }}
-          >
-            The quick brown fox jumps over the lazy dog
-          </p>
-        </div>
-
-        <div>
-          <code>--letter-spacing-wide (0.025em)</code>
-          <p
-            style={{
-              fontSize: 'var(--font-size-lg)',
-              letterSpacing: 'var(--letter-spacing-wide)',
-            }}
-          >
-            The quick brown fox jumps over the lazy dog
-          </p>
-        </div>
-
-        <div>
-          <code>--letter-spacing-wider (0.05em)</code>
-          <p
-            style={{
-              fontSize: 'var(--font-size-lg)',
-              letterSpacing: 'var(--letter-spacing-wider)',
-            }}
-          >
-            The quick brown fox jumps over the lazy dog
-          </p>
-        </div>
-
-        <div>
-          <code>--letter-spacing-widest (0.1em)</code>
-          <p
-            style={{
-              fontSize: 'var(--font-size-lg)',
-              letterSpacing: 'var(--letter-spacing-widest)',
+              letterSpacing: 'var(--letter-spacing-lg)',
             }}
           >
             The quick brown fox jumps over the lazy dog

@@ -190,7 +190,7 @@ export const InContext: Story = {
           gap: '8px',
           padding: '12px',
           border: '1px solid var(--color-border)',
-          borderRadius: 'var(--radius-md)',
+          borderRadius: 'var(--border-radius-md)',
         }}
       >
         <Loading size="small" />
@@ -203,7 +203,7 @@ export const InContext: Story = {
           width: '200px',
           height: '100px',
           backgroundColor: 'var(--color-muted)',
-          borderRadius: 'var(--radius-md)',
+          borderRadius: 'var(--border-radius-md)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -221,7 +221,7 @@ export const InContext: Story = {
           backgroundColor: 'var(--color-primary-600)',
           color: 'white',
           border: 'none',
-          borderRadius: 'var(--radius-md)',
+          borderRadius: 'var(--border-radius-md)',
           cursor: 'pointer',
         }}
         disabled

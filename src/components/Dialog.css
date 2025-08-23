@@ -5,8 +5,8 @@
 }
 
 .dialog__trigger:focus-visible {
-  outline: var(--focus-ring-width) solid var(--focus-ring-color);
-  outline-offset: var(--focus-ring-offset);
+  outline: var(--focus-outline-width) solid var(--focus-outline-color);
+  outline-offset: var(--focus-outline-offset);
 }
 
 .dialog__overlay {
@@ -40,7 +40,7 @@
   padding: var(--xl);
   color: var(--color-foreground);
   box-shadow: var(--shadow-lg);
-  border-radius: var(--radius-lg);
+  border-radius: var(--border-radius-lg);
   transform: translate(-50%, -50%);
   overflow-y: auto;
 }
@@ -81,9 +81,9 @@
 
 .dialog__title {
   font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-bold);
   line-height: var(--line-height-sm);
-  letter-spacing: var(--letter-spacing-tight);
+  letter-spacing: var(--letter-spacing-sm);
   margin-block-start: 0;
 }
 
@@ -93,7 +93,7 @@
 }
 
 .dialog__close {
-  border-radius: var(--radius-sm);
+  border-radius: var(--border-radius-sm);
   border: none;
   background-color: transparent;
   color: var(--color-muted-foreground);
@@ -112,8 +112,8 @@
 }
 
 .dialog__close:focus-visible {
-  outline: var(--focus-ring-width) solid var(--focus-ring-color);
-  outline-offset: var(--focus-ring-offset);
+  outline: var(--focus-outline-width) solid var(--focus-outline-color);
+  outline-offset: var(--focus-outline-offset);
 }
 
 .dialog__close:disabled {
@@ -125,7 +125,7 @@
   position: absolute;
   inset-inline-end: var(--md);
   inset-block-start: var(--md);
-  border-radius: var(--radius-sm);
+  border-radius: var(--border-radius-sm);
   opacity: 0.7;
 }
 

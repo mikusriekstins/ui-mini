@@ -23,7 +23,7 @@
   display: block;
   width: inherit;
   height: inherit;
-  border-radius: var(--radius-md);
+  border-radius: var(--border-radius-md);
   background-color: var(--color-primary-600);
   animation: var(--loading-duration) ease-out infinite loading-spin;
   will-change: transform;
@@ -49,42 +49,42 @@
 
 /* Size variants */
 .loading--small {
-  font-size: 0.875rem;
+  font-size: var(--font-size-sm);
   --loading-duration: 1s;
-  inline-size: 0.875rem;
-  block-size: 0.875rem;
+  inline-size: var(--font-size-sm);
+  block-size: var(--font-size-sm);
 }
 
 .loading--small::after {
-  width: calc(0.875rem * 1.3);
-  height: calc(0.875rem * 0.25);
-  filter: blur(calc(0.875rem * 0.04));
+  width: calc(var(--font-size-sm) * 1.3);
+  height: calc(var(--font-size-sm) * 0.25);
+  filter: blur(calc(var(--font-size-sm) * 0.04));
 }
 
 .loading--medium {
-  font-size: 1.5rem;
-  inline-size: 1.5rem;
-  block-size: 1.5rem;
+  font-size: var(--icon-size-md);
+  inline-size: var(--icon-size-md);
+  block-size: var(--icon-size-md);
   --loading-duration: 1.2s;
 }
 
 .loading--medium::after {
-  width: calc(1.5rem * 1.3);
-  height: calc(1.5rem * 0.25);
-  filter: blur(calc(1.5rem * 0.04));
+  width: calc(var(--icon-size-md) * 1.3);
+  height: calc(var(--icon-size-md) * 0.25);
+  filter: blur(calc(var(--icon-size-md) * 0.04));
 }
 
 .loading--large {
-  font-size: 2rem;
-  inline-size: 2rem;
-  block-size: 2rem;
+  font-size: var(--icon-size-lg);
+  inline-size: var(--icon-size-lg);
+  block-size: var(--icon-size-lg);
   --loading-duration: 1.4s;
 }
 
 .loading--large::after {
-  width: calc(2rem * 1.3);
-  height: calc(2rem * 0.25);
-  filter: blur(calc(2rem * 0.04));
+  width: calc(var(--icon-size-lg) * 1.3);
+  height: calc(var(--icon-size-lg) * 0.25);
+  filter: blur(calc(var(--icon-size-lg) * 0.04));
 }
 
 /* Jumping animation */
@@ -118,21 +118,21 @@
   0%,
   18% {
     transform: rotateZ(0);
-    border-radius: var(--radius-md);
+    border-radius: var(--border-radius-md);
   }
   38% {
-    border-radius: var(--radius-lg);
+    border-radius: var(--border-radius-lg);
   }
   66%,
   100% {
     transform: rotateZ(1turn);
-    border-radius: var(--radius-md);
+    border-radius: var(--border-radius-md);
   }
 }
 
 /* Small size border radius adjustment */
 .loading--small::before {
-  border-radius: calc(var(--radius-md) / 2);
+  border-radius: calc(var(--border-radius-md) / 2);
 }
 
 .loading--small::before {
@@ -143,15 +143,15 @@
   0%,
   18% {
     transform: rotateZ(0);
-    border-radius: calc(var(--radius-md) / 2);
+    border-radius: calc(var(--border-radius-md) / 2);
   }
   38% {
-    border-radius: calc(var(--radius-lg) / 2);
+    border-radius: calc(var(--border-radius-lg) / 2);
   }
   66%,
   100% {
     transform: rotateZ(1turn);
-    border-radius: calc(var(--radius-md) / 2);
+    border-radius: calc(var(--border-radius-md) / 2);
   }
 }
 

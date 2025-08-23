@@ -14,7 +14,7 @@
   align-items: center;
   border-block-end: 1px solid var(--color-border);
   background-color: var(--color-muted);
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
   padding: var(--xss);
   gap: var(--xss);
 }
@@ -25,11 +25,11 @@
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-  border-radius: var(--radius-base);
+  border-radius: var(--border-radius-sm);
   padding-block: var(--xs);
   padding-inline: var(--sm);
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-regular);
   line-height: var(--line-height-sm);
   background-color: transparent;
   color: var(--color-muted-foreground);
@@ -46,8 +46,8 @@
 }
 
 .tabs__trigger:focus-visible {
-  outline: var(--focus-ring-width) solid var(--focus-ring-color);
-  outline-offset: var(--focus-ring-offset);
+  outline: var(--focus-outline-width) solid var(--focus-outline-color);
+  outline-offset: var(--focus-outline-offset);
 }
 
 .tabs__trigger[data-state='active'] {
@@ -66,15 +66,15 @@
 .tabs__content {
   padding: var(--md);
   background-color: var(--color-background);
-  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
   border: 1px solid var(--color-border);
   border-block-start: none;
   outline: none;
 }
 
 .tabs__content:focus-visible {
-  outline: var(--focus-ring-width) solid var(--focus-ring-color);
-  outline-offset: var(--focus-ring-offset);
+  outline: var(--focus-outline-width) solid var(--focus-outline-color);
+  outline-offset: var(--focus-outline-offset);
 }
 
 /* Animation for content */

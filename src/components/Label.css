@@ -2,7 +2,7 @@
 
 .label {
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-regular);
   line-height: var(--line-height-md);
   color: var(--color-foreground);
   display: inline-flex;
