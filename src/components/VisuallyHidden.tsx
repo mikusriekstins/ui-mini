@@ -6,9 +6,9 @@ export interface VisuallyHiddenProps {
 }
 
 const VisuallyHidden = React.forwardRef<HTMLSpanElement, VisuallyHiddenProps>(
-  ({ children, ...props }) => {
+  ({ children, ...props }, ref) => {
     return (
-      <span className="sr-only" {...props}>
+      <span className="sr-only" ref={ref} {...props}>
         {children}
       </span>
     );
