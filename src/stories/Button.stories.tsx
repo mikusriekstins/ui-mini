@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import * as React from 'react';
 import { Button } from '../components/Button';
 
 const meta: Meta<typeof Button> = {
@@ -27,6 +28,16 @@ const meta: Meta<typeof Button> = {
       control: { type: 'text' },
       description:
         'When provided, renders as an anchor tag instead of a button. Supports all standard anchor attributes like target, rel, etc.',
+    },
+    as: {
+      control: false,
+      description:
+        'Custom component to render the button as (e.g., React Router Link). Use with the `to` prop.',
+    },
+    to: {
+      control: { type: 'text' },
+      description:
+        'Destination path when using a custom component with the `as` prop (e.g., React Router Link).',
     },
   },
 };
@@ -100,5 +111,37 @@ export const AsLink: Story = {
     href: 'https://example.com',
     target: '_blank',
     rel: 'noopener noreferrer',
+  },
+};
+
+const MockRouterLink = ({
+  to,
+  children,
+  ...props
+}: {
+  to: string;
+  children: React.ReactNode;
+  [key: string]: unknown;
+}) => (
+  <a href={to} {...props} style={{ textDecoration: 'none' }}>
+    {children}
+  </a>
+);
+
+export const AsRouterLink: Story = {
+  args: {
+    children: 'Navigate to Profile',
+    variant: 'secondary',
+    as: MockRouterLink,
+    to: '/profile',
+    icon: 'arrow-right',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Button rendered with a custom component (e.g., React Router Link). Use the `as` prop to specify the component and `to` for the destination.',
+      },
+    },
   },
 };

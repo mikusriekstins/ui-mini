@@ -34,6 +34,7 @@ Interactive button with variants and icon support.
 <Button variant="primary" icon="arrow-right">Save</Button>
 <Button variant="secondary" disabled>Cancel</Button>
 <Button href="/profile">Link Button</Button>
+<Button as={Link} to="/dashboard">Router Link</Button>
 ```
 
 ### TextInput
