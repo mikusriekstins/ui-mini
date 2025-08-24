@@ -72,10 +72,22 @@
   margin-inline-start: var(--xs);
 }
 
+/* Large button size */
+.button--large {
+  padding-block: 0.875rem;
+  padding-inline: var(--lg);
+}
+
 /* Icon-only button - square padding */
 .button:has(.button__icon):not(:has(.button__text)) {
   padding-block: var(--component-padding-block-base);
   padding-inline: var(--component-padding-block-base);
+}
+
+/* Large icon-only button - square padding with large size */
+.button--large:has(.button__icon):not(:has(.button__text)) {
+  padding-block: 0.875rem;
+  padding-inline: 0.875rem;
 }
 
 /* Dark theme primary button uses secondary color scale */

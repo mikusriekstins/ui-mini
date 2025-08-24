@@ -28,11 +28,11 @@ function App() {
 
 ### Button
 
-Interactive button with variants and icon support.
+Interactive button with variants, sizes, and icon support.
 
 ```tsx
 <Button variant="primary" icon="arrow-right">Save</Button>
-<Button variant="secondary" disabled>Cancel</Button>
+<Button variant="secondary" size="large">Large Button</Button>
 <Button href="/profile">Link Button</Button>
 <Button as={Link} to="/dashboard">Router Link</Button>
 ```

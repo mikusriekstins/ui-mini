@@ -4,6 +4,7 @@ import { Icon, IconName } from './Icon';
 
 type BaseButtonProps = {
   variant?: 'primary' | 'secondary';
+  size?: 'default' | 'large';
   icon?: IconName;
   children?: React.ReactNode;
 };
@@ -38,13 +39,16 @@ const Button = React.forwardRef<
     {
       className = '',
       variant = 'primary',
+      size = 'default',
       icon,
       children,
       ...props
     }: ButtonProps,
     ref
   ) => {
-    const buttonClasses = `button button--${variant} ${className}`.trim();
+    const sizeClass = size === 'large' ? 'button--large' : '';
+    const buttonClasses =
+      `button button--${variant} ${sizeClass} ${className}`.trim();
 
     const content = (
       <>

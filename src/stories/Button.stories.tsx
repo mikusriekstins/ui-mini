@@ -14,6 +14,10 @@ const meta: Meta<typeof Button> = {
       control: { type: 'select' },
       options: ['primary', 'secondary'],
     },
+    size: {
+      control: { type: 'select' },
+      options: ['default', 'large'],
+    },
     icon: {
       control: { type: 'select' },
       options: [
@@ -143,5 +147,14 @@ export const AsRouterLink: Story = {
           'Button rendered with a custom component (e.g., React Router Link). Use the `as` prop to specify the component and `to` for the destination.',
       },
     },
+  },
+};
+
+export const Large: Story = {
+  args: {
+    children: 'Large Button',
+    variant: 'primary',
+    size: 'large',
+    icon: 'arrow-right',
   },
 };
