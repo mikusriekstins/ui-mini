@@ -17,3 +17,7 @@
   font-weight: var(--font-weight-bold);
   margin-inline-end: var(--xss);
 }
+
+[data-theme='dark'] .label__required {
+  color: var(--color-secondary-600);
+}

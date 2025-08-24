@@ -85,3 +85,21 @@
   background-color: var(--color-gray-800);
   border-color: var(--color-gray-800);
 }
+
+/* Dark theme toggle uses secondary color for primary variant */
+[data-theme='dark'] .toggle[data-state='on']:not(.toggle--secondary) {
+  background-color: var(--color-secondary-600);
+  border-color: var(--color-secondary-600);
+}
+
+[data-theme='dark']
+  .toggle[data-state='on']:hover:not([data-disabled]):not(.toggle--secondary) {
+  background-color: var(--color-secondary-700);
+  border-color: var(--color-secondary-700);
+}
+
+[data-theme='dark']
+  .toggle[data-state='on']:active:not([data-disabled]):not(.toggle--secondary) {
+  background-color: var(--color-secondary-800);
+  border-color: var(--color-secondary-800);
+}

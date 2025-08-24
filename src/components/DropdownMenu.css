@@ -38,13 +38,14 @@
   border-radius: var(--border-radius-sm);
   padding-block: var(--component-padding-block-base);
   padding-inline: var(--component-padding-inline-base);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-md);
   outline: none;
   transition: background-color var(--transition-fast);
   border: none;
   background: none;
   width: 100%;
   text-align: start;
+  color: var(--color-foreground);
 }
 
 .dropdown-menu__item[data-disabled] {

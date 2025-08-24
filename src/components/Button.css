@@ -77,3 +77,16 @@
   padding-block: var(--component-padding-block-base);
   padding-inline: var(--component-padding-block-base);
 }
+
+/* Dark theme primary button uses secondary color scale */
+[data-theme='dark'] .button--primary {
+  background-color: var(--color-secondary-600);
+}
+
+[data-theme='dark'] .button--primary:hover:not(:disabled) {
+  background-color: var(--color-secondary-800);
+}
+
+[data-theme='dark'] .button--primary:active:not(:disabled) {
+  background-color: var(--color-secondary-900);
+}

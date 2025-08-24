@@ -3,20 +3,34 @@
 
 :root {
   /* Colors - Primary (shared across themes) */
-  --color-primary-50: #fef2f0;
-  --color-primary-100: #fde4e0;
-  --color-primary-200: #fbcdc6;
-  --color-primary-300: #f8a89c;
-  --color-primary-400: #f4785f;
-  --color-primary-500: #f95738;
-  --color-primary-600: #e73e1f;
-  --color-primary-700: #c2321a;
-  --color-primary-800: #a02b1a;
-  --color-primary-900: #84281c;
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-200: #bae6fd;
+  --color-primary-300: #7dd3fc;
+  --color-primary-400: #38bdf8;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #003041;
+  --color-primary-700: #00283a;
+  --color-primary-800: #002032;
+  --color-primary-900: #001829;
+
+  /* Colors - Secondary (shared across themes) */
+  --color-secondary-50: #fef6f2;
+  --color-secondary-100: #feede3;
+  --color-secondary-200: #fddac2;
+  --color-secondary-300: #fbbf96;
+  --color-secondary-400: #f89a5e;
+  --color-secondary-500: #f57c35;
+  --color-secondary-600: #cf4d1b;
+  --color-secondary-700: #b8421a;
+  --color-secondary-800: #99361a;
+  --color-secondary-900: #7b2e19;
 
   /* Colors - Semantic (shared) */
   --color-white: #ffffff;
   --color-black: #000000;
+  --danger-color: #ef4444;
+  --danger-color-hover: #dc2626;
 }
 
 /* Light theme colors (default) */

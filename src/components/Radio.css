@@ -110,6 +110,18 @@
   color: var(--color-muted-foreground);
 }
 
+/* Dark theme radio uses secondary color */
+[data-theme='dark'] .radio__item[data-state='checked'] {
+  background-color: var(--color-secondary-600);
+  border-color: var(--color-secondary-600);
+}
+
+[data-theme='dark']
+  .radio__item[data-state='checked']:hover:not([data-disabled]) {
+  background-color: var(--color-secondary-700);
+  border-color: var(--color-secondary-700);
+}
+
 /* Animation for radio indicator */
 @keyframes radioIndicatorIn {
   from {

@@ -50,20 +50,20 @@
 }
 
 .text-input__input--error {
-  border-color: #ef4444;
+  border-color: var(--danger-color);
 }
 
 .text-input__input--error:hover {
-  border-color: #dc2626;
+  border-color: var(--danger-color-hover);
 }
 
 .text-input__input--error:focus {
-  outline-color: #ef4444;
-  border-color: #ef4444;
+  outline-color: var(--danger-color);
+  border-color: var(--danger-color);
 }
 
 .text-input__description {
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
   line-height: var(--line-height-sm);
   margin-block-start: var(--xss);
 }
@@ -73,6 +73,6 @@
 }
 
 .text-input__description--error {
-  color: #ef4444;
+  color: var(--danger-color);
   font-weight: var(--font-weight-regular);
 }

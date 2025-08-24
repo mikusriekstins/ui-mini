@@ -253,7 +253,7 @@ Key customizable variables:
 
 ```css
 :root {
-  --color-primary-600: #e73e1f;
+  --color-primary-600: #003041;
   --font-size-md: 1.125rem;
   --border-radius-md: 0.375rem;
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
