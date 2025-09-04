@@ -72,6 +72,13 @@ describe('Icon', () => {
       'arrow-right',
       'arrow-down',
       'x',
+      'edit',
+      'delete',
+      'search',
+      'add',
+      'settings',
+      'user',
+      'home',
     ] as const;
 
     iconNames.forEach((iconName) => {

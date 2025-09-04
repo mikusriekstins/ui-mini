@@ -30,6 +30,16 @@ const meta: Meta<typeof Icon> = {
         'triangle-alert',
         'lock',
         'percent',
+        'edit',
+        'delete',
+        'search',
+        'add',
+        'settings',
+        'user',
+        'home',
+        'eye',
+        'eye-off',
+        'copy',
       ],
     },
     size: {
@@ -80,6 +90,16 @@ export const AllIcons: Story = {
           'triangle-alert',
           'lock',
           'percent',
+          'edit',
+          'delete',
+          'search',
+          'add',
+          'settings',
+          'user',
+          'home',
+          'eye',
+          'eye-off',
+          'copy',
         ] as const
       ).map((iconName) => (
         <div

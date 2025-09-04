@@ -18,6 +18,16 @@ import {
   TriangleAlert,
   Lock,
   Percent,
+  Edit,
+  Trash2,
+  Search,
+  Plus,
+  Settings,
+  User,
+  Home,
+  Eye,
+  EyeOff,
+  Copy,
   LucideProps,
 } from 'lucide-react';
 import './Icon.css';
@@ -41,6 +51,16 @@ const iconMap = {
   'triangle-alert': TriangleAlert,
   lock: Lock,
   percent: Percent,
+  edit: Edit,
+  delete: Trash2,
+  search: Search,
+  add: Plus,
+  settings: Settings,
+  user: User,
+  home: Home,
+  eye: Eye,
+  'eye-off': EyeOff,
+  copy: Copy,
 } as const;
 
 export type IconName = keyof typeof iconMap;
