@@ -40,6 +40,14 @@ const meta: Meta<typeof Icon> = {
         'eye',
         'eye-off',
         'copy',
+        'save',
+        'upload',
+        'file-down',
+        'folder-open',
+        'file',
+        'error',
+        'warning',
+        'success',
       ],
     },
     size: {
@@ -100,6 +108,14 @@ export const AllIcons: Story = {
           'eye',
           'eye-off',
           'copy',
+          'save',
+          'upload',
+          'file-down',
+          'folder-open',
+          'file',
+          'error',
+          'warning',
+          'success',
         ] as const
       ).map((iconName) => (
         <div

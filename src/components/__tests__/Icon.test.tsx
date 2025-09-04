@@ -79,6 +79,12 @@ describe('Icon', () => {
       'settings',
       'user',
       'home',
+      'save',
+      'upload',
+      'file-down',
+      'error',
+      'warning',
+      'success',
     ] as const;
 
     iconNames.forEach((iconName) => {

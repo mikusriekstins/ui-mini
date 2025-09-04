@@ -28,6 +28,14 @@ import {
   Eye,
   EyeOff,
   Copy,
+  Save,
+  Upload,
+  FileDown,
+  FolderOpen,
+  File,
+  AlertCircle,
+  CheckCircle,
+  XCircle,
   LucideProps,
 } from 'lucide-react';
 import './Icon.css';
@@ -61,6 +69,14 @@ const iconMap = {
   eye: Eye,
   'eye-off': EyeOff,
   copy: Copy,
+  save: Save,
+  upload: Upload,
+  'file-down': FileDown,
+  'folder-open': FolderOpen,
+  file: File,
+  error: XCircle,
+  warning: AlertCircle,
+  success: CheckCircle,
 } as const;
 
 export type IconName = keyof typeof iconMap;
