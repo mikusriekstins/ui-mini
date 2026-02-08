@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Icon } from '../components/Icon';
+import { Icon, iconMap } from '../components/Icon';
 
 const meta: Meta<typeof Icon> = {
   title: 'Components/Icon',
@@ -17,8 +17,25 @@ const meta: Meta<typeof Icon> = {
         'arrow-right',
         'arrow-down',
         'chevron-down',
+        'chevron-up',
+        'chevron-left',
+        'chevron-right',
         'x',
         'check',
+        'more-horizontal',
+        'more-vertical',
+        'menu',
+        'maximize',
+        'minimize',
+        'moon',
+        'sun',
+        'bell',
+        'message-square',
+        'heart',
+        'share',
+        'refresh',
+        'filter',
+        'sort-desc',
         'shopping-basket',
         'mail',
         'download',
@@ -48,6 +65,49 @@ const meta: Meta<typeof Icon> = {
         'error',
         'warning',
         'success',
+        'clock',
+        'calendar',
+        'tag',
+        'link',
+        'quote',
+        'code',
+        'terminal',
+        'command',
+        'palette',
+        'layout',
+        'grid',
+        'list',
+        'table',
+        'bar-chart',
+        'pie-chart',
+        'line-chart',
+        'globe',
+        'map-pin',
+        'phone',
+        'qr-code',
+        'credit-card',
+        'wallet',
+        'cpu',
+        'battery-charging',
+        'wifi',
+        'bluetooth',
+        'camera',
+        'mic',
+        'volume2',
+        'volume-x',
+        'monitor',
+        'smartphone',
+        'laptop',
+        'printer',
+        'mail-open',
+        'archive',
+        'inbox',
+        'box',
+        'package',
+        'truck',
+        'shield',
+        'key',
+        'lock-keyhole',
       ],
     },
     size: {
@@ -68,73 +128,37 @@ export const Default: Story = {
 };
 
 export const AllIcons: Story = {
-  render: () => (
-    <div
-      style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(6, 1fr)',
-        gap: '24px',
-        padding: '16px',
-        maxWidth: '800px',
-      }}
-    >
-      {(
-        [
-          'arrow-left',
-          'arrow-up',
-          'arrow-right',
-          'arrow-down',
-          'chevron-down',
-          'x',
-          'check',
-          'shopping-basket',
-          'mail',
-          'download',
-          'image',
-          'headphones',
-          'music',
-          'play',
-          'star',
-          'triangle-alert',
-          'lock',
-          'percent',
-          'edit',
-          'delete',
-          'search',
-          'add',
-          'settings',
-          'user',
-          'home',
-          'eye',
-          'eye-off',
-          'copy',
-          'save',
-          'upload',
-          'file-down',
-          'folder-open',
-          'file',
-          'error',
-          'warning',
-          'success',
-        ] as const
-      ).map((iconName) => (
-        <div
-          key={iconName}
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: '8px',
-          }}
-        >
-          <Icon name={iconName} size="medium" />
-          <span style={{ fontSize: 'var(--font-size-2xs)', color: '#666' }}>
-            {iconName}
-          </span>
-        </div>
-      ))}
-    </div>
-  ),
+  render: () => {
+    const iconNames = Object.keys(iconMap) as Array<keyof typeof iconMap>;
+    return (
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(8, 1fr)',
+          gap: '24px',
+          padding: '16px',
+          maxWidth: '1000px',
+        }}
+      >
+        {iconNames.map((iconName) => (
+          <div
+            key={iconName}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '8px',
+            }}
+          >
+            <Icon name={iconName} size="medium" />
+            <span style={{ fontSize: 'var(--font-size-xs)', color: '#666' }}>
+              {iconName}
+            </span>
+          </div>
+        ))}
+      </div>
+    );
+  },
 };
 
 export const Small: Story = {
