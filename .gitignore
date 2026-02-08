@@ -16,6 +16,9 @@ storybook-static/
 # Claude
 CLAUDE.md
 
+# AGENTS.md
+AGENTS.md
+
 # Environment variables
 .env
 .env.local

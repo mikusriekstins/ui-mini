@@ -136,6 +136,11 @@
   --component-padding-inline-base: 1rem; /* --md */
   --component-block-size-base: 2.25rem; /* 36px - standard component height */
 
+  /* Loading spinner sizes */
+  --loading-size-small: 0.5rem;
+  --loading-size-medium: 2rem;
+  --loading-size-large: 4rem;
+
   /* Border Radius */
   --border-radius-sm: 0.25rem;
   --border-radius-md: 0.5rem;
