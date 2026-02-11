@@ -76,3 +76,11 @@
   color: var(--danger-color);
   font-weight: var(--font-weight-regular);
 }
+
+.text-input__description--default {
+  color: var(--color-muted-foreground);
+}
+
+.text-input__description--danger {
+  color: var(--danger-color);
+}

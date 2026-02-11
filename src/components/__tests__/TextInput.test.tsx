@@ -127,4 +127,26 @@ describe('TextInput', () => {
 
     expect(input).toHaveAttribute('aria-describedby', description.id);
   });
+
+  it('displays message with default severity', () => {
+    render(<TextInput label="Test" message="This is a message" />);
+
+    const description = screen.getByText('This is a message');
+    expect(description).toBeInTheDocument();
+    expect(description).toHaveClass('text-input__description--default');
+  });
+
+  it('displays message with danger severity', () => {
+    render(
+      <TextInput
+        label="Test"
+        message="This is a danger message"
+        severity="danger"
+      />
+    );
+
+    const description = screen.getByText('This is a danger message');
+    expect(description).toBeInTheDocument();
+    expect(description).toHaveClass('text-input__description--danger');
+  });
 });

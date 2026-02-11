@@ -8,6 +8,8 @@ export interface TextInputProps
   isRequired?: boolean;
   error?: string;
   helperText?: string;
+  message?: string;
+  severity?: 'default' | 'danger';
 }
 
 const TextInput = React.forwardRef<React.ComponentRef<'input'>, TextInputProps>(
@@ -18,6 +20,8 @@ const TextInput = React.forwardRef<React.ComponentRef<'input'>, TextInputProps>(
       isRequired = false,
       error,
       helperText,
+      message,
+      severity = 'default',
       id,
       ...props
     },
@@ -48,11 +52,13 @@ const TextInput = React.forwardRef<React.ComponentRef<'input'>, TextInputProps>(
           className={inputClasses}
           aria-invalid={error ? 'true' : undefined}
           aria-describedby={
-            error || helperText ? `${inputId}-description` : undefined
+            error || helperText || message
+              ? `${inputId}-description`
+              : undefined
           }
           {...props}
         />
-        {(error || helperText) && (
+        {((error || helperText) && (
           <div
             id={`${inputId}-description`}
             className={`text-input__description ${
@@ -63,7 +69,14 @@ const TextInput = React.forwardRef<React.ComponentRef<'input'>, TextInputProps>(
           >
             {error || helperText}
           </div>
-        )}
+        )) ||
+          (message && (
+            <div
+              className={`text-input__description text-input__description--${severity}`}
+            >
+              {message}
+            </div>
+          ))}
       </div>
     );
   }

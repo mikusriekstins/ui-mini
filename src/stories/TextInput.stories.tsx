@@ -35,6 +35,14 @@ const meta: Meta<typeof TextInput> = {
       control: 'text',
       description: 'Helper text to display below input',
     },
+    message: {
+      control: 'text',
+      description: 'Message text to display below input',
+    },
+    severity: {
+      control: { type: 'select', options: ['default', 'danger'] },
+      description: 'Severity level for message',
+    },
     disabled: {
       control: 'boolean',
       description: 'Disables the input field',
@@ -167,4 +175,22 @@ export const FormValidation: Story = {
       />
     </div>
   ),
+};
+
+export const WithMessage: Story = {
+  args: {
+    label: 'Username',
+    placeholder: 'Enter your username',
+    message: 'This username is available',
+  },
+};
+
+export const WithDangerMessage: Story = {
+  args: {
+    label: 'Username',
+    placeholder: 'Enter your username',
+    message: 'This username is already taken',
+    severity: 'danger',
+    value: 'taken-username',
+  },
 };
