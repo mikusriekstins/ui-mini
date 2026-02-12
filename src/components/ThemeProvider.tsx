@@ -20,7 +20,7 @@ export function ThemeProvider({
   defaultTheme = 'system',
   theme: controlledTheme,
   storageKey = STORAGE_KEY,
-}: ThemeProviderProps) {
+}: ThemeProviderProps): ReactNode {
   const [theme, setThemeState] = useState<Theme>(() => {
     if (controlledTheme) return controlledTheme;
     if (typeof window === 'undefined') return defaultTheme;
@@ -63,7 +63,7 @@ export function ThemeProvider({
 
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
-    const handleChange = () => {
+    const handleChange: () => void = () => {
       if (theme === 'system') {
         setResolvedTheme(mediaQuery.matches ? 'dark' : 'light');
       }

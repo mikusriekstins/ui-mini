@@ -67,6 +67,7 @@ export const LongOptions: Story = {
 };
 
 export const Controlled: Story = {
+  /* eslint-disable react-hooks/rules-of-hooks */
   render: () => {
     const [value, setValue] = useState<string>('');
 

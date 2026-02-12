@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-import type { ElementRef, ComponentPropsWithoutRef, ReactNode } from 'react';
 import {
   Root,
   Trigger,
@@ -8,6 +6,8 @@ import {
   Separator,
   Item,
 } from '@radix-ui/react-dropdown-menu';
+import { forwardRef } from 'react';
+import type { ElementRef, ComponentPropsWithoutRef, ReactNode } from 'react';
 import './DropdownMenu.css';
 
 interface DropdownMenuProps {
@@ -16,7 +16,11 @@ interface DropdownMenuProps {
   children: ReactNode;
 }
 
-const DropdownMenu = ({ trigger, label, children }: DropdownMenuProps) => {
+const DropdownMenu = ({
+  trigger,
+  label,
+  children,
+}: DropdownMenuProps): React.ReactNode => {
   return (
     <Root>
       <Trigger asChild className="dropdown-menu__trigger">

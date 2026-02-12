@@ -1,4 +1,3 @@
-import { forwardRef } from 'react';
 import {
   ArrowLeft,
   ArrowUp,
@@ -98,6 +97,7 @@ import {
   LockKeyhole,
   LucideProps,
 } from 'lucide-react';
+import { forwardRef } from 'react';
 import './Icon.css';
 
 const iconMap = {
@@ -215,7 +215,7 @@ const Icon = forwardRef<SVGSVGElement, IconProps>(
   ({ name, size = 'medium', className = '', ...props }, ref) => {
     const LucideIcon = iconMap[name];
 
-    if (!LucideIcon) {
+    if (LucideIcon === undefined) {
       console.warn(`Icon "${name}" not found in iconMap`);
       return null;
     }

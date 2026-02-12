@@ -32,11 +32,12 @@ const TextInput = forwardRef<ComponentRef<'input'>, TextInputProps>(
     },
     ref
   ) => {
-    const inputId = id || useId();
+    const generatedId = useId();
+    const inputId = id ?? generatedId;
     const textInputClasses = `text-input ${className}`.trim();
     const inputClasses = [
       'text-input__input',
-      error && 'text-input__input--error',
+      error ? 'text-input__input--error' : null,
     ]
       .filter(Boolean)
       .join(' ');
@@ -57,13 +58,13 @@ const TextInput = forwardRef<ComponentRef<'input'>, TextInputProps>(
           className={inputClasses}
           aria-invalid={error ? 'true' : undefined}
           aria-describedby={
-            error || helperText || message
+            (error ?? helperText ?? message)
               ? `${inputId}-description`
               : undefined
           }
           {...props}
         />
-        {((error || helperText) && (
+        {(error ?? helperText) && (
           <div
             id={`${inputId}-description`}
             className={`text-input__description ${
@@ -72,16 +73,16 @@ const TextInput = forwardRef<ComponentRef<'input'>, TextInputProps>(
                 : 'text-input__description--helper'
             }`}
           >
-            {error || helperText}
+            {error ?? helperText}
           </div>
-        )) ||
-          (message && (
-            <div
-              className={`text-input__description text-input__description--${severity}`}
-            >
-              {message}
-            </div>
-          ))}
+        )}
+        {message && (
+          <div
+            className={`text-input__description text-input__description--${severity}`}
+          >
+            {message}
+          </div>
+        )}
       </div>
     );
   }

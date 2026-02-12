@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import type { ReactElement } from 'react';
 
 import { Button } from '../components/Button';
 
@@ -126,7 +127,7 @@ const MockRouterLink = ({
   to: string;
   children: string;
   [key: string]: unknown;
-}) => (
+}): ReactElement => (
   <a href={to} {...props} style={{ textDecoration: 'none' }}>
     {children}
   </a>

@@ -91,6 +91,7 @@ export const WithDisabledTab: Story = {
 };
 
 export const Controlled: Story = {
+  /* eslint-disable react-hooks/rules-of-hooks */
   render: (args) => {
     const [activeTab, setActiveTab] = useState('overview');
 

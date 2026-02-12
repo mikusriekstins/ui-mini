@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
-import { vi, expect, describe, it } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
+import { ReactNode } from 'react';
+import { vi, expect, describe, it } from 'vitest';
 
 import {
   DropdownMenu,

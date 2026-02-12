@@ -18,6 +18,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Basic: Story = {
+  /* eslint-disable react-hooks/rules-of-hooks */
   render: () => {
     const [open, setOpen] = useState(false);
 
@@ -44,6 +45,7 @@ export const Basic: Story = {
 };
 
 export const WithForm: Story = {
+  /* eslint-disable react-hooks/rules-of-hooks */
   render: () => {
     const [open, setOpen] = useState(false);
 
@@ -128,6 +130,7 @@ export const WithForm: Story = {
 };
 
 export const ConfirmationDialog: Story = {
+  /* eslint-disable react-hooks/rules-of-hooks */
   render: () => {
     const [open, setOpen] = useState(false);
 
@@ -189,6 +192,7 @@ export const ConfirmationDialog: Story = {
 };
 
 export const LongContent: Story = {
+  /* eslint-disable react-hooks/rules-of-hooks */
   render: () => {
     const [open, setOpen] = useState(false);
 

@@ -18,6 +18,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Basic: Story = {
+  /* eslint-disable react-hooks/rules-of-hooks */
   render: () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -56,6 +57,7 @@ export const Basic: Story = {
           >
             <div>
               <label
+                htmlFor="width-input"
                 style={{
                   fontSize: 'var(--font-size-2xs)',
                   fontWeight: 'var(--font-weight-medium)',
@@ -64,6 +66,7 @@ export const Basic: Story = {
                 Width
               </label>
               <input
+                id="width-input"
                 type="text"
                 defaultValue="100%"
                 style={{
@@ -77,6 +80,7 @@ export const Basic: Story = {
             </div>
             <div>
               <label
+                htmlFor="height-input"
                 style={{
                   fontSize: 'var(--font-size-2xs)',
                   fontWeight: 'var(--font-weight-medium)',
@@ -85,6 +89,7 @@ export const Basic: Story = {
                 Height
               </label>
               <input
+                id="height-input"
                 type="text"
                 defaultValue="25px"
                 style={{
@@ -104,6 +109,7 @@ export const Basic: Story = {
 };
 
 export const SimpleContent: Story = {
+  /* eslint-disable react-hooks/rules-of-hooks */
   render: () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -140,6 +146,7 @@ export const SimpleContent: Story = {
 };
 
 export const AccountSettings: Story = {
+  /* eslint-disable react-hooks/rules-of-hooks */
   render: () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -186,6 +193,7 @@ export const AccountSettings: Story = {
 };
 
 export const Positioning: Story = {
+  /* eslint-disable react-hooks/rules-of-hooks */
   render: () => {
     const [topOpen, setTopOpen] = useState(false);
     const [rightOpen, setRightOpen] = useState(false);
