@@ -203,8 +203,10 @@ export type IconName = keyof typeof iconMap;
 
 export type IconSize = 'small' | 'medium';
 
-export interface IconProps
-  extends Omit<LucideProps, 'size' | 'strokeWidth' | 'color'> {
+export interface IconProps extends Omit<
+  LucideProps,
+  'size' | 'strokeWidth' | 'color'
+> {
   name: IconName;
   size?: IconSize;
 }

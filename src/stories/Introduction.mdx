@@ -9,7 +9,7 @@ A modern React component library built with Radix UI primitives, TypeScript, and
 ## Architecture
 
 - **Radix UI**: Headless primitives providing accessibility and keyboard navigation
-- **TypeScript**: Full type safety with strict compiler options  
+- **TypeScript**: Full type safety with strict compiler options
 - **CSS Variables**: Theme-aware styling with light/dark mode support
 - **Modular Scale**: Typography system using Major Third (1.25) scaling
 - **Logical Properties**: International layout support with CSS logical properties
@@ -17,7 +17,9 @@ A modern React component library built with Radix UI primitives, TypeScript, and
 ## Components
 
 ### Button
+
 Interactive button component with variants, sizes, and icon support. Can render as button, link, or custom component.
+
 - **Props**: `variant`, `size`, `icon`, `href`, `as`, `to`, `disabled`
 - **Variants**: `primary`, `secondary`
 - **Sizes**: `default`, `large`
@@ -25,75 +27,99 @@ Interactive button component with variants, sizes, and icon support. Can render 
 - **Story**: [View Button Examples →](?path=/story/components-button--primary)
 
 ### Toggle
+
 Toggle button with pressed state management.
+
 - **Props**: `variant`, `pressed`, `disabled`
-- **Variants**: `primary`, `secondary` 
+- **Variants**: `primary`, `secondary`
 - **Story**: [View Toggle Examples →](?path=/story/components-toggle--default)
 
 ### Icon
+
 SVG icon component with 18+ icons and consistent sizing.
+
 - **Props**: `name`, `size`
 - **Sizes**: `small` (1rem), `medium` (1.5rem)
 - **Story**: [View Icon Examples →](?path=/story/components-icon--default)
 
 ### TextInput
+
 Form input with label, validation, and helper text support.
+
 - **Props**: `label`, `placeholder`, `error`, `helperText`, `required`
 - **Features**: Built-in validation states and accessibility
 - **Story**: [View TextInput Examples →](?path=/story/components-textinput--default)
 
 ### Checkbox
+
 Checkbox input with optional labels and controlled/uncontrolled modes.
+
 - **Props**: `label`, `checked`, `defaultChecked`, `disabled`
 - **Features**: Radix-based with consistent styling
 - **Story**: [View Checkbox Examples →](?path=/story/components-checkbox--default)
 
 ### Radio
+
 Radio button group for mutually exclusive selections.
+
 - **Components**: `RadioGroup`, `Radio`
 - **Props**: `value`, `label`, `orientation`, `disabled`
 - **Story**: [View Radio Examples →](?path=/story/components-radio--default)
 
 ### Select
+
 Dropdown select with searchable options.
+
 - **Props**: `options`, `value`, `onChange`, `placeholder`
 - **Features**: Keyboard navigation and search
 - **Story**: [View Select Examples →](?path=/story/components-select--default)
 
 ### Label
+
 Semantic form labels with required field indicators.
+
 - **Props**: `text`, `isRequired`, `htmlFor`
 - **Features**: Accessibility-focused with proper associations
 - **Story**: [View Label Examples →](?path=/story/components-label--default)
 
 ### Dialog
+
 Modal dialog with overlay and focus management.
+
 - **Props**: `open`, `onOpenChange`, `title`, `description`, `trigger`
 - **Features**: Accessible modal behavior with keyboard navigation
 - **Story**: [View Dialog Examples →](?path=/story/components-dialog--default)
 
 ### Popover
+
 Floating content panel with customizable positioning.
+
 - **Props**: `popoverTrigger`, `closeButtonText`, `side`, `align`
 - **Features**: Smart positioning and controlled/uncontrolled modes
 - **Story**: [View Popover Examples →](?path=/story/components-popover--default)
 
 ### DropdownMenu
+
 Dropdown menu with keyboard navigation and menu items.
+
 - **Components**: `DropdownMenu`, `DropdownMenuItem`
 - **Props**: `trigger`, `label`, `disabled`
 - **Features**: Full keyboard support and accessible menu behavior
 - **Story**: [View DropdownMenu Examples →](?path=/story/components-dropdownmenu--default)
 
 ### Loading
+
 Animated loading indicator with bouncing and spinning effects.
+
 - **Props**: `size`
 - **Sizes**: `small`, `medium`, `large`
 - **Features**: CSS-only animation with shadow effects
 - **Story**: [View Loading Examples →](?path=/story/components-loading--default)
 
 ### Tabs
+
 Tabbed interface with content panels.
+
 - **Components**: `Tabs`, `TabsList`, `TabsTrigger`, `TabsContent`
 - **Props**: `value`, `onValueChange`, `orientation`
 - **Story**: [View Tabs Examples →](?path=/story/components-tabs--default)
@@ -104,13 +130,17 @@ The library uses CSS variables for consistent theming:
 
 ```css
 /* Light/Dark mode support */
-[data-theme='dark'] { /* dark theme variables */ }
-[data-theme='light'] { /* light theme variables */ }
+[data-theme='dark'] {
+  /* dark theme variables */
+}
+[data-theme='light'] {
+  /* light theme variables */
+}
 
 /* Key variables */
---font-size-md: 1.125rem;        /* Base UI font size */
---border-radius-md: 0.375rem;    /* Standard border radius */
---color-primary-600: #003041;    /* Primary brand color */
+--font-size-md: 1.125rem; /* Base UI font size */
+--border-radius-md: 0.375rem; /* Standard border radius */
+--color-primary-600: #003041; /* Primary brand color */
 ```
 
 ## Usage

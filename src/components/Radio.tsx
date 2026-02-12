@@ -6,8 +6,9 @@ export type RadioGroupProps = React.ComponentPropsWithoutRef<
   typeof RadioGroupPrimitive.Root
 >;
 
-export interface RadioProps
-  extends React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item> {
+export interface RadioProps extends React.ComponentPropsWithoutRef<
+  typeof RadioGroupPrimitive.Item
+> {
   label?: string;
 }
 

@@ -2,8 +2,7 @@ import * as React from 'react';
 import { Label } from './Label';
 import './TextInput.css';
 
-export interface TextInputProps
-  extends React.ComponentPropsWithoutRef<'input'> {
+export interface TextInputProps extends React.ComponentPropsWithoutRef<'input'> {
   label?: string;
   isRequired?: boolean;
   error?: string;

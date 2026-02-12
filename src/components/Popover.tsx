@@ -3,11 +3,10 @@ import * as PopoverPrimitive from '@radix-ui/react-popover';
 import { Icon } from './Icon';
 import './Popover.css';
 
-export interface PopoverProps
-  extends Omit<
-    React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Content>,
-    'children' | 'align' | 'side' | 'sideOffset'
-  > {
+export interface PopoverProps extends Omit<
+  React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Content>,
+  'children' | 'align' | 'side' | 'sideOffset'
+> {
   children: React.ReactNode;
   closeButtonText: string;
   popoverTrigger: React.ReactNode;

@@ -2,8 +2,9 @@ import * as React from 'react';
 import * as TogglePrimitive from '@radix-ui/react-toggle';
 import './Toggle.css';
 
-export interface ToggleProps
-  extends React.ComponentPropsWithoutRef<typeof TogglePrimitive.Root> {
+export interface ToggleProps extends React.ComponentPropsWithoutRef<
+  typeof TogglePrimitive.Root
+> {
   variant?: 'primary' | 'secondary';
 }
 

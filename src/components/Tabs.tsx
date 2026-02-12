@@ -2,8 +2,9 @@ import * as React from 'react';
 import * as TabsPrimitive from '@radix-ui/react-tabs';
 import './Tabs.css';
 
-export interface TabsProps
-  extends React.ComponentPropsWithoutRef<typeof TabsPrimitive.Root> {
+export interface TabsProps extends React.ComponentPropsWithoutRef<
+  typeof TabsPrimitive.Root
+> {
   children: React.ReactNode;
 }
 

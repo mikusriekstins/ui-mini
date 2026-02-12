@@ -2,8 +2,9 @@ import * as React from 'react';
 import * as LabelPrimitive from '@radix-ui/react-label';
 import './Label.css';
 
-export interface LabelProps
-  extends React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> {
+export interface LabelProps extends React.ComponentPropsWithoutRef<
+  typeof LabelPrimitive.Root
+> {
   text: string;
   isRequired?: boolean;
 }
