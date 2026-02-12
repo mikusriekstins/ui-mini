@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
+
 import { Tabs, TabItem } from '../components/Tabs';
 
 const meta: Meta<typeof Tabs> = {

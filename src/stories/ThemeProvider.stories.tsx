@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+
 import { ThemeProvider, useTheme, Button, Toggle, Icon } from '../index';
 
 function ThemeDemo() {

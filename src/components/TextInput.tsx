@@ -1,8 +1,14 @@
-import * as React from 'react';
+import {
+  forwardRef,
+  ComponentPropsWithoutRef,
+  ComponentRef,
+  useId,
+} from 'react';
+
 import { Label } from './Label';
 import './TextInput.css';
 
-export interface TextInputProps extends React.ComponentPropsWithoutRef<'input'> {
+export interface TextInputProps extends ComponentPropsWithoutRef<'input'> {
   label?: string;
   isRequired?: boolean;
   error?: string;
@@ -11,7 +17,7 @@ export interface TextInputProps extends React.ComponentPropsWithoutRef<'input'> 
   severity?: 'default' | 'danger';
 }
 
-const TextInput = React.forwardRef<React.ComponentRef<'input'>, TextInputProps>(
+const TextInput = forwardRef<ComponentRef<'input'>, TextInputProps>(
   (
     {
       className = '',
@@ -26,7 +32,7 @@ const TextInput = React.forwardRef<React.ComponentRef<'input'>, TextInputProps>(
     },
     ref
   ) => {
-    const inputId = id || React.useId();
+    const inputId = id || useId();
     const textInputClasses = `text-input ${className}`.trim();
     const inputClasses = [
       'text-input__input',

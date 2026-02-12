@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef } from 'react';
 import {
   ArrowLeft,
   ArrowUp,
@@ -211,7 +211,7 @@ export interface IconProps extends Omit<
   size?: IconSize;
 }
 
-const Icon = React.forwardRef<SVGSVGElement, IconProps>(
+const Icon = forwardRef<SVGSVGElement, IconProps>(
   ({ name, size = 'medium', className = '', ...props }, ref) => {
     const LucideIcon = iconMap[name];
 

@@ -1,5 +1,17 @@
-import * as React from 'react';
-import * as SelectPrimitive from '@radix-ui/react-select';
+import { forwardRef } from 'react';
+import type { ComponentRef } from 'react';
+import {
+  Root,
+  Trigger,
+  Value,
+  Portal,
+  Content,
+  Viewport,
+  Item,
+  ItemText,
+  Icon as SelectIcon,
+} from '@radix-ui/react-select';
+
 import { Icon } from './Icon';
 import './Select.css';
 
@@ -19,10 +31,7 @@ export interface SelectProps {
   id?: string;
 }
 
-const Select = React.forwardRef<
-  React.ComponentRef<typeof SelectPrimitive.Root>,
-  SelectProps
->(
+const Select = forwardRef<ComponentRef<typeof Root>, SelectProps>(
   (
     {
       options,
@@ -40,46 +49,40 @@ const Select = React.forwardRef<
     const selectClasses = `select ${className}`.trim();
 
     return (
-      <SelectPrimitive.Root
+      <Root
         value={value}
         defaultValue={defaultValue}
         onValueChange={onChange}
         disabled={disabled}
         {...props}
       >
-        <SelectPrimitive.Trigger
+        <Trigger
           ref={ref}
           className={`select__trigger ${selectClasses}`}
           id={id}
         >
-          <SelectPrimitive.Value placeholder={placeholder} />
-          <SelectPrimitive.Icon className="select__icon">
+          <Value placeholder={placeholder} />
+          <SelectIcon className="select__icon">
             <Icon name="chevron-down" size="small" />
-          </SelectPrimitive.Icon>
-        </SelectPrimitive.Trigger>
+          </SelectIcon>
+        </Trigger>
 
-        <SelectPrimitive.Portal>
-          <SelectPrimitive.Content
-            className="select__content"
-            position="popper"
-            sideOffset={4}
-          >
-            <SelectPrimitive.Viewport className="select__viewport">
+        <Portal>
+          <Content className="select__content" position="popper" sideOffset={4}>
+            <Viewport className="select__viewport">
               {options.map((option) => (
-                <SelectPrimitive.Item
+                <Item
                   key={option.value}
                   value={option.value}
                   className="select__item"
                 >
-                  <SelectPrimitive.ItemText>
-                    {option.label}
-                  </SelectPrimitive.ItemText>
-                </SelectPrimitive.Item>
+                  <ItemText>{option.label}</ItemText>
+                </Item>
               ))}
-            </SelectPrimitive.Viewport>
-          </SelectPrimitive.Content>
-        </SelectPrimitive.Portal>
-      </SelectPrimitive.Root>
+            </Viewport>
+          </Content>
+        </Portal>
+      </Root>
     );
   }
 );

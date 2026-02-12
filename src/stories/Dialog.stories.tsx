@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
+
 import { Button } from '../components/Button';
 import { Dialog } from '../components/Dialog';
 import '../styles/variables.css';

@@ -1,7 +1,8 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { vi, expect, describe, it } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
+
 import {
   DropdownMenu,
   DropdownMenuItem,
@@ -136,7 +137,7 @@ describe('DropdownMenu', () => {
 });
 
 describe('DropdownMenuItem', () => {
-  const renderWithMenu = (children: React.ReactNode) => {
+  const renderWithMenu = (children: ReactNode) => {
     return render(
       <DropdownMenu trigger={<button>Trigger</button>}>{children}</DropdownMenu>
     );

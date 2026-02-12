@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
+
 import { Select, type SelectOption } from '../components/Select';
 import '../styles/variables.css';
 

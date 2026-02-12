@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import * as React from 'react';
+
 import { Button } from '../components/Button';
 
 const meta: Meta<typeof Button> = {
@@ -47,7 +47,7 @@ const meta: Meta<typeof Button> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
   args: {
@@ -124,7 +124,7 @@ const MockRouterLink = ({
   ...props
 }: {
   to: string;
-  children: React.ReactNode;
+  children: string;
   [key: string]: unknown;
 }) => (
   <a href={to} {...props} style={{ textDecoration: 'none' }}>

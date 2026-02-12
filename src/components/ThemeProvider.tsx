@@ -1,4 +1,5 @@
-import * as React from 'react';
+import { useState, useEffect, useCallback, useMemo, ReactNode } from 'react';
+
 import {
   Theme,
   ThemeContext,
@@ -8,7 +9,7 @@ import {
 const STORAGE_KEY = 'ui-mini-theme';
 
 export interface ThemeProviderProps {
-  children: React.ReactNode;
+  children: ReactNode;
   defaultTheme?: Theme;
   theme?: Theme;
   storageKey?: string;
@@ -20,7 +21,7 @@ export function ThemeProvider({
   theme: controlledTheme,
   storageKey = STORAGE_KEY,
 }: ThemeProviderProps) {
-  const [theme, setThemeState] = React.useState<Theme>(() => {
+  const [theme, setThemeState] = useState<Theme>(() => {
     if (controlledTheme) return controlledTheme;
     if (typeof window === 'undefined') return defaultTheme;
 
@@ -31,35 +32,33 @@ export function ThemeProvider({
     }
   });
 
-  const [resolvedTheme, setResolvedTheme] = React.useState<'light' | 'dark'>(
-    () => {
-      if (typeof window === 'undefined') return 'light';
+  const [resolvedTheme, setResolvedTheme] = useState<'light' | 'dark'>(() => {
+    if (typeof window === 'undefined') return 'light';
 
-      if (theme === 'system') {
-        return window.matchMedia('(prefers-color-scheme: dark)').matches
-          ? 'dark'
-          : 'light';
-      }
-
-      return theme === 'dark' ? 'dark' : 'light';
+    if (theme === 'system') {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light';
     }
-  );
+
+    return theme === 'dark' ? 'dark' : 'light';
+  });
 
   // Update theme when controlled theme changes
-  React.useEffect(() => {
+  useEffect(() => {
     if (controlledTheme) {
       setThemeState(controlledTheme);
     }
   }, [controlledTheme]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (typeof window === 'undefined') return;
 
     const root = window.document.documentElement;
     root.setAttribute('data-theme', resolvedTheme);
   }, [resolvedTheme]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (typeof window === 'undefined') return;
 
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -76,7 +75,7 @@ export function ThemeProvider({
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, [theme]);
 
-  const setTheme = React.useCallback(
+  const setTheme = useCallback(
     (newTheme: Theme) => {
       // Don't update if in controlled mode
       if (controlledTheme) return;
@@ -103,7 +102,7 @@ export function ThemeProvider({
     [storageKey, controlledTheme]
   );
 
-  const value: ThemeContextValue = React.useMemo(
+  const value: ThemeContextValue = useMemo(
     () => ({
       theme,
       resolvedTheme,

@@ -1,5 +1,6 @@
 import { expect, describe, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
+
 import { Select, type SelectOption } from '../Select';
 
 const mockOptions: SelectOption[] = [

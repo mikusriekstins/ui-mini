@@ -1,59 +1,43 @@
-import * as React from 'react';
-import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
+import { forwardRef, useId } from 'react';
+import type { ElementRef, ComponentPropsWithoutRef } from 'react';
+import { Root, Item, Indicator } from '@radix-ui/react-radio-group';
 import './Radio.css';
 
-export type RadioGroupProps = React.ComponentPropsWithoutRef<
-  typeof RadioGroupPrimitive.Root
->;
+export type RadioGroupProps = ComponentPropsWithoutRef<typeof Root>;
 
-export interface RadioProps extends React.ComponentPropsWithoutRef<
-  typeof RadioGroupPrimitive.Item
-> {
+export interface RadioProps extends ComponentPropsWithoutRef<typeof Item> {
   label?: string;
 }
 
-const RadioGroup = React.forwardRef<
-  React.ElementRef<typeof RadioGroupPrimitive.Root>,
-  RadioGroupProps
->(({ className = '', ...props }, ref) => {
-  const radioGroupClasses = `radio-group ${className}`.trim();
+const RadioGroup = forwardRef<ElementRef<typeof Root>, RadioGroupProps>(
+  ({ className = '', ...props }, ref) => {
+    const radioGroupClasses = `radio-group ${className}`.trim();
 
-  return (
-    <RadioGroupPrimitive.Root
-      ref={ref}
-      className={radioGroupClasses}
-      {...props}
-    />
-  );
-});
+    return <Root ref={ref} className={radioGroupClasses} {...props} />;
+  }
+);
 
-const Radio = React.forwardRef<
-  React.ElementRef<typeof RadioGroupPrimitive.Item>,
-  RadioProps
->(({ className = '', label, id, ...props }, ref) => {
-  const radioId = id || React.useId();
-  const radioClasses = `radio ${className}`.trim();
+const Radio = forwardRef<ElementRef<typeof Item>, RadioProps>(
+  ({ className = '', label, id, ...props }, ref) => {
+    const radioId = id || useId();
+    const radioClasses = `radio ${className}`.trim();
 
-  return (
-    <div className={radioClasses}>
-      <RadioGroupPrimitive.Item
-        ref={ref}
-        className="radio__item"
-        id={radioId}
-        {...props}
-      >
-        <RadioGroupPrimitive.Indicator className="radio__indicator" />
-      </RadioGroupPrimitive.Item>
-      {label && (
-        <label className="radio__label" htmlFor={radioId}>
-          {label}
-        </label>
-      )}
-    </div>
-  );
-});
+    return (
+      <div className={radioClasses}>
+        <Item ref={ref} className="radio__item" id={radioId} {...props}>
+          <Indicator className="radio__indicator" />
+        </Item>
+        {label && (
+          <label className="radio__label" htmlFor={radioId}>
+            {label}
+          </label>
+        )}
+      </div>
+    );
+  }
+);
 
-RadioGroup.displayName = RadioGroupPrimitive.Root.displayName;
-Radio.displayName = RadioGroupPrimitive.Item.displayName;
+RadioGroup.displayName = Root.displayName;
+Radio.displayName = Item.displayName;
 
 export { RadioGroup, Radio };

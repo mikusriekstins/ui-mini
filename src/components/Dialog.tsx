@@ -1,12 +1,23 @@
-import * as React from 'react';
-import * as DialogPrimitive from '@radix-ui/react-dialog';
+import { forwardRef } from 'react';
+import type { ElementRef, ReactNode } from 'react';
+import {
+  Root,
+  Trigger,
+  Portal,
+  Overlay,
+  Content,
+  Title,
+  Description,
+  Close,
+} from '@radix-ui/react-dialog';
+
 import { Icon } from './Icon';
 import './Dialog.css';
 
 export interface DialogProps {
-  children: React.ReactNode;
+  children: ReactNode;
   closeButtonText: string;
-  trigger: React.ReactNode;
+  trigger: ReactNode;
   title: string;
   description?: string;
   open?: boolean;
@@ -14,10 +25,7 @@ export interface DialogProps {
   className?: string;
 }
 
-const Dialog = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Content>,
-  DialogProps
->(
+const Dialog = forwardRef<ElementRef<typeof Content>, DialogProps>(
   (
     {
       children,
@@ -33,35 +41,33 @@ const Dialog = React.forwardRef<
     ref
   ) => {
     return (
-      <DialogPrimitive.Root open={open} onOpenChange={onOpenChange}>
-        <DialogPrimitive.Trigger asChild className="dialog__trigger">
+      <Root open={open} onOpenChange={onOpenChange}>
+        <Trigger asChild className="dialog__trigger">
           {trigger}
-        </DialogPrimitive.Trigger>
-        <DialogPrimitive.Portal>
-          <DialogPrimitive.Overlay className="dialog__overlay" />
-          <DialogPrimitive.Content
+        </Trigger>
+        <Portal>
+          <Overlay className="dialog__overlay" />
+          <Content
             ref={ref}
             className={`dialog__content ${className}`.trim()}
             {...props}
           >
-            <DialogPrimitive.Title className="dialog__title">
-              {title}
-            </DialogPrimitive.Title>
+            <Title className="dialog__title">{title}</Title>
             {description && (
-              <DialogPrimitive.Description className="dialog__description">
+              <Description className="dialog__description">
                 {description}
-              </DialogPrimitive.Description>
+              </Description>
             )}
             {children}
-            <DialogPrimitive.Close
+            <Close
               className="dialog__close dialog__close--absolute"
               aria-label={closeButtonText}
             >
               <Icon name="x" size="small" />
-            </DialogPrimitive.Close>
-          </DialogPrimitive.Content>
-        </DialogPrimitive.Portal>
-      </DialogPrimitive.Root>
+            </Close>
+          </Content>
+        </Portal>
+      </Root>
     );
   }
 );

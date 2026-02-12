@@ -1,50 +1,55 @@
-import * as React from 'react';
-import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
+import { forwardRef } from 'react';
+import type { ElementRef, ComponentPropsWithoutRef, ReactNode } from 'react';
+import {
+  Root,
+  Trigger,
+  Portal,
+  Content,
+  Separator,
+  Item,
+} from '@radix-ui/react-dropdown-menu';
 import './DropdownMenu.css';
 
 interface DropdownMenuProps {
-  trigger: React.ReactNode;
+  trigger: ReactNode;
   label?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const DropdownMenu = ({ trigger, label, children }: DropdownMenuProps) => {
   return (
-    <DropdownMenuPrimitive.Root>
-      <DropdownMenuPrimitive.Trigger asChild className="dropdown-menu__trigger">
+    <Root>
+      <Trigger asChild className="dropdown-menu__trigger">
         {trigger}
-      </DropdownMenuPrimitive.Trigger>
-      <DropdownMenuPrimitive.Portal>
-        <DropdownMenuPrimitive.Content
-          className="dropdown-menu__content"
-          sideOffset={4}
-        >
+      </Trigger>
+      <Portal>
+        <Content className="dropdown-menu__content" sideOffset={4}>
           {label && (
             <>
               <div className="dropdown-menu__label">{label}</div>
-              <DropdownMenuPrimitive.Separator className="dropdown-menu__separator" />
+              <Separator className="dropdown-menu__separator" />
             </>
           )}
           {children}
-        </DropdownMenuPrimitive.Content>
-      </DropdownMenuPrimitive.Portal>
-    </DropdownMenuPrimitive.Root>
+        </Content>
+      </Portal>
+    </Root>
   );
 };
 DropdownMenu.displayName = 'DropdownMenu';
 
 interface DropdownMenuItemProps {
-  children: React.ReactNode;
+  children: ReactNode;
   onClick?: () => void;
   disabled?: boolean;
   className?: string;
 }
 
-const DropdownMenuItem = React.forwardRef<
-  React.ElementRef<typeof DropdownMenuPrimitive.Item>,
+const DropdownMenuItem = forwardRef<
+  ElementRef<typeof Item>,
   DropdownMenuItemProps
 >(({ className = '', onClick, children, ...props }, ref) => (
-  <DropdownMenuPrimitive.Item
+  <Item
     ref={ref}
     className={`dropdown-menu__item ${className}`.trim()}
     onSelect={onClick}
@@ -52,26 +57,26 @@ const DropdownMenuItem = React.forwardRef<
     {...props}
   >
     <button type="button">{children}</button>
-  </DropdownMenuPrimitive.Item>
+  </Item>
 ));
-DropdownMenuItem.displayName = DropdownMenuPrimitive.Item.displayName;
+DropdownMenuItem.displayName = Item.displayName;
 
-const DropdownMenuSeparator = React.forwardRef<
-  React.ElementRef<typeof DropdownMenuPrimitive.Separator>,
-  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Separator>
+const DropdownMenuSeparator = forwardRef<
+  ElementRef<typeof Separator>,
+  ComponentPropsWithoutRef<typeof Separator>
 >(({ className = '', ...props }, ref) => (
-  <DropdownMenuPrimitive.Separator
+  <Separator
     ref={ref}
     className={`dropdown-menu__separator ${className}`.trim()}
     {...props}
   />
 ));
-DropdownMenuSeparator.displayName = DropdownMenuPrimitive.Separator.displayName;
+DropdownMenuSeparator.displayName = Separator.displayName;
 
 export { DropdownMenu, DropdownMenuItem, DropdownMenuSeparator };
 
 export type { DropdownMenuProps, DropdownMenuItemProps };
 
-export type DropdownMenuSeparatorProps = React.ComponentPropsWithoutRef<
-  typeof DropdownMenuPrimitive.Separator
+export type DropdownMenuSeparatorProps = ComponentPropsWithoutRef<
+  typeof Separator
 >;

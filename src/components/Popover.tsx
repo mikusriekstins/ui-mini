@@ -1,15 +1,17 @@
-import * as React from 'react';
-import * as PopoverPrimitive from '@radix-ui/react-popover';
+import { forwardRef } from 'react';
+import type { ElementRef, ComponentPropsWithoutRef, ReactNode } from 'react';
+import { Root, Trigger, Portal, Content, Close } from '@radix-ui/react-popover';
+
 import { Icon } from './Icon';
 import './Popover.css';
 
 export interface PopoverProps extends Omit<
-  React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Content>,
+  ComponentPropsWithoutRef<typeof Content>,
   'children' | 'align' | 'side' | 'sideOffset'
 > {
-  children: React.ReactNode;
+  children: ReactNode;
   closeButtonText: string;
-  popoverTrigger: React.ReactNode;
+  popoverTrigger: ReactNode;
   isOpen?: boolean;
   onOpenChange?: (open: boolean) => void;
   align?: 'center' | 'start' | 'end';
@@ -18,10 +20,7 @@ export interface PopoverProps extends Omit<
   className?: string;
 }
 
-const Popover = React.forwardRef<
-  React.ElementRef<typeof PopoverPrimitive.Content>,
-  PopoverProps
->(
+const Popover = forwardRef<ElementRef<typeof Content>, PopoverProps>(
   (
     {
       children,
@@ -43,12 +42,12 @@ const Popover = React.forwardRef<
     };
 
     return (
-      <PopoverPrimitive.Root {...rootProps}>
-        <PopoverPrimitive.Trigger asChild className="popover__trigger">
+      <Root {...rootProps}>
+        <Trigger asChild className="popover__trigger">
           {popoverTrigger}
-        </PopoverPrimitive.Trigger>
-        <PopoverPrimitive.Portal>
-          <PopoverPrimitive.Content
+        </Trigger>
+        <Portal>
+          <Content
             ref={ref}
             align={align}
             side={side}
@@ -57,15 +56,12 @@ const Popover = React.forwardRef<
             {...props}
           >
             {children}
-            <PopoverPrimitive.Close
-              className="popover__close"
-              aria-label={closeButtonText}
-            >
+            <Close className="popover__close" aria-label={closeButtonText}>
               <Icon name="x" size="small" />
-            </PopoverPrimitive.Close>
-          </PopoverPrimitive.Content>
-        </PopoverPrimitive.Portal>
-      </PopoverPrimitive.Root>
+            </Close>
+          </Content>
+        </Portal>
+      </Root>
     );
   }
 );

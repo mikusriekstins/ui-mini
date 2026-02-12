@@ -1,6 +1,7 @@
 import { vi, expect, describe, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
+
 import { RadioGroup, Radio } from '../Radio';
 
 describe('RadioGroup', () => {
