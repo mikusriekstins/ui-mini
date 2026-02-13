@@ -63,7 +63,7 @@ const Button = forwardRef<
         {icon && (
           <Icon name={icon as IconName} size="small" className="button__icon" />
         )}
-        {children && (
+        {children && children !== '' && (
           <span className="button__text">{children as ReactNode}</span>
         )}
       </>

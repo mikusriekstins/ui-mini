@@ -1,5 +1,5 @@
-import { expect, describe, it } from 'vitest';
 import { render } from '@testing-library/react';
+import { expect, describe, it } from 'vitest';
 
 import { Loading } from '../Loading';
 

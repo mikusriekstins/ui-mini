@@ -1,5 +1,5 @@
-import { forwardRef, ComponentPropsWithoutRef, ElementRef } from 'react';
 import { Root } from '@radix-ui/react-toggle';
+import { forwardRef, ComponentPropsWithoutRef, ElementRef } from 'react';
 import './Toggle.css';
 
 export interface ToggleProps extends ComponentPropsWithoutRef<typeof Root> {

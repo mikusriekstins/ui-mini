@@ -1,6 +1,6 @@
 # UI Mini
 
-A modern React component library built with Radix UI primitives, TypeScript, and CSS variables. Provides accessible, customizable components with consistent theming and excellent developer experience.
+A modern React component library built with Radix UI primitives, TypeScript, and CSS variables.
 
 ## Installation
 
@@ -11,279 +11,69 @@ npm install @mikusriekstins/ui-mini
 ## Quick Start
 
 ```tsx
-import { Button, TextInput, Icon } from '@mikusriekstins/ui-mini';
+import { ThemeProvider } from '@mikusriekstins/ui-mini';
+import { Button, TextInput } from '@mikusriekstins/ui-mini';
 import '@mikusriekstins/ui-mini/styles';
 
 function App() {
   return (
-    <div>
-      <TextInput label="Email" placeholder="Enter your email..." />
-      <Button icon="arrow-right">Submit</Button>
-    </div>
+    <ThemeProvider defaultTheme="light">
+      <Button variant="primary" size="large">
+        Click me
+      </Button>
+      <TextInput label="Email" placeholder="Enter your email" />
+    </ThemeProvider>
   );
 }
 ```
 
-## Components
-
-### Button
-
-Interactive button with variants, sizes, and icon support.
-
-```tsx
-<Button variant="primary" icon="arrow-right">Save</Button>
-<Button variant="secondary" size="large">Large Button</Button>
-<Button href="/profile">Link Button</Button>
-<Button as={Link} to="/dashboard">Router Link</Button>
-```
-
-### TextInput
-
-Form input with label, validation, and helper text.
-
-```tsx
-<TextInput
-  label="Email"
-  placeholder="Enter email..."
-  error="Invalid email format"
-  isRequired
-/>
-```
-
-### Select
-
-Dropdown select with searchable options.
-
-```tsx
-<Select
-  options={[
-    { value: 'us', label: 'United States' },
-    { value: 'ca', label: 'Canada' },
-  ]}
-  placeholder="Select country..."
-  value={country}
-  onChange={setCountry}
-/>
-```
-
-### Checkbox
-
-Checkbox input with optional labels.
-
-```tsx
-<Checkbox label="Accept terms" defaultChecked />
-<Checkbox label="Subscribe to newsletter" disabled />
-```
-
-### Radio
-
-Radio button group for exclusive selections.
-
-```tsx
-<RadioGroup value={size} onValueChange={setSize}>
-  <Radio value="sm" label="Small" />
-  <Radio value="md" label="Medium" />
-  <Radio value="lg" label="Large" />
-</RadioGroup>
-```
-
-### Toggle
-
-Toggle button with pressed state management.
-
-```tsx
-<Toggle variant="primary" pressed={enabled} onPressedChange={setEnabled}>
-  Enable notifications
-</Toggle>
-```
-
-### Dialog
-
-Modal dialog with overlay and focus management.
-
-```tsx
-<Dialog
-  trigger={<Button>Open Dialog</Button>}
-  title="Confirm Action"
-  description="Are you sure you want to continue?"
->
-  <Button onClick={handleConfirm}>Confirm</Button>
-</Dialog>
-```
-
-### Popover
-
-Floating content panel with customizable positioning.
-
-```tsx
-<Popover popoverTrigger={<Button>Show Info</Button>} closeButtonText="Close">
-  <div>Popover content here</div>
-</Popover>
-```
-
-### DropdownMenu
-
-Dropdown menu with keyboard navigation.
-
-```tsx
-<DropdownMenu trigger={<Button>Menu</Button>} label="Actions">
-  <DropdownMenuItem>Edit</DropdownMenuItem>
-  <DropdownMenuItem>Delete</DropdownMenuItem>
-</DropdownMenu>
-```
-
-### Tabs
-
-Tabbed interface with content panels.
-
-```tsx
-<Tabs value={activeTab} onValueChange={setActiveTab}>
-  <TabsList>
-    <TabsTrigger value="tab1">Overview</TabsTrigger>
-    <TabsTrigger value="tab2">Details</TabsTrigger>
-  </TabsList>
-  <TabsContent value="tab1">Overview content</TabsContent>
-  <TabsContent value="tab2">Details content</TabsContent>
-</Tabs>
-```
-
-### Label
-
-Semantic form labels with required indicators.
-
-```tsx
-<Label text="Full Name" isRequired />
-<Label text="Company" htmlFor="company-input" />
-```
-
-### Loading
-
-Animated loading indicator with size variants.
-
-```tsx
-<Loading size="small" />
-<Loading size="medium" />
-<Loading size="large" />
-```
-
-### Icon
-
-SVG icon component with consistent sizing.
-
-```tsx
-<Icon name="star" size="small" />
-<Icon name="mail" size="medium" />
-```
-
-### ThemeProvider
-
-Context provider for light/dark theme management.
-
-```tsx
-<ThemeProvider theme="dark">
-  <App />
-</ThemeProvider>
-```
-
-### VisuallyHidden
-
-Accessible content hidden from visual display.
-
-```tsx
-<VisuallyHidden>Screen reader only text</VisuallyHidden>
-```
-
-## Icons
-
-18 built-in icons available:
-
-**Navigation**: `arrow-left`, `arrow-up`, `arrow-right`, `arrow-down`, `chevron-down`
-
-**Actions**: `x`, `check`, `download`, `play`
-
-**UI Elements**: `shopping-basket`, `mail`, `image`, `headphones`, `music`, `star`, `triangle-alert`, `lock`, `percent`
-
-```tsx
-<Icon name="star" size="small" />
-<Icon name="mail" size="medium" />
-<Icon name="triangle-alert" size="medium" />
-```
-
-## TypeScript Support
-
-Full TypeScript support with exported interfaces:
-
-```tsx
-import {
-  Button,
-  ButtonProps,
-  TextInput,
-  TextInputProps,
-  Icon,
-  IconName,
-  IconSize,
-} from '@mikusriekstins/ui-mini';
-
-// Use interfaces in your components
-interface MyFormProps {
-  onSubmit: (data: FormData) => void;
-  submitIcon?: IconName;
-}
-```
-
-## Theming
-
-Built-in light/dark mode support with CSS variables:
-
-```tsx
-// Automatic theme detection
-<ThemeProvider theme="system">
-  <App />
-</ThemeProvider>
-
-// Force specific theme
-<ThemeProvider theme="dark">
-  <App />
-</ThemeProvider>
-```
-
-### CSS Variables
-
-Key customizable variables:
-
-```css
-:root {
-  --color-primary-600: #003041;
-  --font-size-md: 1.125rem;
-  --border-radius-md: 0.375rem;
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-}
-```
-
-## Development
-
-View components and documentation:
-
-```bash
-npm run storybook
-```
-
-Visit `http://localhost:6006` for interactive component playground.
-
-## Architecture
-
-- **Accessibility**: Built on Radix UI primitives
-- **TypeScript**: Full type safety and IntelliSense
-- **CSS Variables**: Consistent theming system
-- **Tree Shaking**: Import only what you need
-- **Modern Build**: ESM/CJS dual output
-
-## Browser Support
-
-- React 18+
-- Modern browsers (ES2020+)
-- CSS custom properties support
-
-## License
-
-MIT
+**Important**: Import `@mikusriekstins/ui-mini/styles` (CSS file) to ensure default CSS variables are applied properly to your application.
+
+## Color and Spacing Variables
+
+The library provides a comprehensive design system with:
+
+- **Color variables**: `--color-primary-50` through `--color-primary-900`, `--color-secondary-50` through `--color-secondary-900`, `--color-gray-50` through `--color-gray-900`
+- **Semantic colors**: `--color-background`, `--color-foreground`, `--color-border`, `--color-muted`, etc.
+- **Spacing variables**: `--xss`, `--xs`, `--sm`, `--md`, `--lg`, `--xl`, `--xxl`, `--xxxl`
+- **Typography**: `--font-size-xs` through `--font-size-xxxl`, `--line-height-sm` through `--line-height-lg`
+- **Border radius**: `--border-radius-sm`, `--border-radius-md`, `--border-radius-lg`
+- **Shadows**: `--shadow-sm`, `--shadow-md`, `--shadow-lg`
+
+All colors are defined in `/dist/ui-mini.css` and can be customized by overriding CSS variables.
+
+## Features
+
+- **Accessibility-first**: Built on Radix UI primitives for fully accessible components
+- **Theming**: Light/dark/system theme support with localStorage persistence
+- **TypeScript**: Full type definitions included
+- **CSS variables**: Customizable design tokens
+- **Icon support**: 75+ Lucide React icons via the Icon component
+- **Component variants**: Multiple style variants where applicable
+
+## Components (15 total)
+
+- **Button** - Primary and secondary button variants with icon support
+- **TextInput** - Text input with label, error state, and helper text
+- **Checkbox** - Accessible checkbox with label support
+- **Radio** - Radio button group with individual radio options
+- **Toggle** - Toggle switch with primary/secondary variants
+- **Icon** - 75+ icons from Lucide React with size options
+- **Label** - Accessible form labels with required indicator
+- **DropdownMenu** - Dropdown menu with trigger, separator, and items
+- **Dialog** - Modal dialog with overlay, title, and description
+- **Popover** - Popover with configurable alignment and side
+- **Tabs** - Tab navigation with tab content panels
+- **Select** - Select dropdown with custom options
+- **VisuallyHidden** - Visually hidden element for accessibility
+- **Loading** - Spinner with small/medium/large sizes
+- **ThemeProvider** - Context provider for theme management
+
+## Technical Details
+
+- **Version**: 0.10.1
+- **License**: ISC
+- **Dependencies**: @radix-ui/react-\* (8 packages), lucide-react
+- **Peer Dependencies**: React >=19.0.0, react-dom >=19.0.0
+- **Build**: Vite + TypeScript
+- **Testing**: Vitest + React Testing Library

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import type { FC } from 'react';
 
 import { Loading } from '../components/Loading';
 
@@ -38,7 +39,7 @@ export const Default: Story = {
     size: 'medium',
   },
   decorators: [
-    (Story) => (
+    (Story: FC): React.ReactElement => (
       <div
         style={{
           backgroundColor: 'rgba(0, 0, 0, 0.2)',
@@ -57,7 +58,7 @@ export const Small: Story = {
     size: 'small',
   },
   decorators: [
-    (Story) => (
+    (Story: FC): React.ReactElement => (
       <div
         style={{
           backgroundColor: 'rgba(0, 0, 0, 0.2)',
@@ -76,7 +77,7 @@ export const Medium: Story = {
     size: 'medium',
   },
   decorators: [
-    (Story) => (
+    (Story: FC): React.ReactElement => (
       <div
         style={{
           backgroundColor: 'rgba(0, 0, 0, 0.2)',
@@ -95,7 +96,7 @@ export const Large: Story = {
     size: 'large',
   },
   decorators: [
-    (Story) => (
+    (Story: FC): React.ReactElement => (
       <div
         style={{
           backgroundColor: 'rgba(0, 0, 0, 0.2)',

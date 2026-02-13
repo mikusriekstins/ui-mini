@@ -1,3 +1,4 @@
+import { Root, List, Trigger, Content } from '@radix-ui/react-tabs';
 import {
   forwardRef,
   ComponentPropsWithoutRef,
@@ -7,7 +8,6 @@ import {
   FC,
   Children,
 } from 'react';
-import { Root, List, Trigger, Content } from '@radix-ui/react-tabs';
 import './Tabs.css';
 
 export interface TabsProps extends ComponentPropsWithoutRef<typeof Root> {

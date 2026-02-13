@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-import type { ComponentRef } from 'react';
 import {
   Root,
   Trigger,
@@ -11,6 +9,8 @@ import {
   ItemText,
   Icon as SelectIcon,
 } from '@radix-ui/react-select';
+import { forwardRef } from 'react';
+import type { ComponentRef } from 'react';
 
 import { Icon } from './Icon';
 import './Select.css';

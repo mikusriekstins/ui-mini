@@ -56,6 +56,7 @@ export const Basic: Story = {
           >
             <div>
               <label
+                htmlFor="width-input"
                 style={{
                   fontSize: 'var(--font-size-2xs)',
                   fontWeight: 'var(--font-weight-medium)',
@@ -64,6 +65,7 @@ export const Basic: Story = {
                 Width
               </label>
               <input
+                id="width-input"
                 type="text"
                 defaultValue="100%"
                 style={{
@@ -77,6 +79,7 @@ export const Basic: Story = {
             </div>
             <div>
               <label
+                htmlFor="height-input"
                 style={{
                   fontSize: 'var(--font-size-2xs)',
                   fontWeight: 'var(--font-weight-medium)',
@@ -85,6 +88,7 @@ export const Basic: Story = {
                 Height
               </label>
               <input
+                id="height-input"
                 type="text"
                 defaultValue="25px"
                 style={{

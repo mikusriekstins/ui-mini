@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-import type { ElementRef, ReactNode } from 'react';
 import {
   Root,
   Trigger,
@@ -10,6 +8,8 @@ import {
   Description,
   Close,
 } from '@radix-ui/react-dialog';
+import { forwardRef } from 'react';
+import type { ElementRef, ReactNode } from 'react';
 
 import { Icon } from './Icon';
 import './Dialog.css';

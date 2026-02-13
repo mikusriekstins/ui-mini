@@ -1,10 +1,10 @@
-import { useEffect } from 'react';
-import { vi, expect, describe, it, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
+import { useEffect } from 'react';
+import { vi, expect, describe, it, beforeEach } from 'vitest';
 
-import { ThemeProvider } from '../ThemeProvider';
 import { useTheme } from '../../hooks/useTheme';
+import { ThemeProvider } from '../ThemeProvider';
 
 // Test component that uses the theme context
 const TestComponent = ({
