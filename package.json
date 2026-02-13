@@ -39,6 +39,9 @@
   "author": "",
   "license": "ISC",
   "description": "A React UI component library with TypeScript support",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.3.3",
     "@radix-ui/react-dialog": "^1.1.15",
