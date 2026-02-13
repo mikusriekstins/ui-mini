@@ -39,6 +39,10 @@
   "author": "",
   "license": "ISC",
   "description": "A React UI component library with TypeScript support",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikusriekstins/ui-mini"
+  },
   "publishConfig": {
     "access": "public"
   },
