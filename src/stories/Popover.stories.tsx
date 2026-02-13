@@ -18,7 +18,6 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Basic: Story = {
-  /* eslint-disable react-hooks/rules-of-hooks */
   render: () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -109,7 +108,6 @@ export const Basic: Story = {
 };
 
 export const SimpleContent: Story = {
-  /* eslint-disable react-hooks/rules-of-hooks */
   render: () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -146,7 +144,6 @@ export const SimpleContent: Story = {
 };
 
 export const AccountSettings: Story = {
-  /* eslint-disable react-hooks/rules-of-hooks */
   render: () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -193,7 +190,6 @@ export const AccountSettings: Story = {
 };
 
 export const Positioning: Story = {
-  /* eslint-disable react-hooks/rules-of-hooks */
   render: () => {
     const [topOpen, setTopOpen] = useState(false);
     const [rightOpen, setRightOpen] = useState(false);
