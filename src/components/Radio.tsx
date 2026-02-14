@@ -1,6 +1,6 @@
 import { Root, Item, Indicator } from '@radix-ui/react-radio-group';
 import { forwardRef, useId } from 'react';
-import type { ElementRef, ComponentPropsWithoutRef } from 'react';
+import type { ComponentRef, ComponentPropsWithoutRef } from 'react';
 import './Radio.css';
 
 export type RadioGroupProps = ComponentPropsWithoutRef<typeof Root>;
@@ -9,7 +9,7 @@ export interface RadioProps extends ComponentPropsWithoutRef<typeof Item> {
   label?: string;
 }
 
-const RadioGroup = forwardRef<ElementRef<typeof Root>, RadioGroupProps>(
+const RadioGroup = forwardRef<ComponentRef<typeof Root>, RadioGroupProps>(
   ({ className = '', ...props }, ref) => {
     const radioGroupClasses = `radio-group ${className}`.trim();
 
@@ -17,7 +17,7 @@ const RadioGroup = forwardRef<ElementRef<typeof Root>, RadioGroupProps>(
   }
 );
 
-const Radio = forwardRef<ElementRef<typeof Item>, RadioProps>(
+const Radio = forwardRef<ComponentRef<typeof Item>, RadioProps>(
   ({ className = '', label, id, ...props }, ref) => {
     const useIdValue = useId();
     const radioId = id ?? useIdValue;

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
+import { Button } from '../components/Button';
 import { Tabs, TabItem } from '../components/Tabs';
 
 const meta: Meta<typeof Tabs> = {
@@ -107,17 +108,9 @@ export const Controlled: Story = {
                 Welcome to the overview section. This tab is controlled by the
                 parent component.
               </p>
-              <button
-                onClick={() => setActiveTab('details')}
-                style={{
-                  padding: '8px 16px',
-                  border: '1px solid #ccc',
-                  borderRadius: '4px',
-                  cursor: 'pointer',
-                }}
-              >
+              <Button onClick={() => setActiveTab('details')}>
                 Switch to Details
-              </button>
+              </Button>
             </div>
           </TabItem>
           <TabItem value="details" label="Details">
@@ -127,17 +120,9 @@ export const Controlled: Story = {
                 This is the details section. You can programmatically control
                 which tab is active.
               </p>
-              <button
-                onClick={() => setActiveTab('settings')}
-                style={{
-                  padding: '8px 16px',
-                  border: '1px solid #ccc',
-                  borderRadius: '4px',
-                  cursor: 'pointer',
-                }}
-              >
+              <Button onClick={() => setActiveTab('settings')}>
                 Switch to Settings
-              </button>
+              </Button>
             </div>
           </TabItem>
           <TabItem value="settings" label="Settings">
@@ -147,17 +132,9 @@ export const Controlled: Story = {
                 Configure your settings here. The parent component has full
                 control over tab switching.
               </p>
-              <button
-                onClick={() => setActiveTab('overview')}
-                style={{
-                  padding: '8px 16px',
-                  border: '1px solid #ccc',
-                  borderRadius: '4px',
-                  cursor: 'pointer',
-                }}
-              >
+              <Button onClick={() => setActiveTab('overview')}>
                 Back to Overview
-              </button>
+              </Button>
             </div>
           </TabItem>
         </Tabs>
@@ -166,171 +143,26 @@ export const Controlled: Story = {
   },
 };
 
-export const WithManyTabs: Story = {
+export const WithIcon: Story = {
   args: {
-    defaultValue: 'tab1',
+    defaultValue: 'home',
     children: [
-      <TabItem key="tab1" value="tab1" label="Dashboard">
+      <TabItem key="home" value="home" label="Home" icon="home">
         <div>
-          <h3>Dashboard</h3>
-          <p>Overview of all your data and metrics.</p>
+          <h3>Home</h3>
+          <p>Welcome to the home tab with an icon.</p>
         </div>
       </TabItem>,
-      <TabItem key="tab2" value="tab2" label="Analytics">
+      <TabItem key="search" value="search" label="Search" icon="search">
         <div>
-          <h3>Analytics</h3>
-          <p>Detailed analytics and reporting.</p>
+          <h3>Search</h3>
+          <p>Find what you're looking for in this search tab.</p>
         </div>
       </TabItem>,
-      <TabItem key="tab3" value="tab3" label="Users">
-        <div>
-          <h3>Users</h3>
-          <p>Manage user accounts and permissions.</p>
-        </div>
-      </TabItem>,
-      <TabItem key="tab4" value="tab4" label="Settings">
+      <TabItem key="settings" value="settings" label="Settings" icon="settings">
         <div>
           <h3>Settings</h3>
-          <p>Configure application settings.</p>
-        </div>
-      </TabItem>,
-      <TabItem key="tab5" value="tab5" label="Integrations">
-        <div>
-          <h3>Integrations</h3>
-          <p>Manage third-party integrations.</p>
-        </div>
-      </TabItem>,
-      <TabItem key="tab6" value="tab6" label="Support">
-        <div>
-          <h3>Support</h3>
-          <p>Get help and contact support.</p>
-        </div>
-      </TabItem>,
-    ],
-  },
-};
-
-export const WithComplexContent: Story = {
-  args: {
-    defaultValue: 'form',
-    children: [
-      <TabItem key="form" value="form" label="Contact Form">
-        <div style={{ maxWidth: '400px' }}>
-          <h3>Contact Us</h3>
-          <form
-            style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}
-          >
-            <div>
-              <label
-                htmlFor="name"
-                style={{ display: 'block', marginBottom: '4px' }}
-              >
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                style={{
-                  width: '100%',
-                  padding: '8px',
-                  border: '1px solid #ccc',
-                  borderRadius: '4px',
-                }}
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="email"
-                style={{ display: 'block', marginBottom: '4px' }}
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                style={{
-                  width: '100%',
-                  padding: '8px',
-                  border: '1px solid #ccc',
-                  borderRadius: '4px',
-                }}
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="message"
-                style={{ display: 'block', marginBottom: '4px' }}
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                rows={4}
-                style={{
-                  width: '100%',
-                  padding: '8px',
-                  border: '1px solid #ccc',
-                  borderRadius: '4px',
-                  resize: 'vertical',
-                }}
-              />
-            </div>
-            <button
-              type="submit"
-              style={{
-                padding: '12px',
-                backgroundColor: '#007bff',
-                color: 'white',
-                border: 'none',
-                borderRadius: '4px',
-                cursor: 'pointer',
-              }}
-            >
-              Send Message
-            </button>
-          </form>
-        </div>
-      </TabItem>,
-      <TabItem key="info" value="info" label="Information">
-        <div>
-          <h3>Company Information</h3>
-          <ul style={{ lineHeight: '1.6' }}>
-            <li>
-              <strong>Address:</strong> 123 Main Street, City, State 12345
-            </li>
-            <li>
-              <strong>Phone:</strong> (555) 123-4567
-            </li>
-            <li>
-              <strong>Email:</strong> contact@company.com
-            </li>
-            <li>
-              <strong>Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM
-            </li>
-          </ul>
-        </div>
-      </TabItem>,
-      <TabItem key="faq" value="faq" label="FAQ">
-        <div>
-          <h3>Frequently Asked Questions</h3>
-          <div style={{ marginBottom: '16px' }}>
-            <h4>How do I create an account?</h4>
-            <p>
-              You can create an account by clicking the "Sign Up" button and
-              filling out the registration form.
-            </p>
-          </div>
-          <div style={{ marginBottom: '16px' }}>
-            <h4>What payment methods do you accept?</h4>
-            <p>We accept all major credit cards, PayPal, and bank transfers.</p>
-          </div>
-          <div>
-            <h4>How can I contact support?</h4>
-            <p>
-              You can reach our support team through the contact form, email, or
-              phone during business hours.
-            </p>
-          </div>
+          <p>Configure your preferences in this settings tab.</p>
         </div>
       </TabItem>,
     ],

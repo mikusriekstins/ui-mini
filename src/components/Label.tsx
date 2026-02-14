@@ -1,6 +1,6 @@
 import { Root } from '@radix-ui/react-label';
 import { forwardRef } from 'react';
-import type { ElementRef, ComponentPropsWithoutRef } from 'react';
+import type { ComponentRef, ComponentPropsWithoutRef } from 'react';
 import './Label.css';
 
 export interface LabelProps extends ComponentPropsWithoutRef<typeof Root> {
@@ -8,7 +8,7 @@ export interface LabelProps extends ComponentPropsWithoutRef<typeof Root> {
   isRequired?: boolean;
 }
 
-const Label = forwardRef<ElementRef<typeof Root>, LabelProps>(
+const Label = forwardRef<ComponentRef<typeof Root>, LabelProps>(
   ({ className = '', text, isRequired = false, ...props }, ref) => {
     const labelClasses = `label ${className}`.trim();
 

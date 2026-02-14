@@ -10,6 +10,13 @@ export { Dialog } from './Dialog';
 export { Checkbox } from './Checkbox';
 export { RadioGroup, Radio } from './Radio';
 export { Select, type SelectOption, type SelectProps } from './Select';
-export { Tabs, TabItem } from './Tabs';
+export {
+  Tabs,
+  TabItem,
+  TabsRoot,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from './Tabs';
 export { VisuallyHidden } from './VisuallyHidden';
 export { Loading, type LoadingProps } from './Loading';

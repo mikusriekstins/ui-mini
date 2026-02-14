@@ -1,12 +1,12 @@
 import { Root } from '@radix-ui/react-toggle';
-import { forwardRef, ComponentPropsWithoutRef, ElementRef } from 'react';
+import { forwardRef, ComponentPropsWithoutRef, ComponentRef } from 'react';
 import './Toggle.css';
 
 export interface ToggleProps extends ComponentPropsWithoutRef<typeof Root> {
   variant?: 'primary' | 'secondary';
 }
 
-const Toggle = forwardRef<ElementRef<typeof Root>, ToggleProps>(
+const Toggle = forwardRef<ComponentRef<typeof Root>, ToggleProps>(
   ({ className = '', variant = 'primary', ...props }, ref) => {
     const toggleClasses =
       `toggle ${variant === 'secondary' ? 'toggle--secondary' : ''} ${className}`.trim();

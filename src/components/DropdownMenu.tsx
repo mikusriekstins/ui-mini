@@ -7,7 +7,7 @@ import {
   Item,
 } from '@radix-ui/react-dropdown-menu';
 import { forwardRef } from 'react';
-import type { ElementRef, ComponentPropsWithoutRef, ReactNode } from 'react';
+import type { ComponentRef, ComponentPropsWithoutRef, ReactNode } from 'react';
 import './DropdownMenu.css';
 
 interface DropdownMenuProps {
@@ -50,7 +50,7 @@ interface DropdownMenuItemProps {
 }
 
 const DropdownMenuItem = forwardRef<
-  ElementRef<typeof Item>,
+  ComponentRef<typeof Item>,
   DropdownMenuItemProps
 >(({ className = '', onClick, children, ...props }, ref) => (
   <Item
@@ -66,7 +66,7 @@ const DropdownMenuItem = forwardRef<
 DropdownMenuItem.displayName = Item.displayName;
 
 const DropdownMenuSeparator = forwardRef<
-  ElementRef<typeof Separator>,
+  ComponentRef<typeof Separator>,
   ComponentPropsWithoutRef<typeof Separator>
 >(({ className = '', ...props }, ref) => (
   <Separator
