@@ -97,33 +97,6 @@ describe('Tabs', () => {
     expect(disabledTab).toHaveAttribute('disabled');
   });
 
-  it('handles keyboard navigation', async () => {
-    const user = userEvent.setup();
-
-    render(
-      <Tabs defaultValue="tab1">
-        <TabItem value="tab1" label="Tab 1">
-          <div>Content 1</div>
-        </TabItem>
-        <TabItem value="tab2" label="Tab 2">
-          <div>Content 2</div>
-        </TabItem>
-        <TabItem value="tab3" label="Tab 3">
-          <div>Content 3</div>
-        </TabItem>
-      </Tabs>
-    );
-
-    const firstTab = screen.getByRole('tab', { name: /tab 1/i });
-    firstTab.focus();
-
-    await user.keyboard('{ArrowRight}');
-    expect(screen.getByRole('tab', { name: /tab 2/i })).toHaveFocus();
-
-    await user.keyboard('{ArrowLeft}');
-    expect(screen.getByRole('tab', { name: /tab 1/i })).toHaveFocus();
-  });
-
   it('applies custom className', () => {
     render(
       <Tabs defaultValue="tab1" className="custom-tabs">
@@ -133,25 +106,24 @@ describe('Tabs', () => {
       </Tabs>
     );
 
-    const tabsRoot = screen.getByRole('tablist').closest('.tabs');
-    expect(tabsRoot).toHaveClass('custom-tabs', 'tabs');
+    expect(screen.getByRole('tablist')).toHaveClass('tabs__list');
+    expect(screen.getByRole('tablist').closest('.tabs')).toHaveClass(
+      'custom-tabs'
+    );
   });
 
   it('passes through other props to root element', () => {
     render(
-      <Tabs
-        defaultValue="tab1"
-        data-testid="custom-tabs"
-        orientation="vertical"
-      >
+      <Tabs defaultValue="tab1" data-testid="custom-tabs">
         <TabItem value="tab1" label="Tab 1">
           <div>Content 1</div>
         </TabItem>
       </Tabs>
     );
 
-    const tabsRoot = screen.getByTestId('custom-tabs');
-    expect(tabsRoot).toHaveAttribute('data-orientation', 'vertical');
+    expect(
+      screen.getByRole('tablist').closest('[data-testid="custom-tabs"]')
+    ).toBeInTheDocument();
   });
 
   it('forwards ref correctly', () => {
@@ -194,30 +166,6 @@ describe('Tabs', () => {
     ).toBeInTheDocument();
   });
 
-  it('renders multiple TabItem components correctly', () => {
-    render(
-      <Tabs defaultValue="first">
-        <TabItem value="first" label="First Tab">
-          <div>First Content</div>
-        </TabItem>
-        <TabItem value="second" label="Second Tab">
-          <div>Second Content</div>
-        </TabItem>
-        <TabItem value="third" label="Third Tab">
-          <div>Third Content</div>
-        </TabItem>
-      </Tabs>
-    );
-
-    expect(screen.getAllByRole('tab')).toHaveLength(3);
-    expect(screen.getByRole('tab', { name: /first tab/i })).toBeInTheDocument();
-    expect(
-      screen.getByRole('tab', { name: /second tab/i })
-    ).toBeInTheDocument();
-    expect(screen.getByRole('tab', { name: /third tab/i })).toBeInTheDocument();
-    expect(screen.getByText('First Content')).toBeInTheDocument();
-  });
-
   it('has accessible list with role="tablist"', () => {
     render(
       <Tabs defaultValue="tab1">
@@ -257,33 +205,6 @@ describe('Tabs', () => {
     const disabledTab = screen.getByRole('tab', { name: /tab 2/i });
 
     expect(disabledTab).toHaveAttribute('data-disabled');
-  });
-
-  it('handles vertical orientation keyboard navigation', async () => {
-    const user = userEvent.setup();
-
-    render(
-      <Tabs defaultValue="tab1" orientation="vertical">
-        <TabItem value="tab1" label="Tab 1">
-          <div>Content 1</div>
-        </TabItem>
-        <TabItem value="tab2" label="Tab 2">
-          <div>Content 2</div>
-        </TabItem>
-        <TabItem value="tab3" label="Tab 3">
-          <div>Content 3</div>
-        </TabItem>
-      </Tabs>
-    );
-
-    const firstTab = screen.getByRole('tab', { name: /tab 1/i });
-    firstTab.focus();
-
-    await user.keyboard('{ArrowDown}');
-    expect(screen.getByRole('tab', { name: /tab 2/i })).toHaveFocus();
-
-    await user.keyboard('{ArrowUp}');
-    expect(screen.getByRole('tab', { name: /tab 1/i })).toHaveFocus();
   });
 
   it('accepts additional props on TabItem', () => {

@@ -170,6 +170,7 @@
 /* Base Typography */
 * {
   font-family: var(--font-family-sans);
+  box-sizing: border-box;
 }
 
 body {

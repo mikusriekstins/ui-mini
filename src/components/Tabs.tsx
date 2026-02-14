@@ -8,7 +8,9 @@ import {
   FC,
   Children,
 } from 'react';
+
 import './Tabs.css';
+import { Icon, IconName } from './Icon';
 
 export interface TabsProps extends ComponentPropsWithoutRef<typeof Root> {
   children: ReactNode;
@@ -19,6 +21,7 @@ export interface TabItemProps extends ComponentPropsWithoutRef<'div'> {
   label: ReactNode;
   children: ReactNode;
   disabled?: boolean;
+  icon?: IconName;
 }
 
 const TabsRoot = forwardRef<ComponentRef<typeof Root>, TabsProps>(
@@ -42,13 +45,12 @@ TabsList.displayName = 'TabsList';
 
 const TabsTrigger = forwardRef<
   ComponentRef<typeof Trigger>,
-  ComponentPropsWithoutRef<typeof Trigger>
->(({ className = '', ...props }, ref) => (
-  <Trigger
-    ref={ref}
-    className={`tabs__trigger ${className}`.trim()}
-    {...props}
-  />
+  ComponentPropsWithoutRef<typeof Trigger> & { icon?: IconName }
+>(({ className = '', icon, ...props }, ref) => (
+  <Trigger ref={ref} className={`tabs__trigger ${className}`.trim()} {...props}>
+    {icon && <Icon name={icon} size="small" className="tabs__icon" />}
+    {props.children && <span className="tabs__text">{props.children}</span>}
+  </Trigger>
 ));
 
 TabsTrigger.displayName = 'TabsTrigger';
@@ -83,6 +85,7 @@ const Tabs = forwardRef<
             value={child.props.value}
             disabled={child.props.disabled}
             data-disabled={child.props.disabled}
+            icon={child.props.icon}
           >
             {child.props.label}
           </TabsTrigger>

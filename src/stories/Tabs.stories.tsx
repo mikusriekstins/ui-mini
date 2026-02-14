@@ -142,3 +142,29 @@ export const Controlled: Story = {
     );
   },
 };
+
+export const WithIcon: Story = {
+  args: {
+    defaultValue: 'home',
+    children: [
+      <TabItem key="home" value="home" label="Home" icon="home">
+        <div>
+          <h3>Home</h3>
+          <p>Welcome to the home tab with an icon.</p>
+        </div>
+      </TabItem>,
+      <TabItem key="search" value="search" label="Search" icon="search">
+        <div>
+          <h3>Search</h3>
+          <p>Find what you're looking for in this search tab.</p>
+        </div>
+      </TabItem>,
+      <TabItem key="settings" value="settings" label="Settings" icon="settings">
+        <div>
+          <h3>Settings</h3>
+          <p>Configure your preferences in this settings tab.</p>
+        </div>
+      </TabItem>,
+    ],
+  },
+};
