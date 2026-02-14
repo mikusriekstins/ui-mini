@@ -16,26 +16,26 @@
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-  padding-top: var(--component-padding-block-base);
-  padding-bottom: calc(
-    var(--component-padding-block-base) - var(--higlight-border-size)
-  );
+  padding-block: var(--component-padding-block-base)
+    calc(var(--component-padding-block-base) - var(--highlight-border-size));
   padding-inline: var(--component-padding-inline-base);
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-sm);
   color: var(--color-gray-900);
   background-color: transparent;
-  border: none;
-  border-bottom: var(--higlight-border-size) solid transparent;
-  border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+  border-block-end: var(--highlight-border-size) solid transparent;
+  border-start-start-radius: var(--border-radius-md);
+  border-start-end-radius: var(--border-radius-md);
+  border-end-start-radius: 0;
+  border-end-end-radius: 0;
   cursor: pointer;
   transition:
     background-color var(--transition-base),
     color var(--transition-base),
     box-shadow var(--transition-base);
   outline: none;
-  text-decoration: none;
+  text-decoration-line: none;
   box-sizing: border-box;
 }
 
@@ -52,7 +52,7 @@
 .tabs__trigger[data-state='active'] {
   background-color: var(--color-gray-100);
   color: var(--color-gray-900);
-  border-bottom-color: var(--highlight-border);
+  border-block-end-color: var(--highlight-border);
 }
 
 .tabs__trigger:disabled {
