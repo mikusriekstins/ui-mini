@@ -158,7 +158,8 @@
   --focus-outline-color: var(--color-primary-500);
 
   /* Tabs */
-  --highlight-border: var(--color-primary-600);
+  --higlight-border-size: 0.1875rem;
+  --highlight-border: var(--color-secondary-500);
 
   /* Transitions */
   --transition-fast: 150ms ease-in-out;

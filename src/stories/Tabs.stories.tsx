@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
+import { Button } from '../components/Button';
 import { Tabs, TabItem } from '../components/Tabs';
 
 const meta: Meta<typeof Tabs> = {
@@ -107,17 +108,9 @@ export const Controlled: Story = {
                 Welcome to the overview section. This tab is controlled by the
                 parent component.
               </p>
-              <button
-                onClick={() => setActiveTab('details')}
-                style={{
-                  padding: '8px 16px',
-                  border: '1px solid #ccc',
-                  borderRadius: '4px',
-                  cursor: 'pointer',
-                }}
-              >
+              <Button onClick={() => setActiveTab('details')}>
                 Switch to Details
-              </button>
+              </Button>
             </div>
           </TabItem>
           <TabItem value="details" label="Details">
@@ -127,17 +120,9 @@ export const Controlled: Story = {
                 This is the details section. You can programmatically control
                 which tab is active.
               </p>
-              <button
-                onClick={() => setActiveTab('settings')}
-                style={{
-                  padding: '8px 16px',
-                  border: '1px solid #ccc',
-                  borderRadius: '4px',
-                  cursor: 'pointer',
-                }}
-              >
+              <Button onClick={() => setActiveTab('settings')}>
                 Switch to Settings
-              </button>
+              </Button>
             </div>
           </TabItem>
           <TabItem value="settings" label="Settings">
@@ -147,17 +132,9 @@ export const Controlled: Story = {
                 Configure your settings here. The parent component has full
                 control over tab switching.
               </p>
-              <button
-                onClick={() => setActiveTab('overview')}
-                style={{
-                  padding: '8px 16px',
-                  border: '1px solid #ccc',
-                  borderRadius: '4px',
-                  cursor: 'pointer',
-                }}
-              >
+              <Button onClick={() => setActiveTab('overview')}>
                 Back to Overview
-              </button>
+              </Button>
             </div>
           </TabItem>
         </Tabs>

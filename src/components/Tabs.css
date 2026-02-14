@@ -17,7 +17,9 @@
   justify-content: center;
   white-space: nowrap;
   padding-top: var(--component-padding-block-base);
-  padding-bottom: calc(var(--component-padding-block-base) - 0.25rem);
+  padding-bottom: calc(
+    var(--component-padding-block-base) - var(--higlight-border-size)
+  );
   padding-inline: var(--component-padding-inline-base);
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-regular);
@@ -25,7 +27,7 @@
   color: var(--color-gray-900);
   background-color: transparent;
   border: none;
-  border-bottom: 0.25rem solid transparent;
+  border-bottom: var(--higlight-border-size) solid transparent;
   border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
   cursor: pointer;
   transition:
