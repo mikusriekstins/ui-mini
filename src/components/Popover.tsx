@@ -1,6 +1,6 @@
 import { Root, Trigger, Portal, Content, Close } from '@radix-ui/react-popover';
 import { forwardRef } from 'react';
-import type { ElementRef, ComponentPropsWithoutRef, ReactNode } from 'react';
+import type { ComponentRef, ComponentPropsWithoutRef, ReactNode } from 'react';
 
 import { Icon } from './Icon';
 import './Popover.css';
@@ -20,7 +20,7 @@ export interface PopoverProps extends Omit<
   className?: string;
 }
 
-const Popover = forwardRef<ElementRef<typeof Content>, PopoverProps>(
+const Popover = forwardRef<ComponentRef<typeof Content>, PopoverProps>(
   (
     {
       children,

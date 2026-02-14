@@ -1,48 +1,45 @@
-/* Import CSS Variables */
 @import url('../styles/variables.css');
 
-/* Tabs Root */
 .tabs {
   display: flex;
   flex-direction: column;
   inline-size: 100%;
 }
 
-/* Tabs List */
 .tabs__list {
   display: flex;
   align-items: center;
-  border-block-end: 1px solid var(--color-border);
-  background-color: var(--color-muted);
-  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
-  padding: var(--xss);
-  gap: var(--xss);
 }
 
-/* Tabs Trigger */
 .tabs__trigger {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-  border-radius: var(--border-radius-sm);
-  padding-block: var(--xs);
-  padding-inline: var(--sm);
-  font-size: var(--font-size-sm);
+  padding-top: var(--component-padding-block-base);
+  padding-bottom: calc(var(--component-padding-block-base) - 0.25rem);
+  padding-inline: var(--component-padding-inline-base);
+  font-size: var(--font-size-md);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-sm);
+  color: var(--color-gray-900);
   background-color: transparent;
-  color: var(--color-muted-foreground);
   border: none;
+  border-bottom: 0.25rem solid transparent;
+  border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base),
+    box-shadow var(--transition-base);
   outline: none;
   text-decoration: none;
+  box-sizing: border-box;
 }
 
-.tabs__trigger:hover {
-  color: var(--color-foreground);
-  background-color: var(--color-gray-100);
+.tabs__trigger:hover:not([data-disabled]) {
+  background-color: var(--color-gray-300);
+  color: var(--color-gray-900);
 }
 
 .tabs__trigger:focus-visible {
@@ -51,24 +48,19 @@
 }
 
 .tabs__trigger[data-state='active'] {
-  color: var(--color-foreground);
-  background-color: var(--color-background);
-  box-shadow: var(--shadow-sm);
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-900);
+  border-bottom-color: var(--highlight-border);
 }
 
 .tabs__trigger:disabled {
-  opacity: 0.5;
+  opacity: 0.6;
   cursor: not-allowed;
   pointer-events: none;
 }
 
-/* Tabs Content */
 .tabs__content {
-  padding: var(--md);
-  background-color: var(--color-background);
-  border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
-  border: 1px solid var(--color-border);
-  border-block-start: none;
+  padding: 0;
   outline: none;
 }
 
@@ -77,7 +69,6 @@
   outline-offset: var(--focus-outline-offset);
 }
 
-/* Animation for content */
 .tabs__content[data-state='active'] {
   animation: fadeIn var(--transition-fast);
 }

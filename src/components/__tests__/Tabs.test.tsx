@@ -133,7 +133,7 @@ describe('Tabs', () => {
       </Tabs>
     );
 
-    const tabsRoot = screen.getByRole('tablist').parentElement;
+    const tabsRoot = screen.getByRole('tablist').closest('.tabs');
     expect(tabsRoot).toHaveClass('custom-tabs', 'tabs');
   });
 
@@ -216,5 +216,106 @@ describe('Tabs', () => {
     ).toBeInTheDocument();
     expect(screen.getByRole('tab', { name: /third tab/i })).toBeInTheDocument();
     expect(screen.getByText('First Content')).toBeInTheDocument();
+  });
+
+  it('has accessible list with role="tablist"', () => {
+    render(
+      <Tabs defaultValue="tab1">
+        <TabItem value="tab1" label="Tab 1">
+          <div>Content 1</div>
+        </TabItem>
+      </Tabs>
+    );
+
+    expect(screen.getByRole('tablist')).toBeInTheDocument();
+  });
+
+  it('has role="tabpanel" on content areas', () => {
+    render(
+      <Tabs defaultValue="tab1">
+        <TabItem value="tab1" label="Tab 1">
+          <div>Content 1</div>
+        </TabItem>
+      </Tabs>
+    );
+
+    expect(screen.getByRole('tabpanel')).toBeInTheDocument();
+  });
+
+  it('respects disabled hover state', () => {
+    render(
+      <Tabs defaultValue="tab1">
+        <TabItem value="tab1" label="Tab 1">
+          <div>Content 1</div>
+        </TabItem>
+        <TabItem value="tab2" label="Tab 2" disabled>
+          <div>Content 2</div>
+        </TabItem>
+      </Tabs>
+    );
+
+    const disabledTab = screen.getByRole('tab', { name: /tab 2/i });
+
+    expect(disabledTab).toHaveAttribute('data-disabled');
+  });
+
+  it('handles vertical orientation keyboard navigation', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Tabs defaultValue="tab1" orientation="vertical">
+        <TabItem value="tab1" label="Tab 1">
+          <div>Content 1</div>
+        </TabItem>
+        <TabItem value="tab2" label="Tab 2">
+          <div>Content 2</div>
+        </TabItem>
+        <TabItem value="tab3" label="Tab 3">
+          <div>Content 3</div>
+        </TabItem>
+      </Tabs>
+    );
+
+    const firstTab = screen.getByRole('tab', { name: /tab 1/i });
+    firstTab.focus();
+
+    await user.keyboard('{ArrowDown}');
+    expect(screen.getByRole('tab', { name: /tab 2/i })).toHaveFocus();
+
+    await user.keyboard('{ArrowUp}');
+    expect(screen.getByRole('tab', { name: /tab 1/i })).toHaveFocus();
+  });
+
+  it('warns about duplicate value props', () => {
+    const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+
+    render(
+      <Tabs defaultValue="tab1">
+        <TabItem value="tab1" label="Tab 1">
+          <div>Content 1</div>
+        </TabItem>
+        <TabItem value="tab1" label="Duplicate Tab">
+          <div>Content 2</div>
+        </TabItem>
+      </Tabs>
+    );
+
+    expect(warnSpy).toHaveBeenCalledWith(
+      expect.stringContaining('Duplicate TabItem value prop detected')
+    );
+
+    warnSpy.mockRestore();
+  });
+
+  it('accepts additional props on TabItem', () => {
+    render(
+      <Tabs defaultValue="tab1">
+        <TabItem value="tab1" label="Tab 1">
+          <div data-testid="custom-content">Content 1</div>
+        </TabItem>
+      </Tabs>
+    );
+
+    expect(screen.getByTestId('custom-content')).toBeInTheDocument();
   });
 });

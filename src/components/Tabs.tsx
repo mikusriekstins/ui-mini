@@ -2,11 +2,12 @@ import { Root, List, Trigger, Content } from '@radix-ui/react-tabs';
 import {
   forwardRef,
   ComponentPropsWithoutRef,
-  ElementRef,
+  ComponentRef,
   ReactNode,
   ReactElement,
   FC,
   Children,
+  useEffect,
 } from 'react';
 import './Tabs.css';
 
@@ -14,14 +15,14 @@ export interface TabsProps extends ComponentPropsWithoutRef<typeof Root> {
   children: ReactNode;
 }
 
-export interface TabItemProps {
+export interface TabItemProps extends ComponentPropsWithoutRef<'div'> {
   value: string;
   label: ReactNode;
   children: ReactNode;
   disabled?: boolean;
 }
 
-const TabsRoot = forwardRef<ElementRef<typeof Root>, TabsProps>(
+const TabsRoot = forwardRef<ComponentRef<typeof Root>, TabsProps>(
   ({ className = '', children, ...props }, ref) => (
     <Root ref={ref} className={`tabs ${className}`.trim()} {...props}>
       {children}
@@ -32,7 +33,7 @@ const TabsRoot = forwardRef<ElementRef<typeof Root>, TabsProps>(
 TabsRoot.displayName = 'TabsRoot';
 
 const TabsList = forwardRef<
-  ElementRef<typeof List>,
+  ComponentRef<typeof List>,
   ComponentPropsWithoutRef<typeof List>
 >(({ className = '', ...props }, ref) => (
   <List ref={ref} className={`tabs__list ${className}`.trim()} {...props} />
@@ -41,7 +42,7 @@ const TabsList = forwardRef<
 TabsList.displayName = 'TabsList';
 
 const TabsTrigger = forwardRef<
-  ElementRef<typeof Trigger>,
+  ComponentRef<typeof Trigger>,
   ComponentPropsWithoutRef<typeof Trigger>
 >(({ className = '', ...props }, ref) => (
   <Trigger
@@ -54,7 +55,7 @@ const TabsTrigger = forwardRef<
 TabsTrigger.displayName = 'TabsTrigger';
 
 const TabsContent = forwardRef<
-  ElementRef<typeof Content>,
+  ComponentRef<typeof Content>,
   ComponentPropsWithoutRef<typeof Content>
 >(({ className = '', ...props }, ref) => (
   <Content
@@ -67,28 +68,41 @@ const TabsContent = forwardRef<
 TabsContent.displayName = 'TabsContent';
 
 const Tabs = forwardRef<
-  ElementRef<typeof Root>,
+  ComponentRef<typeof Root>,
   Omit<TabsProps, 'children'> & {
     children: ReactElement<TabItemProps> | ReactElement<TabItemProps>[];
   }
 >(({ className = '', children, ...props }, ref) => {
   const tabItems = Children.toArray(children) as ReactElement<TabItemProps>[];
 
+  useEffect(() => {
+    const values = tabItems.map((item) => item.props.value);
+    const duplicates = values.filter(
+      (value, index) => values.indexOf(value) !== index
+    );
+    if (duplicates.length > 0) {
+      console.warn(
+        `Duplicate TabItem value prop detected: "${duplicates[0]}". TabItem values must be unique.`
+      );
+    }
+  }, [tabItems]);
+
   return (
     <TabsRoot ref={ref} className={className} {...props}>
       <TabsList>
-        {tabItems.map((child) => (
+        {tabItems.map((child, index) => (
           <TabsTrigger
-            key={child.props.value}
+            key={index}
             value={child.props.value}
             disabled={child.props.disabled}
+            data-disabled={child.props.disabled}
           >
             {child.props.label}
           </TabsTrigger>
         ))}
       </TabsList>
-      {tabItems.map((child) => (
-        <TabsContent key={child.props.value} value={child.props.value}>
+      {tabItems.map((child, index) => (
+        <TabsContent key={index} value={child.props.value}>
           {child.props.children}
         </TabsContent>
       ))}
@@ -104,4 +118,4 @@ const TabItem: FC<TabItemProps> = () => {
 
 TabItem.displayName = 'TabItem';
 
-export { Tabs, TabItem };
+export { Tabs, TabItem, TabsRoot, TabsList, TabsTrigger, TabsContent };

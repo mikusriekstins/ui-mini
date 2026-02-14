@@ -9,7 +9,7 @@ import {
   Close,
 } from '@radix-ui/react-dialog';
 import { forwardRef } from 'react';
-import type { ElementRef, ReactNode } from 'react';
+import type { ComponentRef, ReactNode } from 'react';
 
 import { Icon } from './Icon';
 import './Dialog.css';
@@ -25,7 +25,7 @@ export interface DialogProps {
   className?: string;
 }
 
-const Dialog = forwardRef<ElementRef<typeof Content>, DialogProps>(
+const Dialog = forwardRef<ComponentRef<typeof Content>, DialogProps>(
   (
     {
       children,

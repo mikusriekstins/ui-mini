@@ -1,6 +1,6 @@
 import { Root, Indicator } from '@radix-ui/react-checkbox';
 import { forwardRef, useId } from 'react';
-import type { ElementRef, ComponentPropsWithoutRef } from 'react';
+import type { ComponentRef, ComponentPropsWithoutRef } from 'react';
 
 import './Checkbox.css';
 import { Icon } from './Icon';
@@ -9,7 +9,7 @@ export interface CheckboxProps extends ComponentPropsWithoutRef<typeof Root> {
   label?: string;
 }
 
-const Checkbox = forwardRef<ElementRef<typeof Root>, CheckboxProps>(
+const Checkbox = forwardRef<ComponentRef<typeof Root>, CheckboxProps>(
   ({ className = '', label, id, ...props }, ref) => {
     const generatedId = useId();
     const checkboxId = id ?? generatedId;
