@@ -286,27 +286,6 @@ describe('Tabs', () => {
     expect(screen.getByRole('tab', { name: /tab 1/i })).toHaveFocus();
   });
 
-  it('warns about duplicate value props', () => {
-    const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
-
-    render(
-      <Tabs defaultValue="tab1">
-        <TabItem value="tab1" label="Tab 1">
-          <div>Content 1</div>
-        </TabItem>
-        <TabItem value="tab1" label="Duplicate Tab">
-          <div>Content 2</div>
-        </TabItem>
-      </Tabs>
-    );
-
-    expect(warnSpy).toHaveBeenCalledWith(
-      expect.stringContaining('Duplicate TabItem value prop detected')
-    );
-
-    warnSpy.mockRestore();
-  });
-
   it('accepts additional props on TabItem', () => {
     render(
       <Tabs defaultValue="tab1">

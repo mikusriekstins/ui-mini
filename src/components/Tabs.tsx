@@ -7,7 +7,6 @@ import {
   ReactElement,
   FC,
   Children,
-  useEffect,
 } from 'react';
 import './Tabs.css';
 
@@ -74,18 +73,6 @@ const Tabs = forwardRef<
   }
 >(({ className = '', children, ...props }, ref) => {
   const tabItems = Children.toArray(children) as ReactElement<TabItemProps>[];
-
-  useEffect(() => {
-    const values = tabItems.map((item) => item.props.value);
-    const duplicates = values.filter(
-      (value, index) => values.indexOf(value) !== index
-    );
-    if (duplicates.length > 0) {
-      console.warn(
-        `Duplicate TabItem value prop detected: "${duplicates[0]}". TabItem values must be unique.`
-      );
-    }
-  }, [tabItems]);
 
   return (
     <TabsRoot ref={ref} className={className} {...props}>
