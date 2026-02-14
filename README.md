@@ -71,7 +71,6 @@ All colors are defined in `/dist/ui-mini.css` and can be customized by overridin
 
 ## Technical Details
 
-- **Version**: 0.10.1
 - **License**: ISC
 - **Dependencies**: @radix-ui/react-\* (8 packages), lucide-react
 - **Peer Dependencies**: React >=19.0.0, react-dom >=19.0.0
