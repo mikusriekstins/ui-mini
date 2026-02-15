@@ -109,7 +109,7 @@
   --ui-color-popover-bg: var(--ui-color-white);
   --ui-color-popover-border: var(--ui-color-neutral-200);
   --ui-color-popover-text: var(--ui-color-neutral-900);
-  --ui-color-tabs-indicator: var(--ui-color-neutral-200);
+  --ui-color-tabs-indicator: var(--ui-color-neutral-300);
   --ui-color-tabs-trigger-active: var(--ui-color-primary-600);
   --ui-color-dropdownmenu-bg: var(--ui-color-white);
   --ui-color-dropdownmenu-item-hover: var(--ui-color-neutral-100);
@@ -178,7 +178,7 @@
 
   --focus-outline-width: 2px;
   --focus-outline-offset: 2px;
-  --focus-outline-color: var(--ui-color-primary);
+  --focus-outline-color: var(--ui-color-primary-700);
 
   --highlight-border-size: 0.1875rem;
   --highlight-border: var(--ui-color-secondary-500);
@@ -241,7 +241,7 @@
   --ui-color-popover-bg: var(--ui-color-neutral-900);
   --ui-color-popover-border: var(--ui-color-neutral-700);
   --ui-color-popover-text: var(--ui-color-neutral-100);
-  --ui-color-tabs-indicator: var(--ui-color-neutral-700);
+  --ui-color-tabs-indicator: var(--ui-color-neutral-600);
   --ui-color-tabs-trigger-active: var(--ui-color-primary-600);
   --ui-color-select-trigger-bg: var(--ui-color-neutral-900);
   --ui-color-select-trigger-text: var(--ui-color-neutral-100);
