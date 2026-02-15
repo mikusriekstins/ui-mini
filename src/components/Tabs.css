@@ -1,5 +1,11 @@
 @import url('../styles/variables.css');
 
+:root {
+  --ui-color-label-text: var(--color-foreground);
+  --ui-color-tabs-indicator: var(--color-ghost-hover);
+  --ui-color-tabs-trigger-active: var(--color-ghost-active);
+}
+
 .tabs {
   display: flex;
   flex-direction: column;
@@ -21,7 +27,7 @@
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-sm);
-  color: var(--color-gray-900);
+  color: var(--ui-color-label-text);
   background-color: transparent;
   border: 0;
   border-start-start-radius: var(--border-radius-md);
@@ -38,8 +44,8 @@
 }
 
 .tabs__trigger:hover:not([data-disabled]) {
-  background-color: var(--color-gray-300);
-  color: var(--color-gray-900);
+  background-color: var(--ui-color-tabs-indicator);
+  color: var(--ui-color-label-text);
 }
 
 .tabs__trigger:focus-visible {
@@ -48,10 +54,10 @@
 }
 
 .tabs__trigger[data-state='active'] {
-  background-color: var(--color-gray-100);
-  color: var(--color-gray-900);
+  background-color: var(--ui-color-tabs-trigger-active);
+  color: var(--ui-color-label-text);
   box-shadow: inset 0 calc(var(--highlight-border-size) * -1) 0
-    var(--highlight-border);
+    var(--ui-color-tabs-indicator);
 }
 
 .tabs__trigger:disabled {

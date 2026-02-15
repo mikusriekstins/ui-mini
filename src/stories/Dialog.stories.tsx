@@ -79,7 +79,7 @@ export const WithForm: Story = {
               defaultValue="Pedro Duarte"
               style={{
                 padding: '8px 12px',
-                border: '1px solid var(--color-border)',
+                border: '1px solid var(--color-border-default)',
                 borderRadius: '6px',
                 fontSize: 'var(--font-size-sm)',
               }}
@@ -107,7 +107,7 @@ export const WithForm: Story = {
               defaultValue="@peduarte"
               style={{
                 padding: '8px 12px',
-                border: '1px solid var(--color-border)',
+                border: '1px solid var(--color-border-default)',
                 borderRadius: '6px',
                 fontSize: 'var(--font-size-sm)',
               }}

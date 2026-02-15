@@ -7,7 +7,7 @@
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-md);
   line-height: var(--line-height-sm);
-  border: 1px solid var(--color-gray-300);
+  border: 1px solid var(--ui-color-toggle-track);
   cursor: pointer;
   transition:
     background-color var(--transition-base),
@@ -20,14 +20,14 @@
   text-decoration: none;
   outline: none;
   background-color: transparent;
-  color: var(--color-gray-700);
+  color: var(--ui-color-label-text);
   box-sizing: border-box;
   block-size: var(--component-block-size-base);
 }
 
 .toggle:hover:not([data-disabled]):not([data-state='on']) {
-  background-color: var(--color-muted);
-  border-color: var(--color-gray-400);
+  background-color: var(--ui-color-toggle-track);
+  border-color: var(--ui-color-toggle-track);
 }
 
 .toggle:focus-visible {
@@ -41,65 +41,65 @@
 }
 
 .toggle[data-state='on'][data-disabled] {
-  background-color: var(--color-gray-300);
-  color: var(--color-gray-600);
-  border-color: var(--color-gray-300);
+  background-color: var(--ui-color-toggle-track);
+  color: var(--ui-color-label-text);
+  border-color: var(--ui-color-toggle-track);
 }
 
 /* Toggle pressed/active state */
 .toggle[data-state='on'] {
-  background-color: var(--color-primary-600);
-  color: var(--color-white);
-  border-color: var(--color-primary-600);
+  background-color: var(--ui-color-toggle-checked-track);
+  color: var(--ui-color-toggle-thumb);
+  border-color: var(--ui-color-toggle-checked-track);
 }
 
 .toggle[data-state='on']:hover:not([data-disabled]) {
-  background-color: var(--color-primary-700);
-  border-color: var(--color-primary-700);
+  background-color: var(--ui-color-toggle-checked-track);
+  border-color: var(--ui-color-toggle-checked-track);
 }
 
 .toggle[data-state='on']:active:not([data-disabled]) {
-  background-color: var(--color-primary-800);
-  border-color: var(--color-primary-800);
+  background-color: var(--ui-color-toggle-checked-track);
+  border-color: var(--ui-color-toggle-checked-track);
 }
 
 /* Toggle variants */
 .toggle--secondary {
   background-color: transparent;
-  color: var(--color-gray-900);
-  border-color: var(--color-gray-300);
+  color: var(--ui-color-label-text);
+  border-color: var(--ui-color-toggle-track);
 }
 
 .toggle--secondary:hover:not([data-disabled]):not([data-state='on']) {
-  background-color: var(--color-muted);
-  border-color: var(--color-gray-400);
+  background-color: var(--ui-color-toggle-track);
+  border-color: var(--ui-color-toggle-track);
 }
 
 .toggle--secondary[data-state='on'] {
-  background-color: var(--color-gray-700);
-  color: var(--color-white);
-  border-color: var(--color-gray-700);
+  background-color: var(--ui-color-toggle-track);
+  color: var(--ui-color-toggle-thumb);
+  border-color: var(--ui-color-toggle-track);
 }
 
 .toggle--secondary[data-state='on']:hover:not([data-disabled]) {
-  background-color: var(--color-gray-800);
-  border-color: var(--color-gray-800);
+  background-color: var(--ui-color-toggle-track);
+  border-color: var(--ui-color-toggle-track);
 }
 
 /* Dark theme toggle uses secondary color for primary variant */
 [data-theme='dark'] .toggle[data-state='on']:not(.toggle--secondary) {
-  background-color: var(--color-secondary-600);
-  border-color: var(--color-secondary-600);
+  background-color: var(--ui-color-toggle-checked-track);
+  border-color: var(--ui-color-toggle-checked-track);
 }
 
 [data-theme='dark']
   .toggle[data-state='on']:hover:not([data-disabled]):not(.toggle--secondary) {
-  background-color: var(--color-secondary-700);
-  border-color: var(--color-secondary-700);
+  background-color: var(--ui-color-toggle-checked-track);
+  border-color: var(--ui-color-toggle-checked-track);
 }
 
 [data-theme='dark']
   .toggle[data-state='on']:active:not([data-disabled]):not(.toggle--secondary) {
-  background-color: var(--color-secondary-800);
-  border-color: var(--color-secondary-800);
+  background-color: var(--ui-color-toggle-checked-track);
+  border-color: var(--ui-color-toggle-checked-track);
 }

@@ -19,8 +19,8 @@
   inline-size: 1.125rem;
   block-size: 1.125rem;
   border-radius: var(--border-radius-sm);
-  border: 1px solid var(--color-gray-300);
-  background-color: var(--color-white);
+  border: 1px solid var(--ui-color-checkbox-border);
+  background-color: var(--ui-color-input-bg);
   cursor: pointer;
   transition:
     background-color var(--transition-base),
@@ -35,8 +35,8 @@
 }
 
 .checkbox__checkbox:hover:not([data-disabled]) {
-  border-color: var(--color-gray-400);
-  background-color: var(--color-muted);
+  border-color: var(--ui-color-checkbox-border);
+  background-color: var(--ui-color-checkbox-checked-bg);
 }
 
 .checkbox__checkbox:focus-visible {
@@ -46,26 +46,26 @@
 
 .checkbox__checkbox[data-disabled] {
   cursor: not-allowed;
-  background-color: var(--color-gray-100);
-  border-color: var(--color-gray-200);
+  background-color: var(--ui-color-input-border);
+  border-color: var(--ui-color-input-border);
 }
 
 /* Checked state */
 .checkbox__checkbox[data-state='checked'] {
-  background-color: var(--color-primary-600);
-  border-color: var(--color-primary-600);
-  color: var(--color-white);
+  background-color: var(--ui-color-checkbox-checked-bg);
+  border-color: var(--ui-color-checkbox-checked-bg);
+  color: var(--ui-color-checkbox-checkmark);
 }
 
 .checkbox__checkbox[data-state='checked']:hover:not([data-disabled]) {
-  background-color: var(--color-primary-700);
-  border-color: var(--color-primary-700);
+  background-color: var(--ui-color-checkbox-checked-bg);
+  border-color: var(--ui-color-checkbox-checked-bg);
 }
 
 .checkbox__checkbox[data-state='checked'][data-disabled] {
-  background-color: var(--color-gray-300);
-  border-color: var(--color-gray-300);
-  color: var(--color-gray-500);
+  background-color: var(--ui-color-checkbox-checked-bg);
+  border-color: var(--ui-color-checkbox-checked-bg);
+  color: var(--ui-color-checkbox-border);
 }
 
 /* Checkbox indicator (checkmark container) */
@@ -96,14 +96,14 @@
 
 /* Dark theme checkbox uses secondary color */
 [data-theme='dark'] .checkbox__checkbox[data-state='checked'] {
-  background-color: var(--color-secondary-600);
-  border-color: var(--color-secondary-600);
+  background-color: var(--ui-color-checkbox-checked-bg);
+  border-color: var(--ui-color-checkbox-checked-bg);
 }
 
 [data-theme='dark']
   .checkbox__checkbox[data-state='checked']:hover:not([data-disabled]) {
-  background-color: var(--color-secondary-700);
-  border-color: var(--color-secondary-700);
+  background-color: var(--ui-color-checkbox-checked-bg);
+  border-color: var(--ui-color-checkbox-checked-bg);
 }
 
 /* Animation for check indicator */

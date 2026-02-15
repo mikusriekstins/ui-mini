@@ -71,7 +71,7 @@ export const Basic: Story = {
                 style={{
                   width: '100%',
                   padding: '4px 8px',
-                  border: '1px solid var(--color-border)',
+                  border: '1px solid var(--color-border-default)',
                   borderRadius: '4px',
                   fontSize: 'var(--font-size-2xs)',
                 }}
@@ -94,7 +94,7 @@ export const Basic: Story = {
                 style={{
                   width: '100%',
                   padding: '4px 8px',
-                  border: '1px solid var(--color-border)',
+                  border: '1px solid var(--color-border-default)',
                   borderRadius: '4px',
                   fontSize: 'var(--font-size-2xs)',
                 }}
