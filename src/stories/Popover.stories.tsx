@@ -32,8 +32,7 @@ export const Basic: Story = {
           <h4
             style={{
               margin: '0 0 8px 0',
-              fontSize: 'var(--font-size-sm)',
-              fontWeight: 'var(--font-weight-semibold)',
+              fontWeight: '600',
             }}
           >
             Dimensions
@@ -41,8 +40,6 @@ export const Basic: Story = {
           <p
             style={{
               margin: '0 0 12px 0',
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
             }}
           >
             Set the dimensions for the layer.
@@ -58,8 +55,7 @@ export const Basic: Story = {
               <label
                 htmlFor="width-input"
                 style={{
-                  fontSize: 'var(--font-size-2xs)',
-                  fontWeight: 'var(--font-weight-medium)',
+                  fontWeight: '500',
                 }}
               >
                 Width
@@ -71,9 +67,8 @@ export const Basic: Story = {
                 style={{
                   width: '100%',
                   padding: '4px 8px',
-                  border: '1px solid var(--color-border-default)',
+                  border: '1px solid #e5e7eb',
                   borderRadius: '4px',
-                  fontSize: 'var(--font-size-2xs)',
                 }}
               />
             </div>
@@ -81,8 +76,7 @@ export const Basic: Story = {
               <label
                 htmlFor="height-input"
                 style={{
-                  fontSize: 'var(--font-size-2xs)',
-                  fontWeight: 'var(--font-weight-medium)',
+                  fontWeight: '500',
                 }}
               >
                 Height
@@ -94,9 +88,8 @@ export const Basic: Story = {
                 style={{
                   width: '100%',
                   padding: '4px 8px',
-                  border: '1px solid var(--color-border-default)',
+                  border: '1px solid #e5e7eb',
                   borderRadius: '4px',
-                  fontSize: 'var(--font-size-2xs)',
                 }}
               />
             </div>
@@ -122,8 +115,7 @@ export const SimpleContent: Story = {
           <h4
             style={{
               margin: '0 0 8px 0',
-              fontSize: 'var(--font-size-sm)',
-              fontWeight: 'var(--font-weight-semibold)',
+              fontWeight: '600',
             }}
           >
             Pro Tip
@@ -131,8 +123,6 @@ export const SimpleContent: Story = {
           <p
             style={{
               margin: '0',
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
             }}
           >
             This popover now has a built-in close button with an X icon.
@@ -158,8 +148,7 @@ export const AccountSettings: Story = {
           <h4
             style={{
               margin: '0 0 8px 0',
-              fontSize: 'var(--font-size-sm)',
-              fontWeight: 'var(--font-weight-semibold)',
+              fontWeight: '600',
             }}
           >
             Account Settings
@@ -167,8 +156,6 @@ export const AccountSettings: Story = {
           <p
             style={{
               margin: '0 0 12px 0',
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
             }}
           >
             Manage your account settings and preferences.
@@ -206,9 +193,7 @@ export const Positioning: Story = {
           popoverTrigger={<Button variant="secondary">Top</Button>}
         >
           <div>
-            <p style={{ margin: '0', fontSize: 'var(--font-size-xs)' }}>
-              Positioned on top
-            </p>
+            <p style={{ margin: '0' }}>Positioned on top</p>
           </div>
         </Popover>
 
@@ -220,9 +205,7 @@ export const Positioning: Story = {
           popoverTrigger={<Button variant="secondary">Right</Button>}
         >
           <div>
-            <p style={{ margin: '0', fontSize: 'var(--font-size-xs)' }}>
-              Positioned on right
-            </p>
+            <p style={{ margin: '0' }}>Positioned on right</p>
           </div>
         </Popover>
 
@@ -234,9 +217,7 @@ export const Positioning: Story = {
           popoverTrigger={<Button variant="secondary">Bottom</Button>}
         >
           <div>
-            <p style={{ margin: '0', fontSize: 'var(--font-size-xs)' }}>
-              Positioned on bottom
-            </p>
+            <p style={{ margin: '0' }}>Positioned on bottom</p>
           </div>
         </Popover>
 
@@ -248,9 +229,7 @@ export const Positioning: Story = {
           popoverTrigger={<Button variant="secondary">Left</Button>}
         >
           <div>
-            <p style={{ margin: '0', fontSize: 'var(--font-size-xs)' }}>
-              Positioned on left
-            </p>
+            <p style={{ margin: '0' }}>Positioned on left</p>
           </div>
         </Popover>
       </div>
