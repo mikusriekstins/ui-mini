@@ -35,10 +35,10 @@
   max-inline-size: 32rem;
   max-block-size: 85vh;
   gap: var(--md);
-  border: 1px solid var(--ui-color-popover-border);
-  background-color: var(--ui-color-popover-bg);
+  border: 1px solid var(--ui-color-panel-border);
+  background-color: var(--ui-color-panel-bg);
   padding: var(--xl);
-  color: var(--ui-color-popover-text);
+  color: var(--ui-color-panel-text);
   box-shadow: var(--shadow-lg);
   border-radius: var(--border-radius-lg);
   transform: translate(-50%, -50%);
@@ -107,8 +107,8 @@
 }
 
 .dialog__close:hover {
-  background-color: var(--ui-color-popover-bg);
-  color: var(--ui-color-popover-text);
+  background-color: var(--ui-color-panel-bg);
+  color: var(--ui-color-panel-text);
 }
 
 .dialog__close:focus-visible {

@@ -95,12 +95,6 @@
   --ui-color-toggle-track: var(--ui-color-neutral-300);
   --ui-color-toggle-thumb: var(--ui-color-white);
   --ui-color-toggle-checked-track: var(--ui-color-primary-600);
-  --ui-color-loading-spinner: var(--ui-color-primary-600);
-  --ui-color-popover-bg: var(--ui-color-white);
-  --ui-color-popover-border: var(--ui-color-neutral-200);
-  --ui-color-popover-text: var(--ui-color-neutral-900);
-  --ui-color-dropdownmenu-bg: var(--ui-color-white);
-  --ui-color-dropdownmenu-item-hover: var(--ui-color-neutral-100);
   --ui-color-icon: currentColor;
 
   /* Form Input Consolidated Tokens */
@@ -113,6 +107,11 @@
   --ui-color-input-on-highlight: var(--ui-color-white);
   --ui-color-label: var(--ui-color-neutral-900);
   --ui-color-label-required: var(--ui-color-danger-600);
+
+  /* Panel/Floating Surface Tokens */
+  --ui-color-panel-bg: var(--ui-color-white);
+  --ui-color-panel-border: var(--ui-color-neutral-200);
+  --ui-color-panel-text: var(--ui-color-neutral-900);
 
   /* Typography */
   --font-family-sans:
@@ -182,7 +181,7 @@
   --focus-outline-color: var(--ui-color-primary-700);
 
   --highlight-border-size: 0.1875rem;
-  --highlight-border: var(--ui-color-secondary-500);
+  --ui-color-highlight-border: var(--ui-color-secondary-500);
 
   --transition-fast: 150ms ease-in-out;
   --transition-base: 200ms ease-in-out;
@@ -227,10 +226,6 @@
   --ui-color-toggle-track: var(--ui-color-neutral-600);
   --ui-color-toggle-thumb: var(--ui-color-white);
   --ui-color-toggle-checked-track: var(--ui-color-primary-600);
-  --ui-color-loading-spinner: var(--ui-color-primary-600);
-  --ui-color-popover-bg: var(--ui-color-neutral-900);
-  --ui-color-popover-border: var(--ui-color-neutral-700);
-  --ui-color-popover-text: var(--ui-color-neutral-100);
   --ui-color-icon: currentColor;
 
   /* Form Input Consolidated Tokens (Dark Theme) */
@@ -243,6 +238,11 @@
   --ui-color-input-on-highlight: var(--ui-color-white);
   --ui-color-label: var(--ui-color-neutral-100);
   --ui-color-label-required: var(--ui-color-danger-600);
+
+  /* Panel/Floating Surface Tokens (Dark Theme) */
+  --ui-color-panel-bg: var(--ui-color-neutral-900);
+  --ui-color-panel-border: var(--ui-color-neutral-700);
+  --ui-color-panel-text: var(--ui-color-neutral-100);
 }
 
 * {

@@ -54,7 +54,8 @@
 .tabs__trigger[data-state='active'] {
   background-color: var(--ui-color-button-secondary-bg);
   color: var(--ui-color-button-secondary-text);
-  border-block-end: var(--highlight-border-size) solid var(--highlight-border);
+  border-block-end: var(--highlight-border-size) solid
+    var(--ui-color-highlight-border);
 }
 
 .tabs__trigger:disabled {

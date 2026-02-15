@@ -26,14 +26,14 @@
   block-size: 100%;
   border: 0.2em solid transparent;
   border-color: var(--ui-color-neutral-200);
-  border-block-start-color: var(--ui-color-loading-spinner);
+  border-block-start-color: var(--ui-color-highlight-border);
   border-radius: 50%;
   animation: loadingspin 0.8s linear infinite;
 }
 
 [data-theme='dark'] .spinner {
   border-color: rgba(255, 255, 255, 0.3);
-  border-block-start-color: var(--ui-color-loading-spinner);
+  border-block-start-color: var(--ui-color-highlight-border);
 }
 
 @keyframes loadingspin {

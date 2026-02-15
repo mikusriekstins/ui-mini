@@ -60,10 +60,10 @@
   min-inline-size: 8rem;
   overflow: hidden;
   border-radius: var(--border-radius-md);
-  border: 1px solid var(--ui-color-popover-border);
-  background-color: var(--ui-color-popover-bg);
+  border: 1px solid var(--ui-color-panel-border);
+  background-color: var(--ui-color-panel-bg);
   padding-block: var(--xss);
-  color: var(--ui-color-popover-text);
+  color: var(--ui-color-panel-text);
   box-shadow: var(--shadow-md);
   z-index: 50;
   min-inline-size: var(--radix-select-trigger-width);
@@ -102,11 +102,11 @@
 }
 
 .select__item[data-highlighted] {
-  background-color: var(--ui-color-dropdownmenu-item-hover);
+  background-color: var(--ui-color-button-secondary-hover-bg);
 }
 
 .select__item[data-state='checked'] {
-  background-color: var(--ui-color-dropdownmenu-item-hover);
+  background-color: var(--ui-color-button-secondary-hover-bg);
   font-weight: var(--font-weight-bold);
 }
 

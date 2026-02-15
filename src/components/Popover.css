@@ -13,9 +13,9 @@
   z-index: 50;
   inline-size: 18rem;
   border-radius: var(--border-radius-md);
-  border: 1px solid var(--ui-color-popover-border);
-  background-color: var(--ui-color-popover-bg);
-  color: var(--ui-color-popover-text);
+  border: 1px solid var(--ui-color-panel-border);
+  background-color: var(--ui-color-panel-bg);
+  color: var(--ui-color-panel-text);
   box-shadow: var(--shadow-md);
   outline: none;
 }
@@ -45,8 +45,8 @@
 }
 
 .popover__arrow {
-  fill: var(--ui-color-popover-bg);
-  stroke: var(--ui-color-popover-border);
+  fill: var(--ui-color-panel-bg);
+  stroke: var(--ui-color-panel-border);
   stroke-width: 1px;
   z-index: 1;
 }
@@ -68,8 +68,8 @@
 }
 
 .popover__close:hover {
-  background-color: var(--ui-color-popover-bg);
-  color: var(--ui-color-popover-text);
+  background-color: var(--ui-color-panel-bg);
+  color: var(--ui-color-panel-text);
 }
 
 .popover__close:focus-visible {
