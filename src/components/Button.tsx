@@ -11,7 +11,7 @@ import './Button.css';
 import { Icon, IconName } from './Icon';
 
 type BaseButtonProps = {
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'ghost';
   size?: 'default' | 'large';
   icon?: IconName;
   children?: ReactNode;

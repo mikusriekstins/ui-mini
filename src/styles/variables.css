@@ -91,10 +91,11 @@
   --ui-color-button-secondary-text: var(--ui-color-neutral-900);
   --ui-color-button-secondary-hover-bg: var(--ui-color-neutral-300);
   --ui-color-button-secondary-active-bg: var(--ui-color-neutral-400);
-  --ui-checkbox-size: 1.125rem;
-  --ui-color-toggle-track: var(--ui-color-neutral-300);
-  --ui-color-toggle-thumb: var(--ui-color-white);
-  --ui-color-toggle-checked-track: var(--ui-color-primary-600);
+  --ui-color-button-ghost-bg: transparent;
+  --ui-color-button-ghost-text: var(--ui-color-neutral-900);
+  --ui-color-button-ghost-hover-bg: var(--ui-color-neutral-100);
+  --ui-color-button-ghost-active-bg: var(--ui-color-neutral-200);
+  --ui-input-checkbox-size: 1.125rem;
   --ui-color-icon: currentColor;
 
   /* Form Input Consolidated Tokens */
@@ -223,9 +224,10 @@
   --ui-color-button-secondary-text: var(--ui-color-neutral-100);
   --ui-color-button-secondary-hover-bg: var(--ui-color-neutral-600);
   --ui-color-button-secondary-active-bg: var(--ui-color-neutral-500);
-  --ui-color-toggle-track: var(--ui-color-neutral-600);
-  --ui-color-toggle-thumb: var(--ui-color-white);
-  --ui-color-toggle-checked-track: var(--ui-color-primary-600);
+  --ui-color-button-ghost-bg: transparent;
+  --ui-color-button-ghost-text: var(--ui-color-neutral-100);
+  --ui-color-button-ghost-hover-bg: rgba(255, 255, 255, 0.1);
+  --ui-color-button-ghost-active-bg: rgba(255, 255, 255, 0.15);
   --ui-color-icon: currentColor;
 
   /* Form Input Consolidated Tokens (Dark Theme) */

@@ -10,10 +10,6 @@ const meta: Meta<typeof Toggle> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    variant: {
-      control: { type: 'select' },
-      options: ['primary', 'secondary'],
-    },
     pressed: {
       control: { type: 'boolean' },
     },
@@ -26,17 +22,9 @@ const meta: Meta<typeof Toggle> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Default: Story = {
   args: {
     children: 'Toggle',
-    variant: 'primary',
-  },
-};
-
-export const Secondary: Story = {
-  args: {
-    children: 'Toggle',
-    variant: 'secondary',
   },
 };
 
@@ -58,6 +46,5 @@ export const DisabledPressed: Story = {
 export const WithLongText: Story = {
   args: {
     children: 'This is a toggle with longer text',
-    variant: 'primary',
   },
 };

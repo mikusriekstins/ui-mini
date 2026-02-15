@@ -57,6 +57,19 @@
   background-color: var(--ui-color-button-secondary-active-bg);
 }
 
+.button--ghost {
+  background-color: var(--ui-color-button-ghost-bg);
+  color: var(--ui-color-button-ghost-text);
+}
+
+.button--ghost:hover:not(:disabled) {
+  background-color: var(--ui-color-button-ghost-hover-bg);
+}
+
+.button--ghost:active:not(:disabled) {
+  background-color: var(--ui-color-button-ghost-active-bg);
+}
+
 /* Icon and text layout */
 .button__icon {
   color: currentColor;

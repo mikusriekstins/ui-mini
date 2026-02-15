@@ -14,8 +14,8 @@
 }
 
 .checkbox__checkbox {
-  inline-size: var(--ui-checkbox-size);
-  block-size: var(--ui-checkbox-size);
+  inline-size: var(--ui-input-checkbox-size);
+  block-size: var(--ui-input-checkbox-size);
   border-radius: var(--border-radius-sm);
   border: var(--ui-border-1) var(--ui-color-input-border-default);
   background-color: var(--ui-color-input-bg);
