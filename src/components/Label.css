@@ -4,7 +4,7 @@
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-md);
-  color: var(--ui-color-label-text);
+  color: var(--ui-color-label);
   display: inline-flex;
   align-items: center;
   gap: var(--xss);
@@ -13,7 +13,7 @@
 }
 
 .label__required {
-  color: var(--ui-color-label-text);
+  color: var(--ui-color-label-required);
   font-weight: var(--font-weight-bold);
   margin-inline-end: var(--xss);
 }

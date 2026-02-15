@@ -91,29 +91,28 @@
   --ui-color-button-secondary-text: var(--ui-color-neutral-900);
   --ui-color-button-secondary-hover-bg: var(--ui-color-neutral-300);
   --ui-color-button-secondary-active-bg: var(--ui-color-neutral-400);
-  --ui-color-checkbox-border: var(--ui-color-neutral-300);
-  --ui-color-checkbox-checked-bg: var(--ui-color-primary-600);
-  --ui-color-checkbox-checkmark: var(--ui-color-white);
-  --ui-color-radio-border: var(--ui-color-neutral-300);
-  --ui-color-radio-checked-bg: var(--ui-color-primary-600);
-  --ui-color-radio-dot: var(--ui-color-white);
+  --ui-checkbox-size: 1.125rem;
   --ui-color-toggle-track: var(--ui-color-neutral-300);
   --ui-color-toggle-thumb: var(--ui-color-white);
   --ui-color-toggle-checked-track: var(--ui-color-primary-600);
-  --ui-color-input-border: var(--ui-color-neutral-300);
-  --ui-color-input-bg: var(--ui-color-white);
-  --ui-color-input-text: var(--ui-color-neutral-900);
-  --ui-color-input-placeholder: var(--ui-color-neutral-500);
-  --ui-color-label-text: var(--ui-color-neutral-900);
   --ui-color-loading-spinner: var(--ui-color-primary-600);
   --ui-color-popover-bg: var(--ui-color-white);
   --ui-color-popover-border: var(--ui-color-neutral-200);
   --ui-color-popover-text: var(--ui-color-neutral-900);
-  --ui-color-tabs-indicator: var(--ui-color-neutral-300);
-  --ui-color-tabs-trigger-active: var(--ui-color-primary-600);
   --ui-color-dropdownmenu-bg: var(--ui-color-white);
   --ui-color-dropdownmenu-item-hover: var(--ui-color-neutral-100);
   --ui-color-icon: currentColor;
+
+  /* Form Input Consolidated Tokens */
+  --ui-color-input-bg: var(--ui-color-white);
+  --ui-color-input-bg-disabled: var(--ui-color-neutral-200);
+  --ui-color-input-border-default: var(--ui-color-neutral-300);
+  --ui-color-input-text-default: var(--ui-color-neutral-900);
+  --ui-color-input-placeholder-default: var(--ui-color-neutral-500);
+  --ui-color-input-highlight: var(--ui-color-primary-600);
+  --ui-color-input-on-highlight: var(--ui-color-white);
+  --ui-color-label: var(--ui-color-neutral-900);
+  --ui-color-label-required: var(--ui-color-danger-600);
 
   /* Typography */
   --font-family-sans:
@@ -171,6 +170,8 @@
   --border-radius-md: 0.5rem;
   --border-radius-lg: 0.625rem;
 
+  --ui-border-1: 1px solid;
+
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg:
@@ -223,32 +224,25 @@
   --ui-color-button-secondary-text: var(--ui-color-neutral-100);
   --ui-color-button-secondary-hover-bg: var(--ui-color-neutral-600);
   --ui-color-button-secondary-active-bg: var(--ui-color-neutral-500);
-  --ui-color-checkbox-border: var(--ui-color-neutral-600);
-  --ui-color-checkbox-checked-bg: var(--ui-color-primary-600);
-  --ui-color-checkbox-checkmark: var(--ui-color-white);
-  --ui-color-radio-border: var(--ui-color-neutral-600);
-  --ui-color-radio-checked-bg: var(--ui-color-primary-600);
-  --ui-color-radio-dot: var(--ui-color-white);
   --ui-color-toggle-track: var(--ui-color-neutral-600);
   --ui-color-toggle-thumb: var(--ui-color-white);
   --ui-color-toggle-checked-track: var(--ui-color-primary-600);
-  --ui-color-input-border: var(--ui-color-neutral-600);
-  --ui-color-input-bg: var(--ui-color-neutral-900);
-  --ui-color-input-text: var(--ui-color-neutral-100);
-  --ui-color-input-placeholder: var(--ui-color-neutral-400);
-  --ui-color-label-text: var(--ui-color-neutral-100);
   --ui-color-loading-spinner: var(--ui-color-primary-600);
   --ui-color-popover-bg: var(--ui-color-neutral-900);
   --ui-color-popover-border: var(--ui-color-neutral-700);
   --ui-color-popover-text: var(--ui-color-neutral-100);
-  --ui-color-tabs-indicator: var(--ui-color-neutral-600);
-  --ui-color-tabs-trigger-active: var(--ui-color-primary-600);
-  --ui-color-select-trigger-bg: var(--ui-color-neutral-900);
-  --ui-color-select-trigger-text: var(--ui-color-neutral-100);
-  --ui-color-select-trigger-border: var(--ui-color-neutral-600);
-  --ui-color-dropdownmenu-bg: var(--ui-color-neutral-900);
-  --ui-color-dropdownmenu-item-hover: var(--ui-color-neutral-800);
   --ui-color-icon: currentColor;
+
+  /* Form Input Consolidated Tokens (Dark Theme) */
+  --ui-color-input-bg: var(--ui-color-neutral-900);
+  --ui-color-input-bg-disabled: var(--ui-color-neutral-700);
+  --ui-color-input-border-default: var(--ui-color-neutral-600);
+  --ui-color-input-text-default: var(--ui-color-neutral-100);
+  --ui-color-input-placeholder-default: var(--ui-color-neutral-400);
+  --ui-color-input-highlight: var(--ui-color-secondary-600);
+  --ui-color-input-on-highlight: var(--ui-color-white);
+  --ui-color-label: var(--ui-color-neutral-100);
+  --ui-color-label-required: var(--ui-color-danger-600);
 }
 
 * {

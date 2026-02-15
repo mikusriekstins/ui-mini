@@ -30,8 +30,8 @@
   inline-size: 1.125rem;
   block-size: 1.125rem;
   border-radius: 50%;
-  border: 1px solid var(--ui-color-radio-border);
-  background-color: var(--ui-color-radio-dot);
+  border: 1px solid var(--ui-color-input-border-default);
+  background-color: var(--ui-color-input-bg);
   cursor: pointer;
   transition:
     background-color var(--transition-base),
@@ -45,11 +45,6 @@
   outline: none;
 }
 
-.radio__item:hover:not([data-disabled]) {
-  border-color: var(--ui-color-input-border);
-  background-color: var(--ui-color-radio-checked-bg);
-}
-
 .radio__item:focus-visible {
   outline: var(--focus-outline-width) solid var(--focus-outline-color);
   outline-offset: var(--focus-outline-offset);
@@ -57,24 +52,18 @@
 
 .radio__item[data-disabled] {
   cursor: not-allowed;
-  background-color: var(--ui-color-input-border);
-  border-color: var(--ui-color-input-border);
+  background-color: var(--ui-color-input-bg-disabled);
+  border-color: var(--ui-color-input-border-default);
 }
 
 /* Checked state */
 .radio__item[data-state='checked'] {
-  background-color: var(--ui-color-radio-checked-bg);
-  border-color: var(--ui-color-radio-checked-bg);
-}
-
-.radio__item[data-state='checked']:hover:not([data-disabled]) {
-  background-color: var(--ui-color-radio-checked-bg);
-  border-color: var(--ui-color-radio-checked-bg);
+  background-color: var(--ui-color-input-highlight);
+  border-color: var(--ui-color-input-highlight);
 }
 
 .radio__item[data-state='checked'][data-disabled] {
-  background-color: var(--ui-color-radio-checked-bg);
-  border-color: var(--ui-color-radio-checked-bg);
+  opacity: 0.5;
 }
 
 /* Radio indicator (dot) */
@@ -85,7 +74,7 @@
   inline-size: 0.375rem;
   block-size: 0.375rem;
   border-radius: 50%;
-  background-color: var(--ui-color-radio-dot);
+  background-color: var(--ui-color-input-on-highlight);
 }
 
 .radio__indicator[data-state='checked'] {
@@ -93,21 +82,21 @@
 }
 
 .radio__item[data-disabled] .radio__indicator {
-  background-color: var(--ui-color-radio-dot);
+  background-color: var(--ui-color-input-on-highlight);
 }
 
 /* Label styling */
 .radio__label {
   font-size: var(--font-size-md);
   line-height: var(--line-height-md);
-  color: var(--ui-color-label-text);
+  color: var(--ui-color-label);
   cursor: pointer;
   user-select: none;
 }
 
 .radio[data-disabled] .radio__label {
   cursor: not-allowed;
-  color: var(--ui-color-input-placeholder);
+  color: var(--ui-color-input-placeholder-default);
 }
 
 /* Animation for radio indicator */

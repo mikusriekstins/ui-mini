@@ -14,10 +14,10 @@
   inline-size: 100%;
   padding-block: calc(var(--component-padding-block-base) - 1px);
   padding-inline: var(--component-padding-inline-base);
-  border: 1px solid var(--ui-color-input-border);
+  border: 1px solid var(--ui-color-input-border-default);
   border-radius: var(--border-radius-md);
   background-color: var(--ui-color-input-bg);
-  color: var(--ui-color-input-text);
+  color: var(--ui-color-input-text-default);
   font-size: var(--font-size-md);
   line-height: var(--line-height-sm);
   transition:
@@ -29,23 +29,23 @@
 }
 
 .text-input__input::placeholder {
-  color: var(--ui-color-input-placeholder);
+  color: var(--ui-color-input-placeholder-default);
 }
 
 .text-input__input:hover:not(:disabled):not([aria-invalid='true']) {
-  border-color: var(--ui-color-input-border);
+  border-color: var(--ui-color-input-border-default);
 }
 
 .text-input__input:focus {
   outline: var(--focus-outline-width) solid var(--focus-outline-color);
   outline-offset: var(--focus-outline-offset);
-  border-color: var(--ui-color-input-border);
+  border-color: var(--ui-color-input-border-default);
 }
 
 .text-input__input:disabled {
-  background-color: var(--ui-color-input-bg);
-  color: var(--ui-color-input-placeholder);
-  border-color: var(--ui-color-input-border);
+  background-color: var(--ui-color-input-bg-disabled);
+  color: var(--ui-color-input-placeholder-default);
+  border-color: var(--ui-color-input-border-default);
   cursor: not-allowed;
 }
 
@@ -69,7 +69,7 @@
 }
 
 .text-input__description--helper {
-  color: var(--ui-color-input-placeholder);
+  color: var(--ui-color-input-placeholder-default);
 }
 
 .text-input__description--error {
@@ -78,7 +78,7 @@
 }
 
 .text-input__description--default {
-  color: var(--ui-color-input-placeholder);
+  color: var(--ui-color-input-placeholder-default);
 }
 
 .text-input__description--danger {
