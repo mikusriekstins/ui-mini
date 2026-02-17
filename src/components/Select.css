@@ -88,7 +88,6 @@
   cursor: pointer;
   user-select: none;
   align-items: center;
-  border-radius: var(--border-radius-sm);
   padding-block: var(--component-padding-block-base);
   padding-inline: var(--component-padding-inline-base);
   font-size: var(--font-size-md);
