@@ -1,14 +1,5 @@
 @import '../styles/variables.css';
 
-.popover__trigger {
-  outline: none;
-}
-
-.popover__trigger:focus-visible {
-  outline: var(--focus-outline-width) solid var(--focus-outline-color);
-  outline-offset: var(--focus-outline-offset);
-}
-
 .popover__content {
   z-index: 50;
   inline-size: 18rem;

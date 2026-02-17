@@ -1,14 +1,5 @@
 @import '../styles/variables.css';
 
-.dialog__trigger {
-  outline: none;
-}
-
-.dialog__trigger:focus-visible {
-  outline: var(--focus-outline-width) solid var(--focus-outline-color);
-  outline-offset: var(--focus-outline-offset);
-}
-
 .dialog__overlay {
   position: fixed;
   inset: 0;

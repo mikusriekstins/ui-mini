@@ -42,9 +42,7 @@ const Dialog = forwardRef<ComponentRef<typeof Content>, DialogProps>(
   ) => {
     return (
       <Root open={open} onOpenChange={onOpenChange}>
-        <Trigger asChild className="dialog__trigger">
-          {trigger}
-        </Trigger>
+        <Trigger asChild>{trigger}</Trigger>
         <Portal>
           <Overlay className="dialog__overlay" />
           <Content

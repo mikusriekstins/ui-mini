@@ -1,46 +1,5 @@
 @import '../styles/variables.css';
 
-.dropdown-menu__trigger {
-  outline: none;
-  padding-block: var(--component-padding-block-base);
-  padding-inline: var(--component-padding-inline-base);
-  border-radius: var(--border-radius-md);
-  font-weight: var(--font-weight-regular);
-  font-size: var(--font-size-md);
-  line-height: var(--line-height-sm);
-  border: none;
-  cursor: pointer;
-  transition:
-    background-color var(--transition-base),
-    color var(--transition-base),
-    box-shadow var(--transition-base);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  box-sizing: border-box;
-  background-color: var(--ui-color-button-secondary-bg);
-  color: var(--ui-color-button-secondary-text);
-}
-
-.dropdown-menu__trigger:focus-visible {
-  outline: 2px solid var(--focus-outline-color);
-  outline-offset: var(--focus-outline-offset);
-}
-
-.dropdown-menu__trigger:hover:not(:disabled) {
-  background-color: var(--ui-color-button-secondary-hover-bg);
-}
-
-.dropdown-menu__trigger:disabled {
-  cursor: not-allowed;
-  opacity: 0.6;
-}
-
-.dropdown-menu__trigger[data-state='open'] {
-  background-color: var(--ui-color-button-secondary-active-bg);
-}
-
 .dropdown-menu__content {
   min-inline-size: 8rem;
   overflow: hidden;

@@ -43,9 +43,7 @@ const Popover = forwardRef<ComponentRef<typeof Content>, PopoverProps>(
 
     return (
       <Root {...rootProps}>
-        <Trigger asChild className="popover__trigger">
-          {popoverTrigger}
-        </Trigger>
+        <Trigger asChild>{popoverTrigger}</Trigger>
         <Portal>
           <Content
             ref={ref}
