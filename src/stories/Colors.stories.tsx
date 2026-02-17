@@ -43,7 +43,8 @@ const ColorSwatch = ({
     >
       <span
         style={{
-          fontWeight: '600',
+          fontWeight: 'var(--font-weight-regular)',
+          fontSize: 'var(--font-size-sm)',
         }}
       >
         {name}
@@ -162,6 +163,9 @@ export const Colors: Story = {
           marginBottom: '3rem',
         }}
       >
+        <ColorSwatch name="--ui-color-danger-50" inverseText />
+        <ColorSwatch name="--ui-color-danger-100" inverseText />
+        <ColorSwatch name="--ui-color-danger-200" inverseText />
         <ColorSwatch name="--ui-color-danger-600" />
         <ColorSwatch name="--ui-color-danger-700" />
         <ColorSwatch name="--ui-color-danger-800" />
