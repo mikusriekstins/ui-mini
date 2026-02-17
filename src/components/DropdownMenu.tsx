@@ -23,9 +23,7 @@ const DropdownMenu = ({
 }: DropdownMenuProps): React.ReactNode => {
   return (
     <Root>
-      <Trigger asChild className="dropdown-menu__trigger">
-        {trigger}
-      </Trigger>
+      <Trigger asChild>{trigger}</Trigger>
       <Portal>
         <Content className="dropdown-menu__content" sideOffset={4}>
           {label && (

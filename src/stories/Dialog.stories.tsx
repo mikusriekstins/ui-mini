@@ -68,8 +68,7 @@ export const WithForm: Story = {
             <label
               htmlFor="name"
               style={{
-                fontSize: 'var(--font-size-sm)',
-                fontWeight: 'var(--font-weight-medium)',
+                fontWeight: '500',
               }}
             >
               Name
@@ -79,9 +78,8 @@ export const WithForm: Story = {
               defaultValue="Pedro Duarte"
               style={{
                 padding: '8px 12px',
-                border: '1px solid var(--color-border)',
+                border: '1px solid #e5e7eb',
                 borderRadius: '6px',
-                fontSize: 'var(--font-size-sm)',
               }}
             />
           </div>
@@ -96,8 +94,7 @@ export const WithForm: Story = {
             <label
               htmlFor="username"
               style={{
-                fontSize: 'var(--font-size-sm)',
-                fontWeight: 'var(--font-weight-medium)',
+                fontWeight: '500',
               }}
             >
               Username
@@ -107,9 +104,8 @@ export const WithForm: Story = {
               defaultValue="@peduarte"
               style={{
                 padding: '8px 12px',
-                border: '1px solid var(--color-border)',
+                border: '1px solid #e5e7eb',
                 borderRadius: '6px',
-                fontSize: 'var(--font-size-sm)',
               }}
             />
           </div>
@@ -143,7 +139,7 @@ export const ConfirmationDialog: Story = {
         <div
           style={{
             padding: '16px',
-            backgroundColor: 'var(--color-muted)',
+            backgroundColor: '#f9fafb',
             borderRadius: '6px',
             marginBlock: '16px',
           }}
@@ -151,9 +147,7 @@ export const ConfirmationDialog: Story = {
           <p
             style={{
               margin: '0',
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
-              fontWeight: 'var(--font-weight-medium)',
+              fontWeight: '500',
             }}
           >
             ⚠️ This action will:
@@ -162,8 +156,6 @@ export const ConfirmationDialog: Story = {
             style={{
               margin: '8px 0 0 0',
               paddingLeft: '16px',
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-muted-foreground)',
             }}
           >
             <li>Delete all your projects and files</li>
@@ -210,9 +202,7 @@ export const LongContent: Story = {
         >
           <div
             style={{
-              fontSize: 'var(--font-size-sm)',
               lineHeight: '1.5',
-              color: 'var(--color-foreground)',
             }}
           >
             <h3>1. Introduction</h3>

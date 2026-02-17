@@ -32,29 +32,42 @@
 }
 
 .button--primary {
-  background-color: var(--color-primary-600);
-  color: var(--color-white);
+  background-color: var(--ui-color-button-primary-bg);
+  color: var(--ui-color-button-primary-text);
 }
 
 .button--primary:hover:not(:disabled) {
-  background-color: var(--color-primary-800);
+  background-color: var(--ui-color-button-primary-hover-bg);
 }
 
 .button--primary:active:not(:disabled) {
-  background-color: var(--color-primary-900);
+  background-color: var(--ui-color-button-primary-active-bg);
 }
 
 .button--secondary {
-  background-color: var(--color-gray-200);
-  color: var(--color-gray-900);
+  background-color: var(--ui-color-button-secondary-bg);
+  color: var(--ui-color-button-secondary-text);
 }
 
 .button--secondary:hover:not(:disabled) {
-  background-color: var(--color-gray-300);
+  background-color: var(--ui-color-button-secondary-hover-bg);
 }
 
 .button--secondary:active:not(:disabled) {
-  background-color: var(--color-gray-400);
+  background-color: var(--ui-color-button-secondary-active-bg);
+}
+
+.button--ghost {
+  background-color: var(--ui-color-button-ghost-bg);
+  color: var(--ui-color-button-ghost-text);
+}
+
+.button--ghost:hover:not(:disabled) {
+  background-color: var(--ui-color-button-ghost-hover-bg);
+}
+
+.button--ghost:active:not(:disabled) {
+  background-color: var(--ui-color-button-ghost-active-bg);
 }
 
 /* Icon and text layout */
@@ -92,13 +105,13 @@
 
 /* Dark theme primary button uses secondary color scale */
 [data-theme='dark'] .button--primary {
-  background-color: var(--color-secondary-600);
+  background-color: var(--ui-color-button-primary-bg);
 }
 
 [data-theme='dark'] .button--primary:hover:not(:disabled) {
-  background-color: var(--color-secondary-800);
+  background-color: var(--ui-color-button-primary-hover-bg);
 }
 
 [data-theme='dark'] .button--primary:active:not(:disabled) {
-  background-color: var(--color-secondary-900);
+  background-color: var(--ui-color-button-primary-active-bg);
 }

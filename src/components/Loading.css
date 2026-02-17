@@ -25,15 +25,15 @@
   inline-size: 100%;
   block-size: 100%;
   border: 0.2em solid transparent;
-  border-color: #eee;
-  border-block-start-color: var(--color-primary-600);
+  border-color: var(--ui-color-neutral-200);
+  border-block-start-color: var(--ui-color-highlight-border);
   border-radius: 50%;
   animation: loadingspin 0.8s linear infinite;
 }
 
 [data-theme='dark'] .spinner {
   border-color: rgba(255, 255, 255, 0.3);
-  border-block-start-color: var(--color-secondary-500);
+  border-block-start-color: var(--ui-color-highlight-border);
 }
 
 @keyframes loadingspin {

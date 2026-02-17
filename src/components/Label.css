@@ -4,7 +4,7 @@
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-md);
-  color: var(--color-foreground);
+  color: var(--ui-color-label);
   display: inline-flex;
   align-items: center;
   gap: var(--xss);
@@ -13,11 +13,7 @@
 }
 
 .label__required {
-  color: var(--color-primary-600);
+  color: var(--ui-color-label-required);
   font-weight: var(--font-weight-bold);
   margin-inline-end: var(--xss);
-}
-
-[data-theme='dark'] .label__required {
-  color: var(--color-secondary-600);
 }

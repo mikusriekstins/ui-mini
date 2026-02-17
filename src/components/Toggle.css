@@ -7,7 +7,7 @@
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-md);
   line-height: var(--line-height-sm);
-  border: 1px solid var(--color-gray-300);
+  border: 1px solid var(--ui-color-input-border-default);
   cursor: pointer;
   transition:
     background-color var(--transition-base),
@@ -19,15 +19,20 @@
   justify-content: center;
   text-decoration: none;
   outline: none;
-  background-color: transparent;
-  color: var(--color-gray-700);
+  background-color: var(--ui-color-button-ghost-bg);
+  color: var(--ui-color-button-ghost-text);
   box-sizing: border-box;
   block-size: var(--component-block-size-base);
 }
 
 .toggle:hover:not([data-disabled]):not([data-state='on']) {
-  background-color: var(--color-muted);
-  border-color: var(--color-gray-400);
+  background-color: var(--ui-color-button-ghost-hover-bg);
+  border-color: var(--ui-color-input-border-default);
+}
+
+.toggle:active:not([data-disabled]):not([data-state='on']) {
+  background-color: var(--ui-color-button-ghost-active-bg);
+  border-color: var(--ui-color-input-border-default);
 }
 
 .toggle:focus-visible {
@@ -41,65 +46,24 @@
 }
 
 .toggle[data-state='on'][data-disabled] {
-  background-color: var(--color-gray-300);
-  color: var(--color-gray-600);
-  border-color: var(--color-gray-300);
+  background-color: var(--ui-color-input-highlight);
+  color: var(--ui-color-input-on-highlight);
+  border-color: var(--ui-color-input-highlight);
 }
 
 /* Toggle pressed/active state */
 .toggle[data-state='on'] {
-  background-color: var(--color-primary-600);
-  color: var(--color-white);
-  border-color: var(--color-primary-600);
+  background-color: var(--ui-color-input-highlight);
+  color: var(--ui-color-input-on-highlight);
+  border-color: var(--ui-color-input-highlight);
 }
 
 .toggle[data-state='on']:hover:not([data-disabled]) {
-  background-color: var(--color-primary-700);
-  border-color: var(--color-primary-700);
+  background-color: var(--ui-color-input-highlight);
+  border-color: var(--ui-color-input-highlight);
 }
 
 .toggle[data-state='on']:active:not([data-disabled]) {
-  background-color: var(--color-primary-800);
-  border-color: var(--color-primary-800);
-}
-
-/* Toggle variants */
-.toggle--secondary {
-  background-color: transparent;
-  color: var(--color-gray-900);
-  border-color: var(--color-gray-300);
-}
-
-.toggle--secondary:hover:not([data-disabled]):not([data-state='on']) {
-  background-color: var(--color-muted);
-  border-color: var(--color-gray-400);
-}
-
-.toggle--secondary[data-state='on'] {
-  background-color: var(--color-gray-700);
-  color: var(--color-white);
-  border-color: var(--color-gray-700);
-}
-
-.toggle--secondary[data-state='on']:hover:not([data-disabled]) {
-  background-color: var(--color-gray-800);
-  border-color: var(--color-gray-800);
-}
-
-/* Dark theme toggle uses secondary color for primary variant */
-[data-theme='dark'] .toggle[data-state='on']:not(.toggle--secondary) {
-  background-color: var(--color-secondary-600);
-  border-color: var(--color-secondary-600);
-}
-
-[data-theme='dark']
-  .toggle[data-state='on']:hover:not([data-disabled]):not(.toggle--secondary) {
-  background-color: var(--color-secondary-700);
-  border-color: var(--color-secondary-700);
-}
-
-[data-theme='dark']
-  .toggle[data-state='on']:active:not([data-disabled]):not(.toggle--secondary) {
-  background-color: var(--color-secondary-800);
-  border-color: var(--color-secondary-800);
+  background-color: var(--ui-color-input-highlight);
+  border-color: var(--ui-color-input-highlight);
 }
