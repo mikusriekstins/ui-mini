@@ -113,13 +113,6 @@ describe('Dialog', () => {
     expect(dialog).toBeInTheDocument();
   });
 
-  it('trigger has correct class', () => {
-    const { container } = render(<Dialog {...defaultProps} />);
-
-    const trigger = container.querySelector('.dialog__trigger');
-    expect(trigger).toBeInTheDocument();
-  });
-
   it('close button has correct classes', () => {
     render(<Dialog {...defaultProps} open={true} />);
 

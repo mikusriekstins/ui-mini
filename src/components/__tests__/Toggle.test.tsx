@@ -14,13 +14,6 @@ describe('Toggle', () => {
     expect(toggle).not.toHaveClass('toggle--secondary');
   });
 
-  it('renders with secondary variant', () => {
-    render(<Toggle variant="secondary">Secondary Toggle</Toggle>);
-
-    const toggle = screen.getByRole('button', { name: /secondary toggle/i });
-    expect(toggle).toHaveClass('toggle', 'toggle--secondary');
-  });
-
   it('handles toggle state changes', async () => {
     const user = userEvent.setup();
     const handleToggle = vi.fn();

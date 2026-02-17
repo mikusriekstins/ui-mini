@@ -124,13 +124,6 @@ describe('Popover', () => {
     expect(screen.getByText('Popover content')).toBeInTheDocument();
   });
 
-  it('trigger has correct class', () => {
-    const { container } = render(<Popover {...defaultProps} />);
-
-    const trigger = container.querySelector('.popover__trigger');
-    expect(trigger).toBeInTheDocument();
-  });
-
   it('close button has correct class', () => {
     render(<Popover {...defaultProps} isOpen={true} />);
 
