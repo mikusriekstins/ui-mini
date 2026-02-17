@@ -41,8 +41,8 @@ const preview: Preview = {
         <ThemeProvider theme={theme}>
           <div
             style={{
-              backgroundColor: 'var(--color-background)',
-              color: 'var(--color-foreground)',
+              backgroundColor: 'var(--ui-color-background)',
+              color: 'var(--ui-color-text)',
               padding: '1rem',
             }}
           >

@@ -180,9 +180,9 @@
   --ui-color-icon: currentColor;
 
   /* Component-Specific Tokens (Dark Theme) */
-  --ui-color-button-primary-bg: var(--ui-color-secondary-400);
-  --ui-color-button-primary-text: var(--ui-color-neutral-900);
-  --ui-color-button-primary-hover-bg: var(--ui-color-secondary-600);
+  --ui-color-button-primary-bg: var(--ui-color-secondary-500);
+  --ui-color-button-primary-text: var(--ui-color-neutral-50);
+  --ui-color-button-primary-hover-bg: var(--ui-color-secondary-700);
   --ui-color-button-primary-active-bg: var(--ui-color-secondary-900);
   --ui-color-button-secondary-bg: var(--ui-color-neutral-700);
   --ui-color-button-secondary-text: var(--ui-color-neutral-100);
