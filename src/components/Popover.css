@@ -55,26 +55,6 @@
   position: absolute;
   inset-block-start: var(--sm);
   inset-inline-end: var(--sm);
-  border-radius: var(--border-radius-sm);
-  border: none;
-  background-color: transparent;
-  color: var(--ui-color-label-text);
-  cursor: pointer;
-  padding: var(--xss);
-  outline: none;
-  transition:
-    color var(--transition-fast),
-    background-color var(--transition-fast);
-}
-
-.popover__close:hover {
-  background-color: var(--ui-color-panel-bg);
-  color: var(--ui-color-panel-text);
-}
-
-.popover__close:focus-visible {
-  outline: var(--focus-outline-width) solid var(--focus-outline-color);
-  outline-offset: var(--focus-outline-offset);
 }
 
 @keyframes popover-slide-in {

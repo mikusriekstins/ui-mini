@@ -2,7 +2,7 @@ import { Root, Trigger, Portal, Content, Close } from '@radix-ui/react-popover';
 import { forwardRef } from 'react';
 import type { ComponentRef, ComponentPropsWithoutRef, ReactNode } from 'react';
 
-import { Icon } from './Icon';
+import { Button } from './Button';
 import './Popover.css';
 
 export interface PopoverProps extends Omit<
@@ -56,8 +56,13 @@ const Popover = forwardRef<ComponentRef<typeof Content>, PopoverProps>(
             {...props}
           >
             {children}
-            <Close className="popover__close" aria-label={closeButtonText}>
-              <Icon name="x" size="small" />
+            <Close asChild>
+              <Button
+                variant="ghost"
+                icon="x"
+                aria-label={closeButtonText}
+                className="popover__close"
+              />
             </Close>
           </Content>
         </Portal>

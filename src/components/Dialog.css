@@ -92,50 +92,15 @@
   color: var(--ui-color-label-text);
 }
 
-.dialog__close {
-  border-radius: var(--border-radius-sm);
-  border: none;
-  background-color: transparent;
-  color: var(--ui-color-label-text);
-  cursor: pointer;
-  padding: var(--xss);
-  outline: none;
-  transition:
-    color var(--transition-fast),
-    background-color var(--transition-fast),
-    opacity var(--transition-fast);
-}
-
-.dialog__close:hover {
-  background-color: var(--ui-color-panel-bg);
-  color: var(--ui-color-panel-text);
-}
-
-.dialog__close:focus-visible {
-  outline: var(--focus-outline-width) solid var(--focus-outline-color);
-  outline-offset: var(--focus-outline-offset);
-}
-
-.dialog__close:disabled {
-  pointer-events: none;
-  opacity: 0.5;
-}
-
 .dialog__close--absolute {
   position: absolute;
   inset-inline-end: var(--md);
   inset-block-start: var(--md);
-  border-radius: var(--border-radius-sm);
   opacity: 0.7;
 }
 
 .dialog__close--absolute:hover {
   opacity: 1;
-}
-
-.dialog__close-icon {
-  block-size: var(--md);
-  inline-size: var(--md);
 }
 
 @keyframes dialog-overlay-show {

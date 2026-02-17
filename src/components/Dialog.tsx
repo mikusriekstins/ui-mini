@@ -11,7 +11,7 @@ import {
 import { forwardRef } from 'react';
 import type { ComponentRef, ReactNode } from 'react';
 
-import { Icon } from './Icon';
+import { Button } from './Button';
 import './Dialog.css';
 
 export interface DialogProps {
@@ -59,11 +59,14 @@ const Dialog = forwardRef<ComponentRef<typeof Content>, DialogProps>(
               </Description>
             )}
             {children}
-            <Close
-              className="dialog__close dialog__close--absolute"
-              aria-label={closeButtonText}
-            >
-              <Icon name="x" size="small" />
+            <Close asChild>
+              <Button
+                variant="ghost"
+                size="large"
+                icon="x"
+                aria-label={closeButtonText}
+                className="dialog__close dialog__close--absolute"
+              />
             </Close>
           </Content>
         </Portal>
