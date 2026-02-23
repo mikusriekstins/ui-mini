@@ -20,3 +20,5 @@ export {
 } from './Tabs';
 export { VisuallyHidden } from './VisuallyHidden';
 export { Loading, type LoadingProps } from './Loading';
+export { Tooltip, type TooltipProps } from './Tooltip';
+export { TooltipProvider, type TooltipProviderProps } from './TooltipProvider';

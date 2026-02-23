@@ -1,6 +1,7 @@
 import type { Preview } from '@storybook/react-vite';
 
 import { ThemeProvider } from '../src/components/ThemeProvider';
+import { TooltipProvider } from '../src/components/TooltipProvider';
 import type { Theme } from '../src/context/ThemeContext';
 import '../src/styles/variables.css';
 
@@ -39,15 +40,17 @@ const preview: Preview = {
 
       return (
         <ThemeProvider theme={theme}>
-          <div
-            style={{
-              backgroundColor: 'var(--ui-color-background)',
-              color: 'var(--ui-color-text)',
-              padding: '1rem',
-            }}
-          >
-            <Story />
-          </div>
+          <TooltipProvider>
+            <div
+              style={{
+                backgroundColor: 'var(--ui-color-background)',
+                color: 'var(--ui-color-text)',
+                padding: '1rem',
+              }}
+            >
+              <Story />
+            </div>
+          </TooltipProvider>
         </ThemeProvider>
       );
     },
